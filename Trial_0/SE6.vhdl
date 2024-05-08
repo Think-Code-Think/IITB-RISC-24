@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 library work;
 entity SE6 is
-    port (
+port(
         Imm6in: in std_logic_vector(5 downto 0);
         Imm6out: out std_logic_vector(15 downto 0)
     );
@@ -17,8 +17,5 @@ begin
             else 
                 Imm6out <= "1111111111" & Imm6in;
             end if;
-        else
-            Imm6out <= (others => '0');
-        end if;
     end process;
 end extender;

@@ -10,10 +10,9 @@ entity IFIDReg is
         reset: in std_logic;
 		  Iin : IN STD_LOGIC_VECTOR(15 downto 0); 
 		  PCout : out STD_LOGIC_VECTOR(15 downto 0); 
-		  Iout : out STD_LOGIC_VECTOR(15 downto 0)) ; 
-		   
+		  Iout : out STD_LOGIC_VECTOR(15 downto 0)
+		  ) ; 
 end entity;
-
 
 architecture behave of IFIDReg is
   begin 
@@ -25,7 +24,7 @@ architecture behave of IFIDReg is
 		  
 		 if(reset='1') then
               Iout <="0000000000000000";
-               PCout<="0000000000000000"  ;
+              PCout<="0000000000000000";
        end if; 
 		 
 		 if(WR_E='1') then 
@@ -33,8 +32,7 @@ architecture behave of IFIDReg is
                PCout<=PCin;
              
        end if;
-  
-		  
+
 			 end if;
 		end process;
 end behave;

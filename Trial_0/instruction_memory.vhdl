@@ -1,4 +1,4 @@
- library std;
+library std;
 use std.standard.all;
 
 library ieee;
@@ -6,21 +6,22 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity instruction_memory is 
-	port(
-		 mem_a   : in std_logic_vector(15 downto 0);
-		 mem_out : out std_logic_vector(15 DOWNTO 0)); -- output
+port(
+	  mem_add :  in std_logic_vector(15 downto 0);
+	  mem_out : out std_logic_vector(15 downto 0)
+	  );
 end instruction_memory;
 
 architecture structure of instruction_memory is 
 
 
 type memarr is array(0 to 31) of std_logic_vector(15 downto 0);
-signal RAM : memarr := ("0011000000011111","0100001000000101", "0100010000000111","0000001010111000","0000001010100010",X"0001",X"FFFF",X"FFFF",others => X"F000");
+signal RAM : memarr := ("1000001010000001","1000001010000001",others => "1000001010000001");
 signal addr : std_logic_vector(4 downto 0);
 
 begin
 
-addr <= mem_a(4 downto 0);
+addr <= mem_add(4 downto 0);
 mem_out <= RAM(to_integer(unsigned(addr)));
 
 end structure;

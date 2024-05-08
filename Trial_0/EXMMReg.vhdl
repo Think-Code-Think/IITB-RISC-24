@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity EXMMReg is
-	port (
+port    (
 	      clk: in std_logic;
          PCin : in STD_LOGIC_VECTOR(15 downto 0);    
 		   WR_E: in std_logic;                          
@@ -40,30 +40,31 @@ architecture behave of EXMMReg is
 		if (clk'event and clk = '1') then
 		  
 		 if(reset='1') then
-               Iout  <="0000000000000000";
-               PCout <="0000000000000000"  ;
-					opcode<="0000";
+               Iout   <="0000000000000000";
+               PCout  <="0000000000000000";
+					opcode <="1011";
 			      aluCout<="0000000000000000"; 
-					aRAout<="000";
+					aRAout <="000";
 					aRCout <="000";
 					aRBout <="000";
-					Imm6out    <="0000000000000000";
-					Imm9out    <="0000000000000000";
+					Imm6out<="0000000000000000";
+					Imm9out<="0000000000000000";
+					RA <= "0000000000000000";
        end if; 
 		 
 		 if(WR_E='1') then 
-               Iout <=Iin; 
-               PCout<=PCin;
-               opcode<=opcodein;
+               Iout   <=Iin; 
+               PCout  <=PCin;
+               opcode <=opcodein;
 			      aluCout<=aluCin;
 					aRAout <=aRAin;
 					aRBout <=aRBin;
 					aRCout <=aRCin;
 					Imm6out<=Imm6in;
 					Imm9out<=Imm9in;
+					RA <= RAin;
        end if;
-  
-		  
+
 			 end if;
 		end process;
 end behave;

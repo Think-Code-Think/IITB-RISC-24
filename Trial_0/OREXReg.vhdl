@@ -25,7 +25,7 @@ port(
 		   opcode: out STD_LOGIC_VECTOR(3 downto 0); 
 			RA : out STD_LOGIC_VECTOR(15 downto 0);
 			RB : out STD_LOGIC_VECTOR(15 downto 0); 
-			RC : out STD_LOGIC_VECTOR(15 downto 0);
+--			RC : out STD_LOGIC_VECTOR(15 downto 0);
 			Compbit :out std_logic;
 			aRAout : out STD_LOGIC_VECTOR(2 downto 0);
 			aRBout : out STD_LOGIC_VECTOR(2 downto 0);
@@ -48,7 +48,7 @@ architecture behave of OREXReg is
 		 if(reset='1') then
                Iout  <="0000000000000000";
                PCout <="0000000000000000";
-					opcode<="0000";
+					opcode<="1011";
 			      RA    <="0000000000000000";
 			      RB    <="0000000000000000";
 			      Compbit<='0';

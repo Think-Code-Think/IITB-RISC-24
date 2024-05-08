@@ -3,16 +3,16 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity Decoder is
-	port (clk : in std_logic;
-       	Iin : IN STD_LOGIC_VECTOR(15 downto 0);
-		   opcode: OUT STD_LOGIC_VECTOR(3 downto 0); 
-			RA : OUT STD_LOGIC_VECTOR(2 downto 0);
-			RB : OUT STD_LOGIC_VECTOR(2 downto 0); 
-			RC : OUT STD_LOGIC_VECTOR(2 downto 0);
+	port (Iin : in STD_LOGIC_VECTOR(15 downto 0);
+			reset: in STD_LOGIC;
+		   opcode: out STD_LOGIC_VECTOR(3 downto 0); 
+			RA : out STD_LOGIC_VECTOR(2 downto 0);
+			RB : out STD_LOGIC_VECTOR(2 downto 0); 
+			RC : out STD_LOGIC_VECTOR(2 downto 0);
 			Compbit :out std_logic;
 			SelAlu : out STD_LOGIC_VECTOR(1 downto 0);
-		   Imm6 : OUT STD_LOGIC_VECTOR(5 downto 0); 	
-			Imm9 : OUT STD_LOGIC_VECTOR(8 downto 0) 	
+		   Imm6 : out STD_LOGIC_VECTOR(5 downto 0); 	
+			Imm9 : out STD_LOGIC_VECTOR(8 downto 0) 	
 		   );
 end Decoder;
 
@@ -20,42 +20,81 @@ end Decoder;
 architecture behave of Decoder is
   begin
   
-      process(Iin,clk) 
+      process(Iin,reset) 
       begin
-		if (clk'event and clk = '1') then
-		opcode<=Iin(15 downto 12) ;
-		
------------------------------------------------------------------------------------------------------------------------ 
-		if Iin(15 downto 12) = ("0001" or "0010" ) then----------------ADD AND NAND 
-		
-		SelAlu <=Iin(1 downto 0) ; 
-	   Compbit<= Iin(2);    
-		RC <=Iin(11 downto 9) ;    ------A
-		RA <=Iin(8 downto 6) ;     ------B
-		RB <=Iin(5 downto 3) ;     ------C
-      Imm6 <= "000000";
-		Imm9 <= "000000000";
-		END IF;
----------------------------------------------------------------------------------------------------------------------		
-		if Iin(15 downto 12) = ("0000" or "1000" or "1001" or "1010" or "0101"or "0100" OR  "1101" ) then  ----- 6 bit immidiate case
-		
-		RC <=Iin(11 downto 9) ;    ------A
-		RB <=Iin(8 downto 6) ;     ------B
-		Imm6 <= Iin(5 downto 0);
-		Imm9 <= "000000000";
-		end if;
-		
-----------------------------------------------------------------------------------------------------------------
-		if Iin(15 downto 12) = ("1100" or "1111" or "0111" or "0011" or "0110" ) then    ----- 9 bit immidiate case
-		
-		RC <=Iin(11 downto 9) ;     ------A
-      
-		Imm6 <= "000000";
-		Imm9 <= Iin(8 downto 0);
-		
-		end if;
+			if (reset = '1') then
+				opcode <= "1011";
+				RA <= "000";
+				RB <= "000";
+				RC <= "000";
+				Imm6 <= "000000";
+				Imm9 <= "000000000";
+				SelAlu <= "00";
+				Compbit <= '0';
+			else
+				
+				opcode<=Iin(15 downto 12) ;
+				case Iin(15 downto 12) is
+					when "0001" | "0010"  =>
+						SelAlu <=Iin(1 downto 0) ; 
+						Compbit<= Iin(2);    
+						RA <=Iin(11 downto 9) ;    ------A
+						RB <=Iin(8 downto 6) ;     ------B
+						RC <=Iin(5 downto 3) ;     ------C
+						Imm6 <= "000000";
+						Imm9 <= "000000000";
+					
+					when "0000" | "1000" | "1001" | "1010" | "0101"| "0100" |  "1101" =>
+						RA <=Iin(11 downto 9) ;    ------A
+						RB <=Iin(8 downto 6) ;     ------B
+						Imm6 <= Iin(5 downto 0);
+						Imm9 <= "000000000";
+					
+					when "1100" | "1111" | "0111" | "0011" | "0110"  =>
+					
+						RA <=Iin(11 downto 9) ;     ------A
+						Imm6 <= "000000";
+						Imm9 <= Iin(8 downto 0);
+						
+					when others =>
+						RA <= "000";
+						RB <= "000";
+						RC <= "000";
+						Imm6 <= "000000";
+						Imm9 <= "000000000";
+						SelAlu <= "00";
+						Compbit <= '0';
+					end case;
+			end if;
+--			
+--		if Iin(15 downto 12) = ("0001" | "0010" ) then----------------ADD AND NAND 
+--		
+--		SelAlu <=Iin(1 downto 0) ; 
+--	   Compbit<= Iin(2);    
+--		RA <=Iin(11 downto 9) ;    ------A
+--		RB <=Iin(8 downto 6) ;     ------B
+--		RC <=Iin(5 downto 3) ;     ------C
+--      Imm6 <= "000000";
+--		Imm9 <= "000000000";
+--		END IF;
+--		if Iin(15 downto 12) = ("0000" | "1000" | "1001" | "1010" | "0101"| "0100" |  "1101" ) then  ----- 6 bit immidiate case
+--		
+--		RA <=Iin(11 downto 9) ;    ------A
+--		RB <=Iin(8 downto 6) ;     ------B
+--		Imm6 <= Iin(5 downto 0);
+--		Imm9 <= "000000000";
+--		end if;
+--		
+------------------------------------------------------------------------------------------------------------------
+--		if Iin(15 downto 12) = ("1100" | "1111" | "0111" | "0011" | "0110" ) then    ----- 9 bit immidiate case
+--		
+--		RA <=Iin(11 downto 9) ;     ------A
+--      
+--		Imm6 <= "000000";
+--		Imm9 <= Iin(8 downto 0);
+--		
+--		end if;
 -------------------------------------------------------------------------------------------------------------------		
-		end if;
+		
 end process ;
-
 end behave;

@@ -19,18 +19,18 @@ port(
 end entity;
 
 architecture inside of Register_File is    
-    signal R0 : std_logic_vector(15 downto 0);
-    signal R1 : std_logic_vector(15 downto 0);
-    signal R2 : std_logic_vector(15 downto 0);
-    signal R3 : std_logic_vector(15 downto 0);
-    signal R4 : std_logic_vector(15 downto 0);
-    signal R5 : std_logic_vector(15 downto 0);
-    signal R6 : std_logic_vector(15 downto 0);
-    signal R7 : std_logic_vector(15 downto 0);
+    signal R0 : std_logic_vector(15 downto 0) := "0000000000000000";
+    signal R1 : std_logic_vector(15 downto 0) := "0000000000000001";
+    signal R2 : std_logic_vector(15 downto 0) := "0000000000000010";
+    signal R3 : std_logic_vector(15 downto 0) := "0000000000000011";
+    signal R4 : std_logic_vector(15 downto 0) := "0000000000000100";
+    signal R5 : std_logic_vector(15 downto 0) := "0000000000000101";
+    signal R6 : std_logic_vector(15 downto 0) := "0000000000000110";
+    signal R7 : std_logic_vector(15 downto 0) := "0000000000000111";
 	 
 begin
     
-write_process: process(A3,WR_E,clk,reset,WR_ER0,R0in) 
+write_process: process(A3,WR_E,clk,reset,WR_E_R0,R0in) 
     begin
 	 
 	    if(reset = '1') then           
@@ -77,7 +77,7 @@ elsif (clk'event and clk = '1') then
 end if;
 end process write_process;
 	 
-read_process: process(A1,A2) 
+read_process: process(A1,A2,R0,R1,R2,R3,R4,R5,R6,R7) 
 
 begin
         

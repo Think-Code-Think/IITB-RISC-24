@@ -42,7 +42,7 @@ architecture behave of IDORReg is
 		 if(reset='1') then
                Iout  <="0000000000000000";
                PCout <="0000000000000000";
-					opcode<="0000";
+					opcode<="1011";
 			      aRAout    <="000";
 			      aRBout    <="000";
 			      aRCout    <="000";
