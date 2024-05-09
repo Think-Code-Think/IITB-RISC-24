@@ -1,0 +1,896 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/simulation/modelsim
+Ealu
+Z1 w1715246260
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl
+Z6 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl
+l0
+L5
+VbV<UG9Z?zDzFL:`_YHE;L3
+!s100 6^b0;_mn3RQJ;nD>0dOBh2
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1715271316
+!i10b 1
+Z9 !s108 1715271315.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl|
+Z11 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 bV<UG9Z?zDzFL:`_YHE;L3
+l56
+L16
+V^=ezCWH]Mbl?3zh^=jMHj2
+!s100 FD3:EKj;YMPQZ3nfO_UIm0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu2
+Z14 w1715207491
+R2
+R3
+R4
+R0
+Z15 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl
+Z16 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl
+l0
+L5
+V2aF0G:NQV<mc?5TNmiA9?2
+!s100 :hmF;cZ_Lie4H[=89Q]1<1
+R7
+31
+Z17 !s110 1715271315
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl|
+Z19 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl|
+!i113 1
+R12
+R13
+Ainside
+R2
+R3
+R4
+DEx4 work 4 alu2 0 22 2aF0G:NQV<mc?5TNmiA9?2
+l46
+L26
+VV3G:X<BTIOg`:^2RA>Zze2
+!s100 BT@g=1eFD9lU>Z:`G]@Y20
+R7
+31
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Ealu3
+Z20 w1715155779
+R2
+R3
+R4
+R0
+Z21 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl
+Z22 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl
+l0
+L5
+V@hzPZZ9iaWd0IG61gM:P83
+!s100 VJ]0X8nKiQPbV1`DKcc>k3
+R7
+31
+R8
+!i10b 1
+Z23 !s108 1715271316.000000
+Z24 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl|
+Z25 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl|
+!i113 1
+R12
+R13
+Ainside
+R2
+R3
+R4
+DEx4 work 4 alu3 0 22 @hzPZZ9iaWd0IG61gM:P83
+l31
+L12
+V0?SjED:h^VAlZQ_aLE<I`3
+!s100 @5ObT[4Gl:<84SWWnMSoE1
+R7
+31
+R8
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
+Edata_memory
+Z26 w1715164906
+R2
+R3
+R4
+R0
+Z27 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl
+Z28 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl
+l0
+L8
+V;FKoM=3W5;]>PVALo]e2b3
+!s100 PJam0gM2^o?nSBIzYm=:D0
+R7
+31
+R8
+!i10b 1
+R23
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl|
+Z30 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl|
+!i113 1
+R12
+R13
+Astructure
+R2
+R3
+R4
+DEx4 work 11 data_memory 0 22 ;FKoM=3W5;]>PVALo]e2b3
+l27
+L19
+V5Jj9bD[eSLJjeg]on2Z5X2
+!s100 Q40cN;@3eJW`1Z7=kRf571
+R7
+31
+R8
+!i10b 1
+R23
+R29
+R30
+!i113 1
+R12
+R13
+Edecoder
+Z31 w1715208216
+R2
+R3
+R4
+R0
+Z32 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl
+Z33 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl
+l0
+L5
+V<0R@H43TLNSRf_1e=ah>b2
+!s100 VUhnaka2E15T6`4ik24Gf3
+R7
+31
+R17
+!i10b 1
+R9
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl|
+Z35 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 decoder 0 22 <0R@H43TLNSRf_1e=ah>b2
+l20
+L19
+VinSe:Jl8G=0I9fm?7_^PA3
+!s100 b@YV4Rl;R]MNEFgfz=n1U2
+R7
+31
+R17
+!i10b 1
+R9
+R34
+R35
+!i113 1
+R12
+R13
+Eexmmreg
+Z36 w1715263496
+R2
+R3
+R4
+R0
+Z37 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl
+Z38 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl
+l0
+L5
+VDCRA7dflJ]VNcF?=:UaW@0
+!s100 Z72Gcm>jSIWJ5f=RBWXV03
+R7
+31
+R8
+!i10b 1
+R23
+Z39 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl|
+Z40 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 exmmreg 0 22 DCRA7dflJ]VNcF?=:UaW@0
+l42
+L41
+V[WjTfN`@2N6gDjM41n`Rm3
+!s100 94mMDhZ2ed_8V0j];V:_F1
+R7
+31
+R8
+!i10b 1
+R23
+R39
+R40
+!i113 1
+R12
+R13
+Eidorreg
+Z41 w1715208827
+R2
+R3
+R4
+R0
+Z42 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl
+Z43 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl
+l0
+L5
+V8N]Kl>1ibDnTAHe6B?N1[1
+!s100 :1CdzSAN^iVo@ZzVh36=80
+R7
+31
+R17
+!i10b 1
+R9
+Z44 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl|
+Z45 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 idorreg 0 22 8N]Kl>1ibDnTAHe6B?N1[1
+l36
+L35
+Vmzh2R5kfYk^8_25`Al7L=0
+!s100 W9KnV0P;]odIN;Q1PT;`B2
+R7
+31
+R17
+!i10b 1
+R9
+R44
+R45
+!i113 1
+R12
+R13
+Eifidreg
+Z46 w1715208798
+R2
+R3
+R4
+R0
+Z47 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl
+Z48 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl
+l0
+L5
+VP>@>^bR?K6zioz82GacU00
+!s100 3^`QLG1R0;D?IPPYAYJU53
+R7
+31
+R17
+!i10b 1
+R9
+Z49 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl|
+Z50 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 ifidreg 0 22 P>@>^bR?K6zioz82GacU00
+l18
+L17
+ViO6oI]TXQd]eLFkNSoP]G1
+!s100 V`cSG2?HTh3Sc8l@Ad8Bk2
+R7
+31
+R17
+!i10b 1
+R9
+R49
+R50
+!i113 1
+R12
+R13
+Einstruction_memory
+Z51 w1715271246
+R2
+R3
+R4
+R0
+Z52 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl
+Z53 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl
+l0
+L8
+VS>_fVfNDI]AWOPNC;T3Cd0
+!s100 X?M4@>XnU;gnP3k9JbOn]0
+R7
+31
+R17
+!i10b 1
+R9
+Z54 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl|
+Z55 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl|
+!i113 1
+R12
+R13
+Astructure
+R2
+R3
+R4
+DEx4 work 18 instruction_memory 0 22 S>_fVfNDI]AWOPNC;T3Cd0
+l23
+L16
+VO3BjiDc93z3l4NfhZZT];2
+!s100 9o0DY5<500IRhjY5?kX`A0
+R7
+31
+R17
+!i10b 1
+R9
+R54
+R55
+!i113 1
+R12
+R13
+Emmwbreg
+Z56 w1715263493
+R2
+R3
+R4
+R0
+Z57 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl
+Z58 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl
+l0
+L5
+VIPW67kPdm5QHWKh6QT>oL0
+!s100 7_J>:VYTGm1PoNlS3bg131
+R7
+31
+R8
+!i10b 1
+R23
+Z59 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl|
+Z60 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 mmwbreg 0 22 IPW67kPdm5QHWKh6QT>oL0
+l40
+L39
+VncJOdMl3TgBS>HKIkVfzG3
+!s100 D;n]UR2SB@L8VcKe7VIG92
+R7
+31
+R8
+!i10b 1
+R23
+R59
+R60
+!i113 1
+R12
+R13
+Emultiple_reg
+Z61 w1715258398
+R2
+R3
+R4
+R0
+Z62 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl
+Z63 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl
+l0
+L5
+V_L0fOaRL`00gLLz[=;YB`2
+!s100 k36M;9FM@^l@aZSL2[nJ_2
+R7
+31
+R8
+!i10b 1
+R23
+Z64 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl|
+Z65 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 12 multiple_reg 0 22 _L0fOaRL`00gLLz[=;YB`2
+l24
+L17
+V>G900X_ZzQ53g7]3OZDHk3
+!s100 oUBW[BHNoc<eAi9KF4GSX2
+R7
+31
+R8
+!i10b 1
+R23
+R64
+R65
+!i113 1
+R12
+R13
+Emux_2_1
+Z66 w1715181638
+R3
+R4
+R0
+Z67 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl
+Z68 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl
+l0
+L3
+VBP0@z::RWG5lX^0Kg3b@93
+!s100 UdihbdZTPY5FkU2=`4Rn51
+R7
+31
+R17
+!i10b 1
+R9
+Z69 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl|
+Z70 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl|
+!i113 1
+R12
+R13
+Amux2to1
+R3
+R4
+DEx4 work 7 mux_2_1 0 22 BP0@z::RWG5lX^0Kg3b@93
+l11
+L10
+VQ]_<=RPWN@;NmKz:7LAH;3
+!s100 i@3hQc<KP?ZWVK0Z[IDA10
+R7
+31
+R17
+!i10b 1
+R9
+R69
+R70
+!i113 1
+R12
+R13
+Emux_2_1_3bit
+Z71 w1715262612
+R3
+R4
+R0
+Z72 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl
+Z73 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl
+l0
+L3
+VgFfNJ[@QVQ`B7bFL1dK;N2
+!s100 A=O6SW`gS5dYFbMggd7CB0
+R7
+31
+R8
+!i10b 1
+R23
+Z74 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl|
+Z75 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl|
+!i113 1
+R12
+R13
+Amux2to1
+R3
+R4
+DEx4 work 12 mux_2_1_3bit 0 22 gFfNJ[@QVQ`B7bFL1dK;N2
+l11
+L10
+VVF]RFhm7YKozbfQ?N;B;L2
+!s100 m`iJCOJbSiEN3YNaZ40]W0
+R7
+31
+R8
+!i10b 1
+R23
+R74
+R75
+!i113 1
+R12
+R13
+Emux_4_1
+Z76 w1715156213
+R3
+R4
+R0
+Z77 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl
+Z78 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl
+l0
+L5
+VBzS8cBIW3Im5iH]VJEX=d2
+!s100 3ngIbQATNjeQeSY0Q6>jk2
+R7
+31
+R17
+!i10b 1
+R9
+Z79 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl|
+Z80 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl|
+!i113 1
+R12
+R13
+Amux4to1
+R3
+R4
+DEx4 work 7 mux_4_1 0 22 BzS8cBIW3Im5iH]VJEX=d2
+l12
+L11
+VZ;PLC1`NGOTbCZFiTAocM1
+!s100 I0hiYKfnl0?5@;KGKR>cI1
+R7
+31
+R17
+!i10b 1
+R9
+R79
+R80
+!i113 1
+R12
+R13
+Emux_4_1_3bit
+Z81 w1715174555
+R3
+R4
+R0
+Z82 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl
+Z83 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl
+l0
+L5
+VW2;8[C15zUVGKOM9_<:@51
+!s100 F;VHn1dIC<bAN>>zcY;Ne0
+R7
+31
+R8
+!i10b 1
+R23
+Z84 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl|
+Z85 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl|
+!i113 1
+R12
+R13
+Amux4to1
+R3
+R4
+DEx4 work 12 mux_4_1_3bit 0 22 W2;8[C15zUVGKOM9_<:@51
+l12
+L11
+VSYnJ@[U9=;InB?h7K6Po?3
+!s100 1T;;UUI1T[lQfU[Bm6S[63
+R7
+31
+R8
+!i10b 1
+R23
+R84
+R85
+!i113 1
+R12
+R13
+Eorexreg
+Z86 w1715263495
+R2
+R3
+R4
+R0
+Z87 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl
+Z88 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl
+l0
+L5
+V?2_N<WVE?TPO_6ZK0d^912
+!s100 KF854@8O[bzE<3G`35NgN0
+R7
+31
+R17
+!i10b 1
+R9
+Z89 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl|
+Z90 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 7 orexreg 0 22 ?2_N<WVE?TPO_6ZK0d^912
+l47
+L46
+VoRY>?^SbzN?h`fI>`d<A02
+!s100 DS4^blYzEG5M`7BfIcNbZ3
+R7
+31
+R17
+!i10b 1
+R9
+R89
+R90
+!i113 1
+R12
+R13
+Eregister_file
+Z91 w1715265020
+R3
+R4
+R0
+Z92 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl
+Z93 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl
+l0
+L4
+VN15RRTfm5OeknZ0;R<ce[3
+!s100 jL1n]SG:Tb=Dk<hDOVhCL0
+R7
+31
+R17
+!i10b 1
+R9
+Z94 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl|
+Z95 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl|
+!i113 1
+R12
+R13
+Ainside
+R3
+R4
+DEx4 work 13 register_file 0 22 N15RRTfm5OeknZ0;R<ce[3
+l31
+L21
+VKz00K;6z6<2m4C<^M1[l@3
+!s100 0B6M=P^<45kTU5MO30V252
+R7
+31
+R17
+!i10b 1
+R9
+R94
+R95
+!i113 1
+R12
+R13
+Erisc_pipeline
+Z96 w1715270319
+R2
+R3
+R4
+R0
+Z97 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl
+Z98 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl
+l0
+L5
+VWEVEWTN;KG8@;QbhgI?fI2
+!s100 >DTOL[V0n>MZ=^[zPcNhd0
+R7
+31
+R17
+!i10b 1
+R9
+Z99 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl|
+Z100 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl|
+!i113 1
+R12
+R13
+Abehave
+R2
+R3
+R4
+DEx4 work 13 risc_pipeline 0 22 WEVEWTN;KG8@;QbhgI?fI2
+l464
+L12
+VPC:G6=RmzY7<5fFgM8eHM1
+!s100 =cJIf^f4D>:Qc=`nS6`h20
+R7
+31
+R17
+!i10b 1
+R9
+R99
+R100
+!i113 1
+R12
+R13
+Erisc_tb
+Z101 w1715193556
+R2
+R3
+R4
+R0
+Z102 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl
+Z103 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl
+l0
+L29
+VDWY]P2UbVjLJ[3lVR?J=z1
+!s100 EC^:JBF6nl;LY6EVDAm_l1
+R7
+31
+R8
+!i10b 1
+R23
+Z104 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl|
+Z105 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl|
+!i113 1
+R12
+R13
+Atb_arch
+R2
+R3
+R4
+DEx4 work 7 risc_tb 0 22 DWY]P2UbVjLJ[3lVR?J=z1
+l41
+L32
+VGBfndiWbABb:@h9MdP;480
+!s100 06O`6nV5WboMoF:DkedN_0
+R7
+31
+R8
+!i10b 1
+R23
+R104
+R105
+!i113 1
+R12
+R13
+Ese6
+Z106 w1715181591
+R3
+R4
+R0
+Z107 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl
+Z108 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl
+l0
+L4
+Vo2VkODDb06;7:FP;[P;YJ3
+!s100 YlHjBMY57MYk`@?2MK?_c3
+R7
+31
+R17
+!i10b 1
+R9
+Z109 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl|
+Z110 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl|
+!i113 1
+R12
+R13
+Aextender
+R3
+R4
+DEx4 work 3 se6 0 22 o2VkODDb06;7:FP;[P;YJ3
+l12
+L11
+VS>_FHb4349Ycf6oi7johm3
+!s100 h[Gek@;[?iIaWK?>[o4fk2
+R7
+31
+R17
+!i10b 1
+R9
+R109
+R110
+!i113 1
+R12
+R13
+Ese9
+Z111 w1715181604
+R3
+R4
+R0
+Z112 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl
+Z113 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl
+l0
+L4
+VMWcNJmo46T>DDW;?nTO_Z3
+!s100 Yf3LDh=9zI0h?nmb;lPRR2
+R7
+31
+R17
+!i10b 1
+R9
+Z114 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl|
+Z115 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl|
+!i113 1
+R12
+R13
+Aextender
+R3
+R4
+DEx4 work 3 se9 0 22 MWcNJmo46T>DDW;?nTO_Z3
+l12
+L11
+V:LN`33kmKEKc5l=:ak40J0
+!s100 l;?mhk2`MH:O3=eR[7W5]1
+R7
+31
+R17
+!i10b 1
+R9
+R114
+R115
+!i113 1
+R12
+R13
+Eshifter
+Z116 w1715181670
+R3
+R4
+R0
+Z117 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl
+Z118 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl
+l0
+L5
+V5=b>n=TB4FTY3X?YF4W7@1
+!s100 `mS_4EWYPi=FOWkDG8:C30
+R7
+31
+R17
+!i10b 1
+R9
+Z119 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl|
+Z120 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl|
+!i113 1
+R12
+R13
+Abhv_shifter
+R3
+R4
+DEx4 work 7 shifter 0 22 5=b>n=TB4FTY3X?YF4W7@1
+l13
+L11
+VSfOGk95;UokEfgKi@6`Z41
+!s100 :JZFf3B77`CDbjJ;<D;K]0
+R7
+31
+R17
+!i10b 1
+R9
+R119
+R120
+!i113 1
+R12
+R13
