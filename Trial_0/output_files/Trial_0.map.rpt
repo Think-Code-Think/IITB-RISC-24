@@ -1,0 +1,511 @@
+Analysis & Synthesis report for Trial_0
+Thu May 09 05:19:28 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "MMWBReg:MMWB"
+ 10. Port Connectivity Checks: "data_memory:Dmemory"
+ 11. Port Connectivity Checks: "mux_4_1:muxaluB"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 09 05:19:28 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Trial_0                                     ;
+; Top-level Entity Name              ; RISC_Pipeline                               ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 2                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M25SCE144A7G     ;                    ;
+; Top-level entity name                                            ; RISC_Pipeline      ; Trial_0            ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; instruction_memory.vhdl          ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl ;         ;
+; IFIDReg.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl            ;         ;
+; Decoder.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl            ;         ;
+; Register_File.vhdl               ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl      ;         ;
+; EXMMReg.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl            ;         ;
+; data_memory.vhdl                 ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl        ;         ;
+; MMWBReg.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl            ;         ;
+; SE6.vhdl                         ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl                ;         ;
+; SE9.vhdl                         ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl                ;         ;
+; mux_2_1.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl            ;         ;
+; SHIFTER.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl            ;         ;
+; ALU2.vhdl                        ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl               ;         ;
+; ALU.vhdl                         ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl                ;         ;
+; ALU3.vhdl                        ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl               ;         ;
+; mux_4_1.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl            ;         ;
+; RISC_Pipeline.vhdl               ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl      ;         ;
+; OREXReg.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl            ;         ;
+; IDORReg.vhdl                     ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl            ;         ;
+; mux_4_1_3bit.vhdl                ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl       ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
+; |RISC_Pipeline             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 2    ; 0            ; 0          ; |RISC_Pipeline      ; RISC_Pipeline ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MMWBReg:MMWB"                                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; pcout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; iout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; imm6out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "data_memory:Dmemory" ;
++-------+-------+----------+----------------------+
+; Port  ; Type  ; Severity ; Details              ;
++-------+-------+----------+----------------------+
+; rd_en ; Input ; Info     ; Stuck at VCC         ;
+; wr_en ; Input ; Info     ; Stuck at VCC         ;
++-------+-------+----------+----------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "mux_4_1:muxaluB"  ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; two[15..2] ; Input ; Info     ; Stuck at GND ;
+; two[1]     ; Input ; Info     ; Stuck at VCC ;
+; two[0]     ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu May 09 05:19:18 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trial_0 -c Trial_0
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 17 design units, including 8 entities, in source file gates.vhdl
+    Info (12022): Found design unit 1: Gates File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 7
+    Info (12022): Found design unit 2: INVERTER-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 50
+    Info (12022): Found design unit 3: AND_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 62
+    Info (12022): Found design unit 4: NAND_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 73
+    Info (12022): Found design unit 5: OR_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 84
+    Info (12022): Found design unit 6: NOR_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 95
+    Info (12022): Found design unit 7: XOR_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 107
+    Info (12022): Found design unit 8: XNOR_2-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 118
+    Info (12022): Found design unit 9: HALF_ADDER-Equations File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 129
+    Info (12023): Found entity 1: INVERTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 46
+    Info (12023): Found entity 2: AND_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 58
+    Info (12023): Found entity 3: NAND_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 69
+    Info (12023): Found entity 4: OR_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 80
+    Info (12023): Found entity 5: NOR_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 91
+    Info (12023): Found entity 6: XOR_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 103
+    Info (12023): Found entity 7: XNOR_2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 114
+    Info (12023): Found entity 8: HALF_ADDER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Gates.vhdl Line: 125
+Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhdl
+    Info (12022): Found design unit 1: instruction_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 16
+    Info (12023): Found entity 1: instruction_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file ifidreg.vhdl
+    Info (12022): Found design unit 1: IFIDReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl Line: 17
+    Info (12023): Found entity 1: IFIDReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhdl
+    Info (12022): Found design unit 1: Decoder-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 19
+    Info (12023): Found entity 1: Decoder File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhdl
+    Info (12022): Found design unit 1: Register_File-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 21
+    Info (12023): Found entity 1: Register_File File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file exmmreg.vhdl
+    Info (12022): Found design unit 1: EXMMReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl Line: 35
+    Info (12023): Found entity 1: EXMMReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file data_memory.vhdl
+    Info (12022): Found design unit 1: data_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl Line: 19
+    Info (12023): Found entity 1: data_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file mmwbreg.vhdl
+    Info (12022): Found design unit 1: MMWBReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl Line: 35
+    Info (12023): Found entity 1: MMWBReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file se6.vhdl
+    Info (12022): Found design unit 1: SE6-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl Line: 11
+    Info (12023): Found entity 1: SE6 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file se9.vhdl
+    Info (12022): Found design unit 1: SE9-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl Line: 11
+    Info (12023): Found entity 1: SE9 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1.vhdl
+    Info (12022): Found design unit 1: mux_2_1-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl Line: 10
+    Info (12023): Found entity 1: mux_2_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file shifter.vhdl
+    Info (12022): Found design unit 1: SHIFTER-BHV_SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl Line: 11
+    Info (12023): Found entity 1: SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu2.vhdl
+    Info (12022): Found design unit 1: ALU2-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl Line: 26
+    Info (12023): Found entity 1: ALU2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhdl
+    Info (12022): Found design unit 1: ALU-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 16
+    Info (12023): Found entity 1: ALU File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu3.vhdl
+    Info (12022): Found design unit 1: ALU3-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl Line: 12
+    Info (12023): Found entity 1: ALU3 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux_4_1.vhdl
+    Info (12022): Found design unit 1: mux_4_1-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl Line: 11
+    Info (12023): Found entity 1: mux_4_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file risc_pipeline.vhdl
+    Info (12022): Found design unit 1: RISC_Pipeline-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 12
+    Info (12023): Found entity 1: RISC_Pipeline File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file orexreg.vhdl
+    Info (12022): Found design unit 1: OREXReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl Line: 40
+    Info (12023): Found entity 1: OREXReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file idorreg.vhdl
+    Info (12022): Found design unit 1: IDORReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl Line: 35
+    Info (12023): Found entity 1: IDORReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux_4_1_3bit.vhdl
+    Info (12022): Found design unit 1: mux_4_1_3bit-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl Line: 11
+    Info (12023): Found entity 1: mux_4_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file risc_tb.vhdl
+    Info (12022): Found design unit 1: RISC_tb-tb_arch File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 32
+    Info (12023): Found entity 1: RISC_tb File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 29
+Info (12127): Elaborating entity "RISC_Pipeline" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(323): object "PCout5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 323
+Warning (10541): VHDL Signal Declaration warning at RISC_Pipeline.vhdl(384): used implicit default value for signal "reset_MD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 384
+Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(392): object "Iout5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 392
+Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(394): object "IMM6_16bit_5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 394
+Info (10041): Inferred latch for "WR_MD" at RISC_Pipeline.vhdl(703) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 703
+Info (10041): Inferred latch for "RE_MD" at RISC_Pipeline.vhdl(701) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 701
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:IM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 418
+Warning (10631): VHDL Process Statement warning at instruction_memory.vhdl(24): inferring latch(es) for signal or variable "addr", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (10041): Inferred latch for "addr[0]" at instruction_memory.vhdl(24) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (10041): Inferred latch for "addr[1]" at instruction_memory.vhdl(24) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (10041): Inferred latch for "addr[2]" at instruction_memory.vhdl(24) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (10041): Inferred latch for "addr[3]" at instruction_memory.vhdl(24) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (10041): Inferred latch for "addr[4]" at instruction_memory.vhdl(24) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl Line: 24
+Info (12128): Elaborating entity "ALU2" for hierarchy "ALU2:ALU2_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 425
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:pc_in_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 431
+Info (12128): Elaborating entity "IFIDReg" for hierarchy "IFIDReg:IFID" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 453
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Decoder1" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 468
+Warning (10631): VHDL Process Statement warning at Decoder.vhdl(22): inferring latch(es) for signal or variable "SelAlu", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Warning (10631): VHDL Process Statement warning at Decoder.vhdl(22): inferring latch(es) for signal or variable "Compbit", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Warning (10631): VHDL Process Statement warning at Decoder.vhdl(22): inferring latch(es) for signal or variable "RB", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Warning (10631): VHDL Process Statement warning at Decoder.vhdl(22): inferring latch(es) for signal or variable "RC", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RC[0]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RC[1]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RC[2]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RB[0]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RB[1]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "RB[2]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "Compbit" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "SelAlu[0]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (10041): Inferred latch for "SelAlu[1]" at Decoder.vhdl(22) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl Line: 22
+Info (12128): Elaborating entity "SE6" for hierarchy "SE6:SE6_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 480
+Info (12128): Elaborating entity "SE9" for hierarchy "SE9:SE9_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 486
+Info (12128): Elaborating entity "IDORReg" for hierarchy "IDORReg:IDOR" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 495
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:R_file" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 529
+Warning (10631): VHDL Process Statement warning at Register_File.vhdl(80): inferring latch(es) for signal or variable "D1", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Warning (10631): VHDL Process Statement warning at Register_File.vhdl(80): inferring latch(es) for signal or variable "D2", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[0]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[1]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[2]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[3]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[4]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[5]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[6]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[7]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[8]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[9]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[10]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[11]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[12]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[13]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[14]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D2[15]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[0]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[1]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[2]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[3]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[4]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[5]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[6]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[7]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[8]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[9]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[10]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[11]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[12]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[13]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[14]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (10041): Inferred latch for "D1[15]" at Register_File.vhdl(80) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl Line: 80
+Info (12128): Elaborating entity "OREXReg" for hierarchy "OREXReg:OREX" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 551
+Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:shifter_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 587
+Info (12128): Elaborating entity "SHIFTER" for hierarchy "SHIFTER:Shifter_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 597
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Main_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 630
+Warning (10036): Verilog HDL or VHDL warning at ALU.vhdl(60): object "temp_c_in" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 60
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(57): inferring latch(es) for signal or variable "Output", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(57): inferring latch(es) for signal or variable "carry", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(57): inferring latch(es) for signal or variable "zero", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(57): inferring latch(es) for signal or variable "equal", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(57): inferring latch(es) for signal or variable "less", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "less" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "equal" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "zero" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "carry" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[0]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[1]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[2]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[3]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[4]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[5]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[6]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[7]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[8]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[9]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[10]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[11]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[12]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[13]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[14]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (10041): Inferred latch for "Output[15]" at ALU.vhdl(57) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl Line: 57
+Info (12128): Elaborating entity "ALU3" for hierarchy "ALU3:ALU_3" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 647
+Info (12128): Elaborating entity "EXMMReg" for hierarchy "EXMMReg:EXMM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 657
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:Dmemory" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 689
+Info (12128): Elaborating entity "MMWBReg" for hierarchy "MMWBReg:MMWB" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 709
+Info (12128): Elaborating entity "mux_4_1_3bit" for hierarchy "mux_4_1_3bit:RF_Addressin_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 757
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 7
+    Warning (15610): No output dependent on input pin "reset" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 8
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4795 megabytes
+    Info: Processing ended: Thu May 09 05:19:28 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:06
+
+
