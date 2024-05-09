@@ -1,0 +1,1323 @@
+Fitter report for ForwardingUnit
+Thu May 09 10:46:57 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Incremental Compilation Preservation Summary
+  6. Incremental Compilation Partition Settings
+  7. Incremental Compilation Placement Preservation
+  8. Fitter Resource Usage Summary
+  9. Input Pins
+ 10. Output Pins
+ 11. I/O Bank Usage
+ 12. All Package Pins
+ 13. I/O Assignment Warnings
+ 14. Fitter Resource Utilization by Entity
+ 15. Delay Chain Summary
+ 16. Pad To Core Delay Chain Fanout
+ 17. Control Signals
+ 18. Global & Other Fast Signals
+ 19. I/O Rules Summary
+ 20. I/O Rules Details
+ 21. I/O Rules Matrix
+ 22. Fitter Device Options
+ 23. Operating Settings and Conditions
+ 24. Fitter Messages
+ 25. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Fitter Summary                                                                   ;
++------------------------------------+---------------------------------------------+
+; Fitter Status                      ; Failed - Thu May 09 10:46:57 2024           ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; ForwardingUnit                              ;
+; Top-level Entity Name              ; ForwardingUnit                              ;
+; Family                             ; MAX 10                                      ;
+; Device                             ; 10M08SAE144C8G                              ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 83 / 8,064 ( 1 % )                          ;
+;     Total combinational functions  ; 83 / 8,064 ( 1 % )                          ;
+;     Dedicated logic registers      ; 0 / 8,064 ( 0 % )                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 112 / 101 ( 111 % )                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                              ;
+; Total PLLs                         ; 0 / 1 ( 0 % )                               ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                                    ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Option                                                             ; Setting                               ; Default Value                         ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Device                                                             ; 10M08SAE144C8G                        ;                                       ;
+; Minimum Core Junction Temperature                                  ; 0                                     ;                                       ;
+; Maximum Core Junction Temperature                                  ; 85                                    ;                                       ;
+; Fit Attempts to Skip                                               ; 0                                     ; 0.0                                   ;
+; Use smart compilation                                              ; Off                                   ; Off                                   ;
+; Enable parallel Assembler and Timing Analyzer during compilation   ; On                                    ; On                                    ;
+; Enable compact report table                                        ; Off                                   ; Off                                   ;
+; Auto Merge PLLs                                                    ; On                                    ; On                                    ;
+; Router Timing Optimization Level                                   ; Normal                                ; Normal                                ;
+; Perform Clocking Topology Analysis During Routing                  ; Off                                   ; Off                                   ;
+; Placement Effort Multiplier                                        ; 1.0                                   ; 1.0                                   ;
+; Router Effort Multiplier                                           ; 1.0                                   ; 1.0                                   ;
+; Optimize Hold Timing                                               ; All Paths                             ; All Paths                             ;
+; Optimize Multi-Corner Timing                                       ; On                                    ; On                                    ;
+; Power Optimization During Fitting                                  ; Normal compilation                    ; Normal compilation                    ;
+; SSN Optimization                                                   ; Off                                   ; Off                                   ;
+; Optimize Timing                                                    ; Normal compilation                    ; Normal compilation                    ;
+; Optimize Timing for ECOs                                           ; Off                                   ; Off                                   ;
+; Regenerate Full Fit Report During ECO Compiles                     ; Off                                   ; Off                                   ;
+; Optimize IOC Register Placement for Timing                         ; Normal                                ; Normal                                ;
+; Final Placement Optimizations                                      ; Automatically                         ; Automatically                         ;
+; Fitter Initial Placement Seed                                      ; 1                                     ; 1                                     ;
+; Periphery to Core Placement and Routing Optimization               ; Off                                   ; Off                                   ;
+; PCI I/O                                                            ; Off                                   ; Off                                   ;
+; Weak Pull-Up Resistor                                              ; Off                                   ; Off                                   ;
+; Enable Bus-Hold Circuitry                                          ; Off                                   ; Off                                   ;
+; Auto Packed Registers                                              ; Auto                                  ; Auto                                  ;
+; Auto Delay Chains                                                  ; On                                    ; On                                    ;
+; Auto Delay Chains for High Fanout Input Pins                       ; Off                                   ; Off                                   ;
+; Allow Single-ended Buffer for Differential-XSTL Input              ; Off                                   ; Off                                   ;
+; Treat Bidirectional Pin as Output Pin                              ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Fitting     ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Performance ; Off                                   ; Off                                   ;
+; Perform Register Duplication for Performance                       ; Off                                   ; Off                                   ;
+; Perform Logic to Memory Mapping for Fitting                        ; Off                                   ; Off                                   ;
+; Perform Register Retiming for Performance                          ; Off                                   ; Off                                   ;
+; Perform Asynchronous Signal Pipelining                             ; Off                                   ; Off                                   ;
+; Fitter Effort                                                      ; Auto Fit                              ; Auto Fit                              ;
+; Physical Synthesis Effort Level                                    ; Normal                                ; Normal                                ;
+; Logic Cell Insertion - Logic Duplication                           ; Auto                                  ; Auto                                  ;
+; Auto Register Duplication                                          ; Auto                                  ; Auto                                  ;
+; Auto Global Clock                                                  ; On                                    ; On                                    ;
+; Auto Global Register Control Signals                               ; On                                    ; On                                    ;
+; Reserve all unused pins                                            ; As input tri-stated with weak pull-up ; As input tri-stated with weak pull-up ;
+; Synchronizer Identification                                        ; Auto                                  ; Auto                                  ;
+; Enable Beneficial Skew Optimization                                ; On                                    ; On                                    ;
+; Optimize Design for Metastability                                  ; On                                    ; On                                    ;
+; Force Fitter to Avoid Periphery Placement Warnings                 ; Off                                   ; Off                                   ;
+; Enable input tri-state on active configuration pins in user mode   ; Off                                   ; Off                                   ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                     ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Placement (by node) ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 326 ) ; 0.00 % ( 0 / 326 )         ; 0.00 % ( 0 / 326 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 326 ) ; 0.00 % ( 0 / 326 )         ; 0.00 % ( 0 / 326 )       ;
+;                     ;                    ;                            ;                          ;
+; Routing (by net)    ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+--------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Partition Settings                                                                                                                                             ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Preservation Level Used ; Netlist Type Requested ; Preservation Level Requested ; Contents                       ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; N/A                     ; Source File            ; N/A                          ;                                ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; N/A                     ; Source File            ; N/A                          ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Placement Preservation                                                                                     ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Top                            ; 0.00 % ( 0 / 310 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+
+
++-------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                     ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Total logic elements                        ; 83 / 8,064 ( 1 % )  ;
+;     -- Combinational with no register       ; 83                  ;
+;     -- Register only                        ; 0                   ;
+;     -- Combinational with a register        ; 0                   ;
+;                                             ;                     ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 57                  ;
+;     -- 3 input functions                    ; 24                  ;
+;     -- <=2 input functions                  ; 2                   ;
+;     -- Register only                        ; 0                   ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 83                  ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers*                            ; 0 / 8,542 ( 0 % )   ;
+;     -- Dedicated logic registers            ; 0 / 8,064 ( 0 % )   ;
+;     -- I/O registers                        ; 0 / 478 ( 0 % )     ;
+;                                             ;                     ;
+; Total LABs                                  ; Not available       ;
+; Virtual pins                                ; 0                   ;
+; I/O pins                                    ; 112 / 101 ( 111 % ) ;
+;     -- Clock pins                           ; 0 / 4 ( 0 % )       ;
+;     -- Dedicated input pins                 ; 0 / 1 ( 0 % )       ;
+;                                             ;                     ;
+; M9Ks                                        ; 0 / 42 ( 0 % )      ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )       ;
+; ADC blocks                                  ; 0 / 1 ( 0 % )       ;
+; Total block memory bits                     ; 0 / 387,072 ( 0 % ) ;
+; Total block memory implementation bits      ; 0 / 387,072 ( 0 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 48 ( 0 % )      ;
+; PLLs                                        ; 0 / 1 ( 0 % )       ;
+; Global signals                              ; 1                   ;
+;     -- Global clocks                        ; 1 / 10 ( 10 % )     ;
+; JTAGs                                       ; 0 / 1 ( 0 % )       ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
+; Remote update blocks                        ; 0 / 1 ( 0 % )       ;
+; Oscillator blocks                           ; 0 / 1 ( 0 % )       ;
+; Maximum fan-out                             ; 18                  ;
+; Highest non-global fan-out                  ; 18                  ;
+; Total fan-out                               ; 442                 ;
+; Average fan-out                             ; 1.36                ;
++---------------------------------------------+---------------------+
+*  Register count does not include registers inside RAM blocks or DSP blocks.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                              ;
++----------------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+; Name           ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
++----------------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+; ex_op[0]       ; Unassigned ; --       ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_op[1]       ; Unassigned ; --       ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_op[2]       ; Unassigned ; --       ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_op[3]       ; Unassigned ; --       ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[0]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[10]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[11]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[12]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[13]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[14]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[15]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[1]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[2]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[3]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[4]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[5]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[6]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[7]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[8]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outalu[9]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outc        ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outcond[0]  ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outcond[1]  ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[0]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[10]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[11]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[12]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[13]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[14]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[15]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[1]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[2]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[3]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[4]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[5]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[6]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[7]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[8]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outval[9]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_outz        ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_reg_addr[0] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_reg_addr[1] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_reg_addr[2] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ex_write       ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_op[0]       ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_op[1]       ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_op[2]       ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_op[3]       ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outc        ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outcond[0]  ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outcond[1]  ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[0]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[10]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[11]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[12]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[13]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[14]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[15]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[1]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[2]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[3]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[4]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[5]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[6]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[7]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[8]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outval[9]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_outz        ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_reg_addr[0] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_reg_addr[1] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_reg_addr[2] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; ma_write       ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; req_addr[0]    ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; req_addr[1]    ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; req_addr[2]    ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[0]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[10]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[11]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[12]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[13]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[14]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[15]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[1]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[2]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[3]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[4]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[5]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[6]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[7]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[8]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_outval[9]   ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_reg_addr[0] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_reg_addr[1] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_reg_addr[2] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; wb_write       ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
++----------------+------------+----------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                              ;
++-----------------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+; Name            ; Pin #      ; I/O Bank ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
++-----------------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+; fwd_reg_val[0]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[10] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[11] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[12] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[13] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[14] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[15] ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[1]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[2]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[3]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[4]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[5]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[6]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[7]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[8]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_reg_val[9]  ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; fwd_write       ; Unassigned ; --       ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
++-----------------+------------+----------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+
+
++----------------------------------------------------------+
+; I/O Bank Usage                                           ;
++----------+----------------+---------------+--------------+
+; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ;
++----------+----------------+---------------+--------------+
+; 1A       ; 0 / 8 ( 0 % )  ; 2.5V          ; --           ;
+; 1B       ; 0 / 10 ( 0 % ) ; 2.5V          ; --           ;
+; 2        ; 0 / 7 ( 0 % )  ; 2.5V          ; --           ;
+; 3        ; 0 / 18 ( 0 % ) ; 2.5V          ; --           ;
+; 4        ; 0 / 7 ( 0 % )  ; 2.5V          ; --           ;
+; 5        ; 0 / 12 ( 0 % ) ; 2.5V          ; --           ;
+; 6        ; 0 / 15 ( 0 % ) ; 2.5V          ; --           ;
+; 7        ; 0 / 7 ( 0 % )  ; 2.5V          ; --           ;
+; 8        ; 0 / 17 ( 0 % ) ; 2.5V          ; --           ;
+; Unknown  ; 120            ; --            ;              ;
++----------+----------------+---------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                                               ;
++----------+------------+----------+---------------------------------+-------+--------------+-----------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage                  ; Dir.  ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+---------------------------------+-------+--------------+-----------+------------+-----------------+----------+--------------+
+; 1        ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 2        ;            ; --       ; VCCA6                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 3        ;            ;          ; ANAIN1                          ;       ;              ;           ; --         ;                 ; --       ; --           ;
+; 4        ;            ;          ; REFGND                          ;       ;              ;           ; --         ;                 ; --       ; --           ;
+; 5        ;            ;          ; ADC_VREF                        ;       ;              ;           ; --         ;                 ; --       ; --           ;
+; 6        ; 0          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 7        ; 2          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 8        ; 4          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 9        ;            ; 1A       ; VCCIO1A                         ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 10       ; 6          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 11       ; 8          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 12       ; 10         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 13       ; 12         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 14       ; 14         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 15       ; 18         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 16       ; 20         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 17       ; 21         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 18       ; 22         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 19       ; 24         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 20       ; 26         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 21       ; 28         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 22       ; 30         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 23       ;            ; 1B       ; VCCIO1B                         ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 24       ; 32         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 25       ; 34         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 26       ; 36         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 27       ; 38         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 28       ; 40         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 29       ; 42         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 30       ; 45         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 31       ;            ; 2        ; VCCIO2                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 32       ; 56         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 33       ; 58         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 34       ;            ; --       ; VCCA2                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 35       ;            ; --       ; VCCA1                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 36       ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 37       ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 38       ; 60         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 39       ; 62         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 40       ;            ; 3        ; VCCIO3                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 41       ; 64         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 42       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 43       ; 66         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 44       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 45       ; 70         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 46       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 47       ; 74         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 48       ; 77         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; --       ; --           ;
+; 49       ;            ; 3        ; VCCIO3                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 50       ; 76         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 51       ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 52       ; 78         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 53       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 54       ; 80         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 55       ; 84         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 56       ; 86         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 57       ; 88         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 58       ; 90         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 59       ; 92         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 60       ; 94         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 61       ; 101        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; --       ; --           ;
+; 62       ; 102        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 63       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 64       ; 108        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 65       ; 110        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 66       ; 112        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 67       ;            ; 4        ; VCCIO4                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 68       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 69       ; 116        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 70       ; 118        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 71       ;            ; --       ; VCCA5                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 72       ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 73       ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 74       ; 121        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 75       ; 120        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 76       ; 123        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 77       ; 122        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 78       ; 133        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 79       ; 132        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 80       ; 135        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 81       ; 134        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 82       ;            ; 5        ; VCCIO5                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 83       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 84       ; 141        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 85       ; 140        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 86       ; 143        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 87       ; 142        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 88       ; 148        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 89       ; 150        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 90       ; 152        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 91       ; 154        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 92       ; 156        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 93       ; 158        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 94       ;            ; 6        ; VCCIO6                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 95       ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 96       ; 172        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 97       ; 173        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; --       ; --           ;
+; 98       ; 174        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 99       ; 176        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 100      ; 177        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 101      ; 178        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 102      ; 179        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 103      ;            ; 6        ; VCCIO6                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 104      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 105      ; 188        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 106      ; 190        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Row I/O    ;                 ; no       ; On           ;
+; 107      ;            ; --       ; VCCA3                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 108      ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 109      ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 110      ; 192        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 111      ; 194        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 112      ; 199        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; --       ; --           ;
+; 113      ; 202        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 114      ; 204        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 115      ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 116      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 117      ;            ; 7        ; VCCIO7                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 118      ; 212        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 119      ; 214        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 120      ; 224        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 121      ; 226        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 122      ; 228        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 123      ; 231        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; --       ; --           ;
+; 124      ; 233        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 125      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 126      ; 232        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 127      ; 235        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 128      ;            ; 8        ; VCCIO8                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 129      ; 234        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 130      ; 236        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 131      ; 238        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 132      ; 240        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 133      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 134      ; 242        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 135      ; 243        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 136      ; 244        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 137      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 138      ; 246        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 139      ;            ; 8        ; VCCIO8                          ; power ;              ; 2.5V      ; --         ;                 ; --       ; --           ;
+; 140      ; 248        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 141      ; 250        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP ;       ;              ;           ; Column I/O ;                 ; no       ; On           ;
+; 142      ;            ;          ; GND                             ; gnd   ;              ;           ; --         ;                 ; --       ; --           ;
+; 143      ;            ; --       ; VCCA4                           ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
+; 144      ;            ; --       ; VCC_ONE                         ; power ;              ; 3.0V/3.3V ; --         ;                 ; --       ; --           ;
++----------+------------+----------+---------------------------------+-------+--------------+-----------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------+
+; I/O Assignment Warnings                         ;
++-----------------+-------------------------------+
+; Pin Name        ; Reason                        ;
++-----------------+-------------------------------+
+; fwd_reg_val[0]  ; Incomplete set of assignments ;
+; fwd_reg_val[1]  ; Incomplete set of assignments ;
+; fwd_reg_val[2]  ; Incomplete set of assignments ;
+; fwd_reg_val[3]  ; Incomplete set of assignments ;
+; fwd_reg_val[4]  ; Incomplete set of assignments ;
+; fwd_reg_val[5]  ; Incomplete set of assignments ;
+; fwd_reg_val[6]  ; Incomplete set of assignments ;
+; fwd_reg_val[7]  ; Incomplete set of assignments ;
+; fwd_reg_val[8]  ; Incomplete set of assignments ;
+; fwd_reg_val[9]  ; Incomplete set of assignments ;
+; fwd_reg_val[10] ; Incomplete set of assignments ;
+; fwd_reg_val[11] ; Incomplete set of assignments ;
+; fwd_reg_val[12] ; Incomplete set of assignments ;
+; fwd_reg_val[13] ; Incomplete set of assignments ;
+; fwd_reg_val[14] ; Incomplete set of assignments ;
+; fwd_reg_val[15] ; Incomplete set of assignments ;
+; fwd_write       ; Incomplete set of assignments ;
+; ex_reg_addr[0]  ; Incomplete set of assignments ;
+; ex_reg_addr[1]  ; Incomplete set of assignments ;
+; req_addr[1]     ; Incomplete set of assignments ;
+; req_addr[0]     ; Incomplete set of assignments ;
+; ex_write        ; Incomplete set of assignments ;
+; ex_reg_addr[2]  ; Incomplete set of assignments ;
+; req_addr[2]     ; Incomplete set of assignments ;
+; ex_op[0]        ; Incomplete set of assignments ;
+; ex_op[1]        ; Incomplete set of assignments ;
+; ex_op[2]        ; Incomplete set of assignments ;
+; ex_op[3]        ; Incomplete set of assignments ;
+; ex_outcond[0]   ; Incomplete set of assignments ;
+; ex_outcond[1]   ; Incomplete set of assignments ;
+; ma_reg_addr[1]  ; Incomplete set of assignments ;
+; ma_reg_addr[0]  ; Incomplete set of assignments ;
+; ma_write        ; Incomplete set of assignments ;
+; ma_reg_addr[2]  ; Incomplete set of assignments ;
+; ma_op[0]        ; Incomplete set of assignments ;
+; ma_op[1]        ; Incomplete set of assignments ;
+; ma_op[2]        ; Incomplete set of assignments ;
+; ma_op[3]        ; Incomplete set of assignments ;
+; ma_outcond[1]   ; Incomplete set of assignments ;
+; ma_outc         ; Incomplete set of assignments ;
+; ma_outcond[0]   ; Incomplete set of assignments ;
+; ma_outz         ; Incomplete set of assignments ;
+; ex_outc         ; Incomplete set of assignments ;
+; ex_outz         ; Incomplete set of assignments ;
+; wb_reg_addr[1]  ; Incomplete set of assignments ;
+; wb_reg_addr[0]  ; Incomplete set of assignments ;
+; wb_write        ; Incomplete set of assignments ;
+; wb_reg_addr[2]  ; Incomplete set of assignments ;
+; ma_outval[0]    ; Incomplete set of assignments ;
+; wb_outval[0]    ; Incomplete set of assignments ;
+; ex_outalu[0]    ; Incomplete set of assignments ;
+; ex_outval[0]    ; Incomplete set of assignments ;
+; ex_outalu[1]    ; Incomplete set of assignments ;
+; wb_outval[1]    ; Incomplete set of assignments ;
+; ex_outval[1]    ; Incomplete set of assignments ;
+; ma_outval[1]    ; Incomplete set of assignments ;
+; wb_outval[2]    ; Incomplete set of assignments ;
+; ex_outalu[2]    ; Incomplete set of assignments ;
+; ex_outval[2]    ; Incomplete set of assignments ;
+; ma_outval[2]    ; Incomplete set of assignments ;
+; ex_outalu[3]    ; Incomplete set of assignments ;
+; wb_outval[3]    ; Incomplete set of assignments ;
+; ex_outval[3]    ; Incomplete set of assignments ;
+; ma_outval[3]    ; Incomplete set of assignments ;
+; ex_outalu[4]    ; Incomplete set of assignments ;
+; wb_outval[4]    ; Incomplete set of assignments ;
+; ex_outval[4]    ; Incomplete set of assignments ;
+; ma_outval[4]    ; Incomplete set of assignments ;
+; wb_outval[5]    ; Incomplete set of assignments ;
+; ex_outalu[5]    ; Incomplete set of assignments ;
+; ex_outval[5]    ; Incomplete set of assignments ;
+; ma_outval[5]    ; Incomplete set of assignments ;
+; ex_outalu[6]    ; Incomplete set of assignments ;
+; wb_outval[6]    ; Incomplete set of assignments ;
+; ex_outval[6]    ; Incomplete set of assignments ;
+; ma_outval[6]    ; Incomplete set of assignments ;
+; wb_outval[7]    ; Incomplete set of assignments ;
+; ex_outalu[7]    ; Incomplete set of assignments ;
+; ex_outval[7]    ; Incomplete set of assignments ;
+; ma_outval[7]    ; Incomplete set of assignments ;
+; ex_outalu[8]    ; Incomplete set of assignments ;
+; wb_outval[8]    ; Incomplete set of assignments ;
+; ex_outval[8]    ; Incomplete set of assignments ;
+; ma_outval[8]    ; Incomplete set of assignments ;
+; wb_outval[9]    ; Incomplete set of assignments ;
+; ex_outalu[9]    ; Incomplete set of assignments ;
+; ex_outval[9]    ; Incomplete set of assignments ;
+; ma_outval[9]    ; Incomplete set of assignments ;
+; ex_outalu[10]   ; Incomplete set of assignments ;
+; wb_outval[10]   ; Incomplete set of assignments ;
+; ex_outval[10]   ; Incomplete set of assignments ;
+; ma_outval[10]   ; Incomplete set of assignments ;
+; wb_outval[11]   ; Incomplete set of assignments ;
+; ex_outalu[11]   ; Incomplete set of assignments ;
+; ex_outval[11]   ; Incomplete set of assignments ;
+; ma_outval[11]   ; Incomplete set of assignments ;
+; ex_outalu[12]   ; Incomplete set of assignments ;
+; wb_outval[12]   ; Incomplete set of assignments ;
+; ex_outval[12]   ; Incomplete set of assignments ;
+; ma_outval[12]   ; Incomplete set of assignments ;
+; wb_outval[13]   ; Incomplete set of assignments ;
+; ex_outalu[13]   ; Incomplete set of assignments ;
+; ex_outval[13]   ; Incomplete set of assignments ;
+; ma_outval[13]   ; Incomplete set of assignments ;
+; ex_outalu[14]   ; Incomplete set of assignments ;
+; wb_outval[14]   ; Incomplete set of assignments ;
+; ex_outval[14]   ; Incomplete set of assignments ;
+; ma_outval[14]   ; Incomplete set of assignments ;
+; wb_outval[15]   ; Incomplete set of assignments ;
+; ex_outalu[15]   ; Incomplete set of assignments ;
+; ex_outval[15]   ; Incomplete set of assignments ;
+; ma_outval[15]   ; Incomplete set of assignments ;
+; fwd_reg_val[0]  ; Missing location assignment   ;
+; fwd_reg_val[1]  ; Missing location assignment   ;
+; fwd_reg_val[2]  ; Missing location assignment   ;
+; fwd_reg_val[3]  ; Missing location assignment   ;
+; fwd_reg_val[4]  ; Missing location assignment   ;
+; fwd_reg_val[5]  ; Missing location assignment   ;
+; fwd_reg_val[6]  ; Missing location assignment   ;
+; fwd_reg_val[7]  ; Missing location assignment   ;
+; fwd_reg_val[8]  ; Missing location assignment   ;
+; fwd_reg_val[9]  ; Missing location assignment   ;
+; fwd_reg_val[10] ; Missing location assignment   ;
+; fwd_reg_val[11] ; Missing location assignment   ;
+; fwd_reg_val[12] ; Missing location assignment   ;
+; fwd_reg_val[13] ; Missing location assignment   ;
+; fwd_reg_val[14] ; Missing location assignment   ;
+; fwd_reg_val[15] ; Missing location assignment   ;
+; fwd_write       ; Missing location assignment   ;
+; ex_reg_addr[0]  ; Missing location assignment   ;
+; ex_reg_addr[1]  ; Missing location assignment   ;
+; req_addr[1]     ; Missing location assignment   ;
+; req_addr[0]     ; Missing location assignment   ;
+; ex_write        ; Missing location assignment   ;
+; ex_reg_addr[2]  ; Missing location assignment   ;
+; req_addr[2]     ; Missing location assignment   ;
+; ex_op[0]        ; Missing location assignment   ;
+; ex_op[1]        ; Missing location assignment   ;
+; ex_op[2]        ; Missing location assignment   ;
+; ex_op[3]        ; Missing location assignment   ;
+; ex_outcond[0]   ; Missing location assignment   ;
+; ex_outcond[1]   ; Missing location assignment   ;
+; ma_reg_addr[1]  ; Missing location assignment   ;
+; ma_reg_addr[0]  ; Missing location assignment   ;
+; ma_write        ; Missing location assignment   ;
+; ma_reg_addr[2]  ; Missing location assignment   ;
+; ma_op[0]        ; Missing location assignment   ;
+; ma_op[1]        ; Missing location assignment   ;
+; ma_op[2]        ; Missing location assignment   ;
+; ma_op[3]        ; Missing location assignment   ;
+; ma_outcond[1]   ; Missing location assignment   ;
+; ma_outc         ; Missing location assignment   ;
+; ma_outcond[0]   ; Missing location assignment   ;
+; ma_outz         ; Missing location assignment   ;
+; ex_outc         ; Missing location assignment   ;
+; ex_outz         ; Missing location assignment   ;
+; wb_reg_addr[1]  ; Missing location assignment   ;
+; wb_reg_addr[0]  ; Missing location assignment   ;
+; wb_write        ; Missing location assignment   ;
+; wb_reg_addr[2]  ; Missing location assignment   ;
+; ma_outval[0]    ; Missing location assignment   ;
+; wb_outval[0]    ; Missing location assignment   ;
+; ex_outalu[0]    ; Missing location assignment   ;
+; ex_outval[0]    ; Missing location assignment   ;
+; ex_outalu[1]    ; Missing location assignment   ;
+; wb_outval[1]    ; Missing location assignment   ;
+; ex_outval[1]    ; Missing location assignment   ;
+; ma_outval[1]    ; Missing location assignment   ;
+; wb_outval[2]    ; Missing location assignment   ;
+; ex_outalu[2]    ; Missing location assignment   ;
+; ex_outval[2]    ; Missing location assignment   ;
+; ma_outval[2]    ; Missing location assignment   ;
+; ex_outalu[3]    ; Missing location assignment   ;
+; wb_outval[3]    ; Missing location assignment   ;
+; ex_outval[3]    ; Missing location assignment   ;
+; ma_outval[3]    ; Missing location assignment   ;
+; ex_outalu[4]    ; Missing location assignment   ;
+; wb_outval[4]    ; Missing location assignment   ;
+; ex_outval[4]    ; Missing location assignment   ;
+; ma_outval[4]    ; Missing location assignment   ;
+; wb_outval[5]    ; Missing location assignment   ;
+; ex_outalu[5]    ; Missing location assignment   ;
+; ex_outval[5]    ; Missing location assignment   ;
+; ma_outval[5]    ; Missing location assignment   ;
+; ex_outalu[6]    ; Missing location assignment   ;
+; wb_outval[6]    ; Missing location assignment   ;
+; ex_outval[6]    ; Missing location assignment   ;
+; ma_outval[6]    ; Missing location assignment   ;
+; wb_outval[7]    ; Missing location assignment   ;
+; ex_outalu[7]    ; Missing location assignment   ;
+; ex_outval[7]    ; Missing location assignment   ;
+; ma_outval[7]    ; Missing location assignment   ;
+; ex_outalu[8]    ; Missing location assignment   ;
+; wb_outval[8]    ; Missing location assignment   ;
+; ex_outval[8]    ; Missing location assignment   ;
+; ma_outval[8]    ; Missing location assignment   ;
+; wb_outval[9]    ; Missing location assignment   ;
+; ex_outalu[9]    ; Missing location assignment   ;
+; ex_outval[9]    ; Missing location assignment   ;
+; ma_outval[9]    ; Missing location assignment   ;
+; ex_outalu[10]   ; Missing location assignment   ;
+; wb_outval[10]   ; Missing location assignment   ;
+; ex_outval[10]   ; Missing location assignment   ;
+; ma_outval[10]   ; Missing location assignment   ;
+; wb_outval[11]   ; Missing location assignment   ;
+; ex_outalu[11]   ; Missing location assignment   ;
+; ex_outval[11]   ; Missing location assignment   ;
+; ma_outval[11]   ; Missing location assignment   ;
+; ex_outalu[12]   ; Missing location assignment   ;
+; wb_outval[12]   ; Missing location assignment   ;
+; ex_outval[12]   ; Missing location assignment   ;
+; ma_outval[12]   ; Missing location assignment   ;
+; wb_outval[13]   ; Missing location assignment   ;
+; ex_outalu[13]   ; Missing location assignment   ;
+; ex_outval[13]   ; Missing location assignment   ;
+; ma_outval[13]   ; Missing location assignment   ;
+; ex_outalu[14]   ; Missing location assignment   ;
+; wb_outval[14]   ; Missing location assignment   ;
+; ex_outval[14]   ; Missing location assignment   ;
+; ma_outval[14]   ; Missing location assignment   ;
+; wb_outval[15]   ; Missing location assignment   ;
+; ex_outalu[15]   ; Missing location assignment   ;
+; ex_outval[15]   ; Missing location assignment   ;
+; ma_outval[15]   ; Missing location assignment   ;
++-----------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++----------------------------+-------------+---------------------------+---------------+-------------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name ; Entity Name    ; Library Name ;
++----------------------------+-------------+---------------------------+---------------+-------------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------+----------------+--------------+
+; |ForwardingUnit            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 1          ; 0            ; 0       ; 0         ; 112  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |ForwardingUnit     ; ForwardingUnit ; work         ;
++----------------------------+-------------+---------------------------+---------------+-------------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                             ;
++-----------------+----------+---------------+---------------+-----------------------+-----+------+
+; Name            ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
++-----------------+----------+---------------+---------------+-----------------------+-----+------+
+; fwd_reg_val[0]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[1]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[2]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[3]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[4]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[5]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[6]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[7]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[8]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[9]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[10] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[11] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[12] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[13] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[14] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_reg_val[15] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; fwd_write       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; ex_reg_addr[0]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_reg_addr[1]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; req_addr[1]     ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; req_addr[0]     ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_write        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_reg_addr[2]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; req_addr[2]     ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_op[0]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_op[1]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_op[2]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_op[3]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outcond[0]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outcond[1]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_reg_addr[1]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_reg_addr[0]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_write        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_reg_addr[2]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_op[0]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_op[1]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_op[2]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_op[3]        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outcond[1]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outc         ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outcond[0]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outz         ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outc         ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outz         ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_reg_addr[1]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_reg_addr[0]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_write        ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_reg_addr[2]  ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[0]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[0]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[0]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[0]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[1]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[1]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[1]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[1]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[2]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[2]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[2]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[2]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[3]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[3]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[3]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[3]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[4]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[4]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[4]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[4]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[5]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[5]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[5]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[5]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[6]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[6]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[6]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[6]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[7]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[7]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[7]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[7]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[8]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[8]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[8]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[8]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[9]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[9]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[9]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[9]    ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[10]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[10]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[10]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[10]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[11]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[11]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[11]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[11]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[12]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[12]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[12]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[12]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[13]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[13]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[13]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[13]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[14]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[14]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[14]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[14]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; wb_outval[15]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outalu[15]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ex_outval[15]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
+; ma_outval[15]   ; Input    ; 0             ; --            ; --                    ; --  ; --   ;
++-----------------+----------+---------------+---------------+-----------------------+-----+------+
+
+
++---------------------------------------------------+
+; Pad To Core Delay Chain Fanout                    ;
++---------------------+-------------------+---------+
+; Source Pin / Fanout ; Pad To Core Index ; Setting ;
++---------------------+-------------------+---------+
+; ex_reg_addr[0]      ;                   ;         ;
+; ex_reg_addr[1]      ;                   ;         ;
+; req_addr[1]         ;                   ;         ;
+; req_addr[0]         ;                   ;         ;
+; ex_write            ;                   ;         ;
+; ex_reg_addr[2]      ;                   ;         ;
+; req_addr[2]         ;                   ;         ;
+; ex_op[0]            ;                   ;         ;
+; ex_op[1]            ;                   ;         ;
+; ex_op[2]            ;                   ;         ;
+; ex_op[3]            ;                   ;         ;
+; ex_outcond[0]       ;                   ;         ;
+; ex_outcond[1]       ;                   ;         ;
+; ma_reg_addr[1]      ;                   ;         ;
+; ma_reg_addr[0]      ;                   ;         ;
+; ma_write            ;                   ;         ;
+; ma_reg_addr[2]      ;                   ;         ;
+; ma_op[0]            ;                   ;         ;
+; ma_op[1]            ;                   ;         ;
+; ma_op[2]            ;                   ;         ;
+; ma_op[3]            ;                   ;         ;
+; ma_outcond[1]       ;                   ;         ;
+; ma_outc             ;                   ;         ;
+; ma_outcond[0]       ;                   ;         ;
+; ma_outz             ;                   ;         ;
+; ex_outc             ;                   ;         ;
+; ex_outz             ;                   ;         ;
+; wb_reg_addr[1]      ;                   ;         ;
+; wb_reg_addr[0]      ;                   ;         ;
+; wb_write            ;                   ;         ;
+; wb_reg_addr[2]      ;                   ;         ;
+; ma_outval[0]        ;                   ;         ;
+; wb_outval[0]        ;                   ;         ;
+; ex_outalu[0]        ;                   ;         ;
+; ex_outval[0]        ;                   ;         ;
+; ex_outalu[1]        ;                   ;         ;
+; wb_outval[1]        ;                   ;         ;
+; ex_outval[1]        ;                   ;         ;
+; ma_outval[1]        ;                   ;         ;
+; wb_outval[2]        ;                   ;         ;
+; ex_outalu[2]        ;                   ;         ;
+; ex_outval[2]        ;                   ;         ;
+; ma_outval[2]        ;                   ;         ;
+; ex_outalu[3]        ;                   ;         ;
+; wb_outval[3]        ;                   ;         ;
+; ex_outval[3]        ;                   ;         ;
+; ma_outval[3]        ;                   ;         ;
+; ex_outalu[4]        ;                   ;         ;
+; wb_outval[4]        ;                   ;         ;
+; ex_outval[4]        ;                   ;         ;
+; ma_outval[4]        ;                   ;         ;
+; wb_outval[5]        ;                   ;         ;
+; ex_outalu[5]        ;                   ;         ;
+; ex_outval[5]        ;                   ;         ;
+; ma_outval[5]        ;                   ;         ;
+; ex_outalu[6]        ;                   ;         ;
+; wb_outval[6]        ;                   ;         ;
+; ex_outval[6]        ;                   ;         ;
+; ma_outval[6]        ;                   ;         ;
+; wb_outval[7]        ;                   ;         ;
+; ex_outalu[7]        ;                   ;         ;
+; ex_outval[7]        ;                   ;         ;
+; ma_outval[7]        ;                   ;         ;
+; ex_outalu[8]        ;                   ;         ;
+; wb_outval[8]        ;                   ;         ;
+; ex_outval[8]        ;                   ;         ;
+; ma_outval[8]        ;                   ;         ;
+; wb_outval[9]        ;                   ;         ;
+; ex_outalu[9]        ;                   ;         ;
+; ex_outval[9]        ;                   ;         ;
+; ma_outval[9]        ;                   ;         ;
+; ex_outalu[10]       ;                   ;         ;
+; wb_outval[10]       ;                   ;         ;
+; ex_outval[10]       ;                   ;         ;
+; ma_outval[10]       ;                   ;         ;
+; wb_outval[11]       ;                   ;         ;
+; ex_outalu[11]       ;                   ;         ;
+; ex_outval[11]       ;                   ;         ;
+; ma_outval[11]       ;                   ;         ;
+; ex_outalu[12]       ;                   ;         ;
+; wb_outval[12]       ;                   ;         ;
+; ex_outval[12]       ;                   ;         ;
+; ma_outval[12]       ;                   ;         ;
+; wb_outval[13]       ;                   ;         ;
+; ex_outalu[13]       ;                   ;         ;
+; ex_outval[13]       ;                   ;         ;
+; ma_outval[13]       ;                   ;         ;
+; ex_outalu[14]       ;                   ;         ;
+; wb_outval[14]       ;                   ;         ;
+; ex_outval[14]       ;                   ;         ;
+; ma_outval[14]       ;                   ;         ;
+; wb_outval[15]       ;                   ;         ;
+; ex_outalu[15]       ;                   ;         ;
+; ex_outval[15]       ;                   ;         ;
+; ma_outval[15]       ;                   ;         ;
++---------------------+-------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                      ;
++-----------------+------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name            ; Location   ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------+------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; reg_data[15]~17 ; Unassigned ; 16      ; Latch enable ; yes    ; Global Clock         ; Not Available    ; --                        ;
++-----------------+------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                         ;
++-----------------+------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name            ; Location   ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------+------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; reg_data[15]~17 ; Unassigned ; 16      ; 0                                    ; Global Clock         ; Not Available    ; --                        ;
++-----------------+------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+
+
++------------------------------------------+
+; I/O Rules Summary                        ;
++----------------------------------+-------+
+; I/O Rules Statistic              ; Total ;
++----------------------------------+-------+
+; Total I/O Rules                  ; 30    ;
+; Number of I/O Rules Passed       ; 2     ;
+; Number of I/O Rules Failed       ; 0     ;
+; Number of I/O Rules Unchecked    ; 7     ;
+; Number of I/O Rules Inapplicable ; 21    ;
++----------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; I/O Rules Details                                                                                                                                                                                                                                                                                   ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+; Status       ; ID        ; Category                          ; Rule Description                                                                                     ; Severity ; Information                                                              ; Area                ; Extra Information ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+; Inapplicable ; IO_000001 ; Capacity Checks                   ; Number of pins in an I/O bank should not exceed the number of locations available.                   ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Inapplicable ; IO_000002 ; Capacity Checks                   ; Number of clocks in an I/O bank should not exceed the number of clocks available.                    ; Critical ; No Global Signal assignments found.                                      ; I/O                 ;                   ;
+; Inapplicable ; IO_000003 ; Capacity Checks                   ; Number of pins in a Vrefgroup should not exceed the number of locations available.                   ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Inapplicable ; IO_000004 ; Voltage Compatibility Checks      ; The I/O bank should support the requested VCCIO.                                                     ; Critical ; No IOBANK_VCCIO assignments found.                                       ; I/O                 ;                   ;
+; Inapplicable ; IO_000005 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VREF values.                                                  ; Critical ; No VREF I/O Standard assignments found.                                  ; I/O                 ;                   ;
+; Unchecked    ; IO_000006 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VCCIO values.                                                 ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000007 ; Valid Location Checks             ; Checks for unavailable locations.                                                                    ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Inapplicable ; IO_000008 ; Valid Location Checks             ; Checks for reserved locations.                                                                       ; Critical ; No reserved LogicLock region found.                                      ; I/O                 ;                   ;
+; Unchecked    ; IO_000009 ; I/O Properties Checks for One I/O ; The location should support the requested I/O standard.                                              ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Unchecked    ; IO_000010 ; I/O Properties Checks for One I/O ; The location should support the requested I/O direction.                                             ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000011 ; I/O Properties Checks for One I/O ; The location should support the requested Current Strength.                                          ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Unchecked    ; IO_000012 ; I/O Properties Checks for One I/O ; The location should support the requested On Chip Termination value.                                 ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000013 ; I/O Properties Checks for One I/O ; The location should support the requested Bus Hold value.                                            ; Critical ; No Enable Bus-Hold Circuitry assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000014 ; I/O Properties Checks for One I/O ; The location should support the requested Weak Pull Up value.                                        ; Critical ; No Weak Pull-Up Resistor assignments found.                              ; I/O                 ;                   ;
+; Unchecked    ; IO_000015 ; I/O Properties Checks for One I/O ; The location should support the requested PCI Clamp Diode.                                           ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000018 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Current Strength.                                      ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Unchecked    ; IO_000019 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested On Chip Termination value.                             ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Pass         ; IO_000020 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested PCI Clamp Diode.                                       ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000021 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Weak Pull Up value.                                    ; Critical ; No Weak Pull-Up Resistor assignments found.                              ; I/O                 ;                   ;
+; Inapplicable ; IO_000022 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Bus Hold value.                                        ; Critical ; No Enable Bus-Hold Circuitry assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000023 ; I/O Properties Checks for One I/O ; The I/O standard should support the Open Drain value.                                                ; Critical ; No open drain assignments found.                                         ; I/O                 ;                   ;
+; Pass         ; IO_000024 ; I/O Properties Checks for One I/O ; The I/O direction should support the On Chip Termination value.                                      ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000026 ; I/O Properties Checks for One I/O ; On Chip Termination and Current Strength should not be used at the same time.                        ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000027 ; I/O Properties Checks for One I/O ; Weak Pull Up and Bus Hold should not be used at the same time.                                       ; Critical ; No Enable Bus-Hold Circuitry or Weak Pull-Up Resistor assignments found. ; I/O                 ;                   ;
+; Inapplicable ; IO_000045 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Slew Rate value.                                       ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000046 ; I/O Properties Checks for One I/O ; The location should support the requested Slew Rate value.                                           ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000047 ; I/O Properties Checks for One I/O ; On Chip Termination and Slew Rate should not be used at the same time.                               ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Unchecked    ; IO_000033 ; Electromigration Checks           ; Current density for consecutive I/Os should not exceed 160mA for row I/Os and 160mA for column I/Os. ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000034 ; SI Related Distance Checks        ; Single-ended outputs should be 5 LAB row(s) away from a differential I/O.                            ; High     ; No Differential I/O Standard assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000042 ; SI Related SSO Limit Checks       ; No more than 20 outputs are allowed in a VREF group when VREF is being read from.                    ; High     ; No VREF I/O Standard assignments found.                                  ; I/O                 ;                   ;
+; ----         ; ----      ; Disclaimer                        ; OCT rules are checked but not reported.                                                              ; None     ; ----                                                                     ; On Chip Termination ;                   ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; I/O Rules Matrix                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
++--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 95           ; 0            ; 0            ; 0            ; 17           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
+; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 112       ; 0            ; 0            ; 112       ; 112       ; 0            ; 17           ; 0            ; 0            ; 95           ; 0            ; 17           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 112       ; 0            ; 0            ;
+; Total Inapplicable ; 112          ; 112          ; 112          ; 112          ; 112          ; 0         ; 112          ; 112          ; 0         ; 0         ; 112          ; 95           ; 112          ; 112          ; 17           ; 112          ; 95           ; 17           ; 112          ; 112          ; 112          ; 95           ; 112          ; 112          ; 112          ; 112          ; 112          ; 0         ; 112          ; 112          ;
+; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
+; fwd_reg_val[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[1]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[2]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[3]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[4]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[5]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[6]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[7]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[8]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[9]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[10]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[11]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[12]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[13]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[14]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_reg_val[15]    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; fwd_write          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_reg_addr[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_reg_addr[1]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; req_addr[1]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; req_addr[0]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_write           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_reg_addr[2]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; req_addr[2]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_op[0]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_op[1]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_op[2]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_op[3]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outcond[0]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outcond[1]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_reg_addr[1]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_reg_addr[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_write           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_reg_addr[2]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_op[0]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_op[1]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_op[2]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_op[3]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outcond[1]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outc            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outcond[0]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outz            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outc            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outz            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_reg_addr[1]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_reg_addr[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_write           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_reg_addr[2]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[0]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[0]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[0]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[0]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[1]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[1]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[1]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[1]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[2]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[2]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[2]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[2]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[3]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[3]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[3]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[3]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[4]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[4]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[4]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[4]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[8]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[8]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[8]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[8]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[9]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[9]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[9]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[9]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[10]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[10]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[10]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[10]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[11]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[11]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[11]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[11]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[12]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[12]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[12]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[12]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[13]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[13]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[13]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[13]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[14]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[14]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[14]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[14]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; wb_outval[15]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outalu[15]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ex_outval[15]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
+; ma_outval[15]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ; Unchecked ; Unchecked ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked    ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Unchecked ; Inapplicable ; Inapplicable ;
++--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Fitter Device Options                                                                     ;
++------------------------------------------------------------------+------------------------+
+; Option                                                           ; Setting                ;
++------------------------------------------------------------------+------------------------+
+; Enable user-supplied start-up clock (CLKUSR)                     ; Off                    ;
+; Enable device-wide reset (DEV_CLRn)                              ; Off                    ;
+; Enable device-wide output enable (DEV_OE)                        ; Off                    ;
+; Enable INIT_DONE output                                          ; Off                    ;
+; Configuration scheme                                             ; Internal Configuration ;
+; Enable Error Detection CRC_ERROR pin                             ; Off                    ;
+; Enable open drain on CRC_ERROR pin                               ; Off                    ;
+; Enable nCONFIG, nSTATUS, and CONF_DONE pins                      ; On                     ;
+; Enable JTAG pin sharing                                          ; Off                    ;
+; Enable nCE pin                                                   ; Off                    ;
+; Enable CONFIG_SEL pin                                            ; On                     ;
+; Enable input tri-state on active configuration pins in user mode ; Off                    ;
+; Configuration Voltage Level                                      ; Auto                   ;
+; Force Configuration Voltage Level                                ; Off                    ;
+; Data[0]                                                          ; Unreserved             ;
+; Data[1]/ASDO                                                     ; Unreserved             ;
+; FLASH_nCE/nCSO                                                   ; Unreserved             ;
+; DCLK                                                             ; Unreserved             ;
++------------------------------------------------------------------+------------------------+
+
+
++------------------------------------+
+; Operating Settings and Conditions  ;
++---------------------------+--------+
+; Setting                   ; Value  ;
++---------------------------+--------+
+; Nominal Core Voltage      ; 1.20 V ;
+; Low Junction Temperature  ; 0 °C   ;
+; High Junction Temperature ; 85 °C  ;
++---------------------------+--------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (119006): Selected device 10M08SAE144C8G for design "ForwardingUnit"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Critical Warning (16562): Review the Power Analyzer report file (<design>.pow.rpt) to ensure your design is within the maximum power utilization limit of the single power-supply target device and to avoid functional failures.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device 10M08SAE144C8GES is compatible
+    Info (176445): Device 10M04SAE144C8G is compatible
+    Info (176445): Device 10M16SAE144C8G is compatible
+    Info (176445): Device 10M25SAE144C8G is compatible
+Info (169124): Fitter converted 8 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_TMS~ is reserved at location 16
+    Info (169125): Pin ~ALTERA_TCK~ is reserved at location 18
+    Info (169125): Pin ~ALTERA_TDI~ is reserved at location 19
+    Info (169125): Pin ~ALTERA_TDO~ is reserved at location 20
+    Info (169125): Pin ~ALTERA_CONFIG_SEL~ is reserved at location 126
+    Info (169125): Pin ~ALTERA_nCONFIG~ is reserved at location 129
+    Info (169125): Pin ~ALTERA_nSTATUS~ is reserved at location 136
+    Info (169125): Pin ~ALTERA_CONF_DONE~ is reserved at location 138
+Info (169141): DATA[0] dual-purpose pin not reserved
+Info (12825): Data[1]/ASDO dual-purpose pin not reserved
+Info (12825): nCSO dual-purpose pin not reserved
+Info (12825): DCLK dual-purpose pin not reserved
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Critical Warning (169085): No exact pin location assignment(s) for 112 pins of 112 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Warning (335093): The Timing Analyzer is analyzing 16 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ForwardingUnit.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: process_0~2  from: dataa  to: combout
+    Info (332098): Cell: process_0~9  from: dataa  to: combout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info (176353): Automatically promoted node reg_data[15]~17  File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+Info (176233): Starting register packing
+Info (176235): Finished register packing
+    Extra Info (176219): No registers were packed into other blocks
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 112 (unused VREF, 2.5V VCCIO, 95 input, 17 output, 0 bidirectional)
+        Info (176212): I/O standards used: 2.5 V.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1A does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
+        Info (176213): I/O bank number 1B does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  6 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  18 pins available
+        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
+        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  15 pins available
+        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  13 pins available
+Info (176215): I/O bank details after I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1A does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  8 pins available
+        Info (176213): I/O bank number 1B does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  6 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  18 pins available
+        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  12 pins available
+        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  15 pins available
+        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  7 pins available
+        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  13 pins available
+Error (176205): Can't place 112 pins with 2.5 V I/O standard because Fitter has only 93 such free pins available for general purpose I/O placement
+Error (176204): Can't place pins due to device constraints
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Error (171000): Can't fit design in device
+Info (144001): Generated suppressed messages file C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/output_files/ForwardingUnit.fit.smsg
+Error: Quartus Prime Fitter was unsuccessful. 3 errors, 7 warnings
+    Error: Peak virtual memory: 5272 megabytes
+    Error: Processing ended: Thu May 09 10:46:57 2024
+    Error: Elapsed time: 00:00:04
+    Error: Total CPU time (on all processors): 00:00:01
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/output_files/ForwardingUnit.fit.smsg.
+
+
