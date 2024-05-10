@@ -1,0 +1,617 @@
+Analysis & Synthesis report for Trial_0
+Fri May 10 23:49:52 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "MMWBReg:MMWB"
+ 14. Port Connectivity Checks: "mux_4_1:muxaluB"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 10 23:49:52 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Trial_0                                     ;
+; Top-level Entity Name              ; RISC_Pipeline                               ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 2,237                                       ;
+;     Total combinational functions  ; 1,820                                       ;
+;     Dedicated logic registers      ; 945                                         ;
+; Total registers                    ; 945                                         ;
+; Total pins                         ; 66                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M25SCE144A7G     ;                    ;
+; Top-level entity name                                            ; RISC_Pipeline      ; Trial_0            ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; RISC_Pipeline.vhdl               ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl ;         ;
+; Components.vhdl                  ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl    ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 2,237     ;
+;                                             ;           ;
+; Total combinational functions               ; 1820      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1211      ;
+;     -- 3 input functions                    ; 296       ;
+;     -- <=2 input functions                  ; 313       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1760      ;
+;     -- arithmetic mode                      ; 60        ;
+;                                             ;           ;
+; Total registers                             ; 945       ;
+;     -- Dedicated logic registers            ; 945       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 66        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 945       ;
+; Total fan-out                               ; 9330      ;
+; Average fan-out                             ; 3.22      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name        ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
+; |RISC_Pipeline                         ; 1820 (27)           ; 945 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |RISC_Pipeline                                   ; RISC_Pipeline      ; work         ;
+;    |ALU2:ALU2_inst|                    ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU2:ALU2_inst                    ; ALU2               ; work         ;
+;    |ALU3:ALU_3|                        ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU3:ALU_3                        ; ALU3               ; work         ;
+;    |ALU3:Multiple_ALU|                 ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU3:Multiple_ALU                 ; ALU3               ; work         ;
+;    |ALU:Main_ALU|                      ; 219 (219)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU:Main_ALU                      ; ALU                ; work         ;
+;    |Decoder:Decoder1|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Decoder:Decoder1                  ; Decoder            ; work         ;
+;    |EXMMReg:EXMM|                      ; 67 (67)             ; 66 (66)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|EXMMReg:EXMM                      ; EXMMReg            ; work         ;
+;    |ForwardingUnit:RF_D1_fwd_unit|     ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D1_fwd_unit     ; ForwardingUnit     ; work         ;
+;    |ForwardingUnit:RF_D2_fwd_unit|     ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D2_fwd_unit     ; ForwardingUnit     ; work         ;
+;    |IDORReg:IDOR|                      ; 71 (71)             ; 47 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IDORReg:IDOR                      ; IDORReg            ; work         ;
+;    |IFIDReg:IFID|                      ; 32 (32)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IFIDReg:IFID                      ; IFIDReg            ; work         ;
+;    |MMWBReg:MMWB|                      ; 50 (50)             ; 49 (49)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|MMWBReg:MMWB                      ; MMWBReg            ; work         ;
+;    |Multiple_Reg:Multiple_Counter|     ; 25 (25)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter     ; Multiple_Reg       ; work         ;
+;    |OREXReg:OREX|                      ; 378 (378)           ; 92 (92)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|OREXReg:OREX                      ; OREXReg            ; work         ;
+;    |R0PCForwardingUnit:R0_PC_Fwd_Unit| ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|R0PCForwardingUnit:R0_PC_Fwd_Unit ; R0PCForwardingUnit ; work         ;
+;    |Register_File:R_file|              ; 96 (96)             ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Register_File:R_file              ; Register_File      ; work         ;
+;    |data_memory:Dmemory|               ; 583 (583)           ; 512 (512)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|data_memory:Dmemory               ; data_memory        ; work         ;
+;    |instruction_memory:IM|             ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|instruction_memory:IM             ; instruction_memory ; work         ;
+;    |mux_2_1:Mdatain_mux|               ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:Mdatain_mux               ; mux_2_1            ; work         ;
+;    |mux_2_1:muxaluC|                   ; 27 (27)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:muxaluC                   ; mux_2_1            ; work         ;
+;    |mux_2_1:shifter_mux|               ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:shifter_mux               ; mux_2_1            ; work         ;
+;    |mux_2_1_3bit:RF_A2_mux|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1_3bit:RF_A2_mux            ; mux_2_1_3bit       ; work         ;
+;    |mux_4_1:RF_Datain_mux|             ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:RF_Datain_mux             ; mux_4_1            ; work         ;
+;    |mux_4_1:muxaluA|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:muxaluA                   ; mux_4_1            ; work         ;
+;    |mux_4_1:muxaluB|                   ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:muxaluB                   ; mux_4_1            ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; ALU:Main_ALU|carry_var                             ; ALU:Main_ALU|Mux16  ; yes                    ;
+; ALU:Main_ALU|zero_var                              ; ALU:Main_ALU|Mux18  ; yes                    ;
+; instruction_memory:IM|addr[4]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[0]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[1]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[2]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[3]                      ; reset_im            ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; OREXReg:OREX|Imm6out[5..9,11..15]      ; Merged with OREXReg:OREX|Imm6out[10] ;
+; OREXReg:OREX|Imm9out[5,9,11..15]       ; Merged with OREXReg:OREX|Imm9out[10] ;
+; IDORReg:IDOR|Imm9out[5,9,11..15]       ; Merged with IDORReg:IDOR|Imm9out[10] ;
+; IDORReg:IDOR|Imm6out[5..9,11..15]      ; Merged with IDORReg:IDOR|Imm6out[10] ;
+; MMWBReg:MMWB|Imm9out[5,9,11..15]       ; Merged with MMWBReg:MMWB|Imm9out[10] ;
+; EXMMReg:EXMM|Imm9out[5,9,11..15]       ; Merged with EXMMReg:EXMM|Imm9out[10] ;
+; Total Number of Removed Registers = 48 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 945   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 128   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 921   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; data_memory:Dmemory|RAM[0][0]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][1]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][2]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][3]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][4]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][5]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][6]                 ; 2       ;
+; data_memory:Dmemory|RAM[0][7]                 ; 2       ;
+; data_memory:Dmemory|RAM[1][0]                 ; 2       ;
+; data_memory:Dmemory|RAM[1][2]                 ; 2       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[0] ; 9       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[1] ; 8       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[2] ; 7       ;
+; data_memory:Dmemory|RAM[16][0]                ; 1       ;
+; data_memory:Dmemory|RAM[11][0]                ; 1       ;
+; data_memory:Dmemory|RAM[7][0]                 ; 1       ;
+; data_memory:Dmemory|RAM[10][1]                ; 1       ;
+; data_memory:Dmemory|RAM[5][1]                 ; 1       ;
+; data_memory:Dmemory|RAM[7][1]                 ; 1       ;
+; data_memory:Dmemory|RAM[4][1]                 ; 1       ;
+; data_memory:Dmemory|RAM[11][1]                ; 1       ;
+; data_memory:Dmemory|RAM[28][2]                ; 1       ;
+; data_memory:Dmemory|RAM[26][2]                ; 1       ;
+; data_memory:Dmemory|RAM[24][2]                ; 1       ;
+; data_memory:Dmemory|RAM[30][2]                ; 1       ;
+; data_memory:Dmemory|RAM[21][2]                ; 1       ;
+; data_memory:Dmemory|RAM[19][2]                ; 1       ;
+; data_memory:Dmemory|RAM[17][2]                ; 1       ;
+; data_memory:Dmemory|RAM[23][2]                ; 1       ;
+; data_memory:Dmemory|RAM[18][2]                ; 1       ;
+; data_memory:Dmemory|RAM[16][2]                ; 1       ;
+; data_memory:Dmemory|RAM[22][2]                ; 1       ;
+; data_memory:Dmemory|RAM[29][2]                ; 1       ;
+; data_memory:Dmemory|RAM[27][2]                ; 1       ;
+; data_memory:Dmemory|RAM[25][2]                ; 1       ;
+; data_memory:Dmemory|RAM[31][2]                ; 1       ;
+; data_memory:Dmemory|RAM[9][2]                 ; 1       ;
+; data_memory:Dmemory|RAM[8][2]                 ; 1       ;
+; data_memory:Dmemory|RAM[4][2]                 ; 1       ;
+; data_memory:Dmemory|RAM[7][2]                 ; 1       ;
+; data_memory:Dmemory|RAM[14][2]                ; 1       ;
+; data_memory:Dmemory|RAM[13][2]                ; 1       ;
+; data_memory:Dmemory|RAM[12][2]                ; 1       ;
+; data_memory:Dmemory|RAM[15][2]                ; 1       ;
+; data_memory:Dmemory|RAM[26][3]                ; 1       ;
+; data_memory:Dmemory|RAM[25][3]                ; 1       ;
+; data_memory:Dmemory|RAM[24][3]                ; 1       ;
+; data_memory:Dmemory|RAM[27][3]                ; 1       ;
+; data_memory:Dmemory|RAM[22][3]                ; 1       ;
+; data_memory:Dmemory|RAM[21][3]                ; 1       ;
+; data_memory:Dmemory|RAM[23][3]                ; 1       ;
+; data_memory:Dmemory|RAM[18][3]                ; 1       ;
+; data_memory:Dmemory|RAM[17][3]                ; 1       ;
+; data_memory:Dmemory|RAM[19][3]                ; 1       ;
+; data_memory:Dmemory|RAM[30][3]                ; 1       ;
+; data_memory:Dmemory|RAM[29][3]                ; 1       ;
+; data_memory:Dmemory|RAM[28][3]                ; 1       ;
+; data_memory:Dmemory|RAM[31][3]                ; 1       ;
+; data_memory:Dmemory|RAM[12][3]                ; 1       ;
+; data_memory:Dmemory|RAM[9][3]                 ; 1       ;
+; data_memory:Dmemory|RAM[13][3]                ; 1       ;
+; data_memory:Dmemory|RAM[6][3]                 ; 1       ;
+; data_memory:Dmemory|RAM[5][3]                 ; 1       ;
+; data_memory:Dmemory|RAM[11][3]                ; 1       ;
+; data_memory:Dmemory|RAM[14][3]                ; 1       ;
+; data_memory:Dmemory|RAM[10][3]                ; 1       ;
+; data_memory:Dmemory|RAM[15][3]                ; 1       ;
+; data_memory:Dmemory|RAM[4][5]                 ; 1       ;
+; data_memory:Dmemory|RAM[6][5]                 ; 1       ;
+; data_memory:Dmemory|RAM[25][6]                ; 1       ;
+; data_memory:Dmemory|RAM[21][6]                ; 1       ;
+; data_memory:Dmemory|RAM[17][6]                ; 1       ;
+; data_memory:Dmemory|RAM[29][6]                ; 1       ;
+; data_memory:Dmemory|RAM[26][6]                ; 1       ;
+; data_memory:Dmemory|RAM[22][6]                ; 1       ;
+; data_memory:Dmemory|RAM[18][6]                ; 1       ;
+; data_memory:Dmemory|RAM[30][6]                ; 1       ;
+; data_memory:Dmemory|RAM[24][6]                ; 1       ;
+; data_memory:Dmemory|RAM[20][6]                ; 1       ;
+; data_memory:Dmemory|RAM[28][6]                ; 1       ;
+; data_memory:Dmemory|RAM[27][6]                ; 1       ;
+; data_memory:Dmemory|RAM[23][6]                ; 1       ;
+; data_memory:Dmemory|RAM[19][6]                ; 1       ;
+; data_memory:Dmemory|RAM[31][6]                ; 1       ;
+; data_memory:Dmemory|RAM[9][6]                 ; 1       ;
+; data_memory:Dmemory|RAM[4][6]                 ; 1       ;
+; data_memory:Dmemory|RAM[14][6]                ; 1       ;
+; data_memory:Dmemory|RAM[13][6]                ; 1       ;
+; data_memory:Dmemory|RAM[12][6]                ; 1       ;
+; data_memory:Dmemory|RAM[15][6]                ; 1       ;
+; data_memory:Dmemory|RAM[20][7]                ; 1       ;
+; data_memory:Dmemory|RAM[25][8]                ; 1       ;
+; data_memory:Dmemory|RAM[21][8]                ; 1       ;
+; data_memory:Dmemory|RAM[17][8]                ; 1       ;
+; data_memory:Dmemory|RAM[29][8]                ; 1       ;
+; data_memory:Dmemory|RAM[26][8]                ; 1       ;
+; data_memory:Dmemory|RAM[22][8]                ; 1       ;
+; data_memory:Dmemory|RAM[18][8]                ; 1       ;
+; data_memory:Dmemory|RAM[30][8]                ; 1       ;
+; data_memory:Dmemory|RAM[24][8]                ; 1       ;
+; Total number of inverted registers = 194*     ;         ;
++-----------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 66 bits   ; 132 LEs       ; 66 LEs               ; 66 LEs                 ; Yes        ; |RISC_Pipeline|EXMMReg:EXMM|RAout[9]                         ;
+; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Mem_Imm_M_out[1]                 ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |RISC_Pipeline|IFIDReg:IFID|PCout[9]                         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|IFIDReg:IFID|Iout[3]                          ;
+; 3:1                ; 49 bits   ; 98 LEs        ; 49 LEs               ; 49 LEs                 ; Yes        ; |RISC_Pipeline|MMWBReg:MMWB|Imm9out[0]                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter|Mem_Imm_temp[4] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Dest_reg_add_out[0]              ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm9out[1]                       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRBout[2]                        ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|SelAluout[1]                     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm6out[4]                       ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm9out[8]                       ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 3 LEs                ; 33 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRAout[2]                        ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|Register_File:R_file|R0[0]                    ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RA[11]                           ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RB[0]                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|ForwardingUnit:RF_D1_fwd_unit|Mux21           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|R0PCForwardingUnit:R0_PC_Fwd_Unit|Mux2        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluA|Mux1                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:RF_Datain_mux|Mux8                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux0                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux14                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux7                          ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux12                     ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 64 LEs               ; 112 LEs                ; No         ; |RISC_Pipeline|ALU:Main_ALU|Mux15                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MMWBReg:MMWB"                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; pcout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "mux_4_1:muxaluB"  ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; two[15..2] ; Input ; Info     ; Stuck at GND ;
+; two[1]     ; Input ; Info     ; Stuck at VCC ;
+; two[0]     ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 66                          ;
+; cycloneiii_ff         ; 945                         ;
+;     ENA               ; 761                         ;
+;     ENA CLR           ; 112                         ;
+;     ENA CLR SLD       ; 16                          ;
+;     ENA SCLR          ; 16                          ;
+;     ENA SCLR SLD      ; 16                          ;
+;     plain             ; 24                          ;
+; cycloneiii_lcell_comb ; 1830                        ;
+;     arith             ; 60                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 30                          ;
+;     normal            ; 1770                        ;
+;         1 data inputs ; 203                         ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 266                         ;
+;         4 data inputs ; 1211                        ;
+;                       ;                             ;
+; Max LUT depth         ; 25.00                       ;
+; Average LUT depth     ; 8.89                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri May 10 23:49:38 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trial_0 -c Trial_0
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file risc_tb.vhdl
+    Info (12022): Found design unit 1: RISC_tb-tb_arch File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 32
+    Info (12023): Found entity 1: RISC_tb File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file risc_pipeline.vhdl
+    Info (12022): Found design unit 1: RISC_Pipeline-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 20
+    Info (12023): Found entity 1: RISC_Pipeline File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 9
+Info (12021): Found 45 design units, including 22 entities, in source file components.vhdl
+    Info (12022): Found design unit 1: Components File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 5
+    Info (12022): Found design unit 2: ALU2-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 332
+    Info (12022): Found design unit 3: instruction_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 378
+    Info (12022): Found design unit 4: IFIDReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 428
+    Info (12022): Found design unit 5: Decoder-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 471
+    Info (12022): Found design unit 6: IDORReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 554
+    Info (12022): Found design unit 7: SE6-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 599
+    Info (12022): Found design unit 8: SE9-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 622
+    Info (12022): Found design unit 9: Register_File-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 655
+    Info (12022): Found design unit 10: OREXReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 807
+    Info (12022): Found design unit 11: mux_2_1-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 864
+    Info (12022): Found design unit 12: SHIFTER-BHV_SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 896
+    Info (12022): Found design unit 13: mux_4_1-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 916
+    Info (12022): Found design unit 14: ALU-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 960
+    Info (12022): Found design unit 15: ALU3-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1121
+    Info (12022): Found design unit 16: EXMMReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1183
+    Info (12022): Found design unit 17: data_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1243
+    Info (12022): Found design unit 18: MMWBReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1325
+    Info (12022): Found design unit 19: mux_4_1_3bit-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1367
+    Info (12022): Found design unit 20: Multiple_Reg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1411
+    Info (12022): Found design unit 21: mux_2_1_3bit-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1490
+    Info (12022): Found design unit 22: ForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1539
+    Info (12022): Found design unit 23: R0PCForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1627
+    Info (12023): Found entity 1: ALU2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 325
+    Info (12023): Found entity 2: instruction_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 370
+    Info (12023): Found entity 3: IFIDReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 416
+    Info (12023): Found entity 4: Decoder File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 457
+    Info (12023): Found entity 5: IDORReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 526
+    Info (12023): Found entity 6: SE6 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 592
+    Info (12023): Found entity 7: SE9 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 615
+    Info (12023): Found entity 8: Register_File File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 638
+    Info (12023): Found entity 9: OREXReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 771
+    Info (12023): Found entity 10: mux_2_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 857
+    Info (12023): Found entity 11: SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 890
+    Info (12023): Found entity 12: mux_4_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 910
+    Info (12023): Found entity 13: ALU File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 948
+    Info (12023): Found entity 14: ALU3 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1114
+    Info (12023): Found entity 15: EXMMReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1155
+    Info (12023): Found entity 16: data_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1227
+    Info (12023): Found entity 17: MMWBReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1301
+    Info (12023): Found entity 18: mux_4_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1361
+    Info (12023): Found entity 19: Multiple_Reg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1399
+    Info (12023): Found entity 20: mux_2_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1483
+    Info (12023): Found entity 21: ForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1517
+    Info (12023): Found entity 22: R0PCForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1609
+Info (12127): Elaborating entity "RISC_Pipeline" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(74): object "PCout5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 74
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:IM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 171
+Warning (10631): VHDL Process Statement warning at Components.vhdl(399): inferring latch(es) for signal or variable "addr", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (10041): Inferred latch for "addr[0]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (10041): Inferred latch for "addr[1]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (10041): Inferred latch for "addr[2]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (10041): Inferred latch for "addr[3]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (10041): Inferred latch for "addr[4]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
+Info (12128): Elaborating entity "ALU2" for hierarchy "ALU2:ALU2_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 178
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:pc_in_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 184
+Info (12128): Elaborating entity "R0PCForwardingUnit" for hierarchy "R0PCForwardingUnit:R0_PC_Fwd_Unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 206
+Info (12128): Elaborating entity "IFIDReg" for hierarchy "IFIDReg:IFID" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 233
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Decoder1" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 246
+Info (12128): Elaborating entity "SE6" for hierarchy "SE6:SE6_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 258
+Info (12128): Elaborating entity "SE9" for hierarchy "SE9:SE9_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 264
+Info (12128): Elaborating entity "IDORReg" for hierarchy "IDORReg:IDOR" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 273
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:R_file" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 304
+Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:RF_D1_PC_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 320
+Info (12128): Elaborating entity "mux_4_1_3bit" for hierarchy "mux_4_1_3bit:RF_Addressin_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 339
+Info (12128): Elaborating entity "ForwardingUnit" for hierarchy "ForwardingUnit:RF_D1_fwd_unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 353
+Info (12128): Elaborating entity "mux_2_1_3bit" for hierarchy "mux_2_1_3bit:RF_A2_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 410
+Info (12128): Elaborating entity "Multiple_Reg" for hierarchy "Multiple_Reg:Multiple_Counter" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 420
+Info (12128): Elaborating entity "OREXReg" for hierarchy "OREXReg:OREX" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 443
+Info (12128): Elaborating entity "ALU3" for hierarchy "ALU3:Multiple_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 481
+Info (12128): Elaborating entity "SHIFTER" for hierarchy "SHIFTER:Shifter_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 508
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Main_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 541
+Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "carry_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "zero_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+Info (10041): Inferred latch for "zero_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+Info (10041): Inferred latch for "carry_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+Info (12128): Elaborating entity "EXMMReg" for hierarchy "EXMMReg:EXMM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 570
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:Dmemory" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 600
+Info (12128): Elaborating entity "MMWBReg" for hierarchy "MMWBReg:MMWB" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 635
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "instruction_memory:IM|RAM" is uninferred because MIF is not supported for the selected family File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 382
+Warning (13012): Latch ALU:Main_ALU|carry_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[3] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 814
+Warning (13012): Latch ALU:Main_ALU|zero_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[1] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 814
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2351 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 2285 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Fri May 10 23:49:52 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:04
+
+

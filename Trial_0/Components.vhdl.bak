@@ -1,0 +1,320 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+package Components is
+
+-------------------------------------------------------------------------------------------------------
+component Register_File is 
+port(  
+        A1 : in std_logic_vector(2 downto 0); 
+        A2 : in std_logic_vector(2 downto 0); 
+        A3 : in std_logic_vector(2 downto 0); 
+        D3 : in std_logic_vector(15 downto 0);
+		  R0in : in std_logic_vector(15 downto 0);
+		  WR_E_R0: in std_logic;
+        WR_E : in std_logic; 
+        reset : in std_logic;
+        clk : in std_logic; 
+        D1 : out std_logic_vector(15 downto 0); 
+        D2 : out std_logic_vector(15 downto 0); 
+        R0_PC : out std_logic_vector(15 downto 0)  
+    );
+end component;
+---------------------------------------------------------------------------------------------
+component instruction_memory is 
+port(
+		  mem_add :  in std_logic_vector(15 downto 0);
+		  reset   : in std_logic;
+		  mem_out : out std_logic_vector(15 downto 0)
+	 ); 
+end component;
+---------------------------------------------------------------------------------------------
+component ALU is
+port (
+        opcode : in std_logic_vector(3 downto 0);     
+        c_in, z_in, CompBit,Bit_Reg_Add_in : in std_logic;         
+        C_z : in std_logic_vector(1 downto 0);
+        ALU_A, ALU_B : in std_logic_vector(15 downto 0);
+        ALU_C : out std_logic_vector(15 downto 0);  
+        carry, zero, equal, less, write_reg : out std_logic
+    );
+end component;
+------------------------------------------------------------------------------------------------
+component ALU2 is
+	port (
+		  PC: in std_logic_vector(15 downto 0);
+		  PCout : out std_logic_vector(15 downto 0)
+		   );
+end component;
+----------------------------------------------------------------------------------------------------
+component ALU3 is
+    Port (
+	     PC, Imm: in std_logic_vector(15 downto 0);
+		  PCImm2: out std_logic_vector(15 downto 0)
+    );
+end component;
+------------------------------------------------------------------------------------------------------
+component Decoder is
+	port (Iin : in std_logic_VECTOR(15 downto 0);
+		   opcode: out std_logic_VECTOR(3 downto 0); 
+			RA : out std_logic_VECTOR(2 downto 0);
+			RB : out std_logic_VECTOR(2 downto 0); 
+			RC : out std_logic_VECTOR(2 downto 0);
+			Compbit :out std_logic;
+			SelAlu : out std_logic_VECTOR(1 downto 0);
+		   Imm6 : out std_logic_VECTOR(5 downto 0); 	
+			Imm9 : out std_logic_VECTOR(8 downto 0) 	
+		   );
+end component;
+---------------------------------------------------------------------------------------------------------
+component SE6 is
+port (
+        Imm6in: in std_logic_vector(5 downto 0);
+        Imm6out: out std_logic_vector(15 downto 0)
+     );
+end component;
+---------------------------------------------------------------------------------------------------------
+component SE9 is
+port (
+        Imm9in: in std_logic_vector(8 downto 0);
+        Imm9out: out std_logic_vector(15 downto 0)
+    );
+end component;
+---------------------------------------------------------------------------------------------------------
+component SHIFTER is 
+port (input: in std_logic_vector(15 downto 0);
+		output: out std_logic_vector(15 downto 0)
+		);
+end component;
+---------------------------------------------------------------------------------------------------------
+component ForwardingUnit is
+	port(
+		EX_dest_reg_add: in std_logic_vector(2 downto 0);
+		MM_dest_reg_add: in std_logic_vector(2 downto 0);
+		WB_dest_reg_add : in std_logic_vector(2 downto 0);
+		OR_source_reg_add : in std_logic_vector(2 downto 0);
+		OR_source_reg_data: in std_logic_vector(15 downto 0);
+		EX_aluc : in std_logic_vector(15 downto 0);
+		EX_Imm9_16bit : in std_logic_vector(15 downto 0);
+		MM_mem_out : in std_logic_vector(15 downto 0);
+		MEM_aluc : in std_logic_vector(15 downto 0);
+		MEM_Imm9_16bit : in std_logic_vector(15 downto 0);
+		WB_RFD3 : in std_logic_vector(15 downto 0);
+		EX_opcode : in std_logic_vector(3 downto 0);
+		MM_opcode : in std_logic_vector(3 downto 0);
+		EX_instr_wr_reg, MM_instr_wr_reg, WB_instr_wr_reg: in std_logic;
+		
+		fwd_reg_val : out std_logic_vector(15 downto 0);
+		hold_or_fwd: out std_logic
+	);
+end component;
+---------------------------------------------------------------------------------------------------------
+component R0PCForwardingUnit is
+	port(
+		EX_dest_reg_add: in std_logic_vector(2 downto 0);
+		MM_dest_reg_add: in std_logic_vector(2 downto 0);
+		PC_selected_without_fwd: in std_logic_vector(15 downto 0);
+		EX_aluc : in std_logic_vector(15 downto 0);
+		EX_Imm9_16bit : in std_logic_vector(15 downto 0);
+		MM_mem_out : in std_logic_vector(15 downto 0);
+		EX_opcode : in std_logic_vector(3 downto 0);
+		MM_opcode : in std_logic_vector(3 downto 0);
+		EX_instr_wr_reg, MM_instr_wr_reg: in std_logic;
+		
+		pc_out : out std_logic_vector(15 downto 0);
+		flush_id_or_ex: out std_logic;
+		flush_mem: out std_logic
+	);
+end component;
+---------------------------------------------------------------------------------------------------------
+component IFIDReg is
+port (
+	     clk: in std_logic;
+        PCin : in std_logic_vector(15 downto 0);   
+		  WR_E: in std_logic;                     
+        reset: in std_logic;
+		  Iin : in std_logic_vector(15 downto 0);
+		  
+		  PCout : out std_logic_vector(15 downto 0); 
+		  Iout : out std_logic_vector(15 downto 0)
+		  );  
+end component;
+--------------------------------------------------------------------------------------------------------
+component IDORReg is
+port (
+	      clk: in std_logic;
+         PCin : IN std_logic_VECTOR(15 downto 0);    
+		   WR_E: in std_logic;                        
+         reset: in std_logic;
+         opcodein: in std_logic_VECTOR(3 downto 0);
+			aRAin : in std_logic_VECTOR(2 downto 0);
+			aRBin : in std_logic_VECTOR(2 downto 0); 
+			aRCin : in std_logic_VECTOR(2 downto 0);
+			Compbitin :in std_logic;
+			SelAluin : in std_logic_VECTOR(1 downto 0);
+		   Imm6in : in std_logic_VECTOR(15 downto 0); 	
+			Imm9in : in std_logic_VECTOR(15 downto 0); 
+
+		   PCout : out std_logic_VECTOR(15 downto 0); 
+		   opcode: OUT std_logic_VECTOR(3 downto 0); 
+			aRAout : OUT std_logic_VECTOR(2 downto 0);
+			aRBout : OUT std_logic_VECTOR(2 downto 0); 
+			aRCout : OUT std_logic_VECTOR(2 downto 0);
+			Compbitout :out std_logic;
+			SelAluout : out std_logic_VECTOR(1 downto 0);
+		   Imm6out : out std_logic_VECTOR(15 downto 0); 	
+			Imm9out : out std_logic_VECTOR(15 downto 0)
+			);
+end component;
+-------------------------------------------------------------------------------------------------------
+component OREXReg is
+port(
+	      clk: in std_logic;
+         PCin : in std_logic_VECTOR(15 downto 0);    
+		   WR_E: in std_logic;                        
+         reset: in std_logic;
+         opcodein: in std_logic_VECTOR(3 downto 0); 
+			RAin : in std_logic_VECTOR(15 downto 0);   
+			RBin : in std_logic_VECTOR(15 downto 0); 
+			Compbitin :in std_logic;
+			SelAluin : in std_logic_VECTOR(1 downto 0);
+		   Imm6in : in std_logic_VECTOR(15 downto 0); 	
+			Imm9in : in std_logic_VECTOR(15 downto 0);
+			Dest_reg_add_in : in std_logic_VECTOR(2 downto 0);
+			Mem_Imm_M_in:  in std_logic_VECTOR(15 downto 0); 	
+			Bit_Reg_Add_in: in std_logic;
+			Cin : in std_logic;
+			Zin : in std_logic;
+			
+		   PCout : out std_logic_VECTOR(15 downto 0); 
+		   opcode: out std_logic_VECTOR(3 downto 0); 
+			RA : out std_logic_VECTOR(15 downto 0);
+			RB : out std_logic_VECTOR(15 downto 0); 
+			Compbit :out std_logic;
+			Dest_reg_add_out : out std_logic_VECTOR(2 downto 0);
+			SelAlu : out std_logic_VECTOR(1 downto 0);
+		   Imm6out : out std_logic_VECTOR(15 downto 0); 	
+			Imm9out : out std_logic_VECTOR(15 downto 0);
+			Mem_Imm_M_out:  out std_logic_VECTOR(15 downto 0); 	
+			Bit_Reg_Add_out: out std_logic;
+			Cout : out std_logic;
+			Zout : out std_logic
+			);
+end component;
+----------------------------------------------------------------------------------------------------------
+component EXMMReg is
+port (
+	      clk: in std_logic;
+         PCin : in std_logic_VECTOR(15 downto 0);    
+		   WR_E: in std_logic;                          
+         reset: in std_logic;
+         opcodein: in std_logic_VECTOR(3 downto 0);
+			aluCin : in std_logic_VECTOR(15 downto 0);
+			RAin : in std_logic_VECTOR(15 downto 0);   
+			RBin : in std_logic_VECTOR(15 downto 0);   	
+			Imm9in : in std_logic_VECTOR(15 downto 0);
+			Dest_reg_add_in : in std_logic_VECTOR(2 downto 0);	
+			Bit_Reg_Add_in: in std_logic;
+			write_reg_in : in std_logic;
+
+		   PCout : out std_logic_VECTOR(15 downto 0); 
+		   opcode: OUT std_logic_VECTOR(3 downto 0); 
+			aluCout : out std_logic_VECTOR(15 downto 0);
+			RAout : out std_logic_VECTOR(15 downto 0);
+			RBout : out std_logic_VECTOR(15 downto 0);
+			Dest_reg_add_out : out std_logic_VECTOR(2 downto 0);	
+			Imm9out : out std_logic_VECTOR(15 downto 0);	
+			Bit_Reg_Add_out: out std_logic;
+			write_reg_out : out std_logic
+			);
+end component;
+
+--------------------------------------------------------------------------------------------------------------
+component MMWBReg is
+port (
+	      clk: in std_logic;
+         PCin : in std_logic_vector(15 downto 0);   
+		   WR_E: in std_logic;                         
+         reset: in std_logic;
+         opcodein: in std_logic_vector(3 downto 0); 
+			MMoutin : in std_logic_vector(15 downto 0);
+		   aluCin : in std_logic_vector(15 downto 0); 	
+			Imm9in : in std_logic_vector(15 downto 0);
+			Dest_reg_add_in : in std_logic_VECTOR(2 downto 0);
+         write_reg_in : in std_logic;
+			
+		   PCout : out std_logic_vector(15 downto 0); 
+		   opcode: out std_logic_vector(3 downto 0); 
+			aluCout : out std_logic_vector(15 downto 0);
+		   MMoutout : out std_logic_vector(15 downto 0);
+			Dest_reg_add_out : out std_logic_VECTOR(2 downto 0);	
+			Imm9out : out std_logic_vector(15 downto 0);
+			write_reg_out : out std_logic
+			);
+end component;
+---------------------------------------------------------------------------------------------------------------
+component data_memory is                                                                    
+port(
+		 mem_d   : in std_logic_vector(15 downto 0);
+		 mem_a   : in std_logic_vector(15 downto 0);
+		 rd_en  : in std_logic; 
+		 wr_en  : in std_logic; 
+		 reset: in std_logic; 
+		 clk : in std_logic;
+		 mem_out : out std_logic_vector(15 downto 0); 
+		 mem_0 : out std_logic_vector(15 downto 0); 
+		 mem_1 : out std_logic_vector(15 downto 0); 
+		 mem_2 : out std_logic_vector(15 downto 0); 
+		 mem_3 : out std_logic_vector(15 downto 0)
+		 );
+end component;
+
+------------------------------------------------------------------------------------------------------------
+component mux_4_1 is
+port(
+		three,two,one,zero:in std_logic_vector(15 downto 0);
+      output:out std_logic_vector(15 downto 0); 
+      sel:in std_logic_vector(1 downto 0)
+	 );
+end component;
+
+------------------------------------------------------------------------------------------------------------
+component mux_2_1  is
+port (
+		  I0 ,I1: in std_logic_vector(15 downto 0);
+        S0: in std_logic;
+		  mux_out: out std_logic_vector(15 downto 0)
+	  );
+end component;
+---------------------------------------------------------------------------------------------------------
+component mux_2_1_3bit  is
+  port (I0 ,I1: in std_logic_vector(2 downto 0);
+        S0: in std_logic;
+		  mux_out: out std_logic_vector(2 downto 0)
+		 );
+end component;
+------------------------------------------------------------------------------------------------------------
+component mux_4_1_3bit is
+port(
+     three,two,one,zero:in std_logic_vector(2 downto 0);
+     output:out std_logic_vector(2 downto 0); 
+     sel:in std_logic_vector(1 downto 0)
+	 );
+end component;
+------------------------------------------------------------------------------------------------------------
+component Multiple_Reg is
+	port (
+	     clk: in std_logic;
+		  Imm9_16bit : IN std_logic_VECTOR(15 downto 0);
+		  WR_E_M: in std_logic;                     
+        reset: in std_logic;
+		  Reg_Add_out : out std_logic_VECTOR(2 downto 0); 
+		  Mem_Imm_out : out std_logic_VECTOR(15 downto 0);
+		  Imm_at_RegAdd_out : out std_logic
+		  ) ; 
+end component;
+
+end package Components;
+----------------------------------------------------------------------------------------------------------------------
+
