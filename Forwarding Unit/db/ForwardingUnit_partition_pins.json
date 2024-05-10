@@ -68,387 +68,547 @@
 					"strict" : false
 				},
 				{
-					"name" : "fwd_write",
+					"name" : "hold_or_fwd",
 					"strict" : false
 				},
 				{
-					"name" : "ex_reg_addr[0]",
+					"name" : "EX_Imm9_16bit[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_reg_addr[1]",
+					"name" : "EX_aluc[0]",
 					"strict" : false
 				},
 				{
-					"name" : "req_addr[1]",
+					"name" : "EX_dest_reg_add[0]",
 					"strict" : false
 				},
 				{
-					"name" : "req_addr[0]",
+					"name" : "EX_dest_reg_add[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_write",
+					"name" : "OR_source_reg_add[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_reg_addr[2]",
+					"name" : "OR_source_reg_add[0]",
 					"strict" : false
 				},
 				{
-					"name" : "req_addr[2]",
+					"name" : "EX_instr_wr_reg",
 					"strict" : false
 				},
 				{
-					"name" : "ex_op[0]",
+					"name" : "EX_dest_reg_add[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_op[1]",
+					"name" : "OR_source_reg_add[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_op[2]",
+					"name" : "EX_opcode[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_op[3]",
+					"name" : "EX_opcode[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outcond[0]",
+					"name" : "EX_opcode[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outcond[1]",
+					"name" : "EX_opcode[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_reg_addr[1]",
+					"name" : "MM_opcode[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_reg_addr[0]",
+					"name" : "MM_opcode[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_write",
+					"name" : "MM_opcode[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_reg_addr[2]",
+					"name" : "MM_opcode[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_op[0]",
+					"name" : "WB_dest_reg_add[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_op[1]",
+					"name" : "WB_dest_reg_add[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_op[2]",
+					"name" : "WB_dest_reg_add[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_op[3]",
+					"name" : "WB_instr_wr_reg",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outcond[1]",
+					"name" : "MM_dest_reg_add[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outc",
+					"name" : "MM_dest_reg_add[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outcond[0]",
+					"name" : "MM_instr_wr_reg",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outz",
+					"name" : "MM_dest_reg_add[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outc",
+					"name" : "MM_mem_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outz",
+					"name" : "WB_RFD3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_reg_addr[1]",
+					"name" : "MEM_Imm9_16bit[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_reg_addr[0]",
+					"name" : "MEM_aluc[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_write",
+					"name" : "OR_source_reg_data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_reg_addr[2]",
+					"name" : "EX_Imm9_16bit[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[0]",
+					"name" : "EX_aluc[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[0]",
+					"name" : "WB_RFD3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[0]",
+					"name" : "MM_mem_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[0]",
+					"name" : "MEM_Imm9_16bit[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[1]",
+					"name" : "MEM_aluc[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[1]",
+					"name" : "OR_source_reg_data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[1]",
+					"name" : "EX_Imm9_16bit[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[1]",
+					"name" : "EX_aluc[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[2]",
+					"name" : "MM_mem_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[2]",
+					"name" : "WB_RFD3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[2]",
+					"name" : "MEM_Imm9_16bit[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[2]",
+					"name" : "MEM_aluc[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[3]",
+					"name" : "OR_source_reg_data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[3]",
+					"name" : "EX_Imm9_16bit[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[3]",
+					"name" : "EX_aluc[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[3]",
+					"name" : "WB_RFD3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[4]",
+					"name" : "MM_mem_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[4]",
+					"name" : "MEM_Imm9_16bit[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[4]",
+					"name" : "MEM_aluc[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[4]",
+					"name" : "OR_source_reg_data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[5]",
+					"name" : "EX_Imm9_16bit[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[5]",
+					"name" : "EX_aluc[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[5]",
+					"name" : "MM_mem_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[5]",
+					"name" : "WB_RFD3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[6]",
+					"name" : "MEM_Imm9_16bit[4]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[6]",
+					"name" : "MEM_aluc[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[6]",
+					"name" : "OR_source_reg_data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[6]",
+					"name" : "EX_Imm9_16bit[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[7]",
+					"name" : "EX_aluc[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[7]",
+					"name" : "WB_RFD3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[7]",
+					"name" : "MM_mem_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[7]",
+					"name" : "MEM_Imm9_16bit[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[8]",
+					"name" : "MEM_aluc[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[8]",
+					"name" : "OR_source_reg_data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[8]",
+					"name" : "EX_Imm9_16bit[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[8]",
+					"name" : "EX_aluc[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[9]",
+					"name" : "MM_mem_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[9]",
+					"name" : "WB_RFD3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[9]",
+					"name" : "MEM_Imm9_16bit[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[9]",
+					"name" : "MEM_aluc[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[10]",
+					"name" : "OR_source_reg_data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[10]",
+					"name" : "EX_Imm9_16bit[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[10]",
+					"name" : "EX_aluc[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[10]",
+					"name" : "WB_RFD3[7]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[11]",
+					"name" : "MM_mem_out[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[11]",
+					"name" : "MEM_Imm9_16bit[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[11]",
+					"name" : "MEM_aluc[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[11]",
+					"name" : "OR_source_reg_data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[12]",
+					"name" : "EX_Imm9_16bit[8]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[12]",
+					"name" : "EX_aluc[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[12]",
+					"name" : "MM_mem_out[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[12]",
+					"name" : "WB_RFD3[8]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[13]",
+					"name" : "MEM_Imm9_16bit[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[13]",
+					"name" : "MEM_aluc[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[13]",
+					"name" : "OR_source_reg_data[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[13]",
+					"name" : "EX_Imm9_16bit[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[14]",
+					"name" : "EX_aluc[9]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[14]",
+					"name" : "WB_RFD3[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[14]",
+					"name" : "MM_mem_out[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[14]",
+					"name" : "MEM_Imm9_16bit[9]",
 					"strict" : false
 				},
 				{
-					"name" : "wb_outval[15]",
+					"name" : "MEM_aluc[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outalu[15]",
+					"name" : "OR_source_reg_data[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ex_outval[15]",
+					"name" : "EX_Imm9_16bit[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ma_outval[15]",
+					"name" : "EX_aluc[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[10]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_Imm9_16bit[11]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_aluc[11]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[11]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_Imm9_16bit[12]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_aluc[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[12]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_Imm9_16bit[13]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_aluc[13]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[13]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_Imm9_16bit[14]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_aluc[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[14]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_Imm9_16bit[15]",
+					"strict" : false
+				},
+				{
+					"name" : "EX_aluc[15]",
+					"strict" : false
+				},
+				{
+					"name" : "WB_RFD3[15]",
+					"strict" : false
+				},
+				{
+					"name" : "MM_mem_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_Imm9_16bit[15]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_aluc[15]",
+					"strict" : false
+				},
+				{
+					"name" : "OR_source_reg_data[15]",
 					"strict" : false
 				}
 			]

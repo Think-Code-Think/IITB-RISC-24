@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ForwardingUnit
-Thu May 09 10:46:52 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri May 10 07:57:50 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -13,21 +13,20 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -37,16 +36,15 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 09 10:46:52 2024       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri May 10 07:57:50 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ForwardingUnit                              ;
 ; Top-level Entity Name              ; ForwardingUnit                              ;
 ; Family                             ; MAX 10                                      ;
@@ -54,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 82                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 112                                         ;
+; Total pins                         ; 152                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -156,24 +154,23 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; ForwardingUnit.vhd               ; yes             ; User VHDL File  ; C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; ForwardingUnit.vhdl              ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Forwarding Unit/ForwardingUnit.vhdl ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -185,8 +182,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Total combinational functions               ; 82             ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 57             ;
-;     -- 3 input functions                    ; 24             ;
+;     -- 4 input functions                    ; 77             ;
+;     -- 3 input functions                    ; 4              ;
 ;     -- <=2 input functions                  ; 1              ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
@@ -197,14 +194,14 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 0              ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 112            ;
+; I/O pins                                    ; 152            ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
-; Maximum fan-out node                        ; reg_data[4]~25 ;
-; Maximum fan-out                             ; 18             ;
-; Total fan-out                               ; 431            ;
-; Average fan-out                             ; 1.41           ;
+; Maximum fan-out node                        ; fwd_reg_val~11 ;
+; Maximum fan-out                             ; 24             ;
+; Total fan-out                               ; 491            ;
+; Average fan-out                             ; 1.27           ;
 +---------------------------------------------+----------------+
 
 
@@ -213,35 +210,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
-; |ForwardingUnit            ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 112  ; 0            ; 0          ; |ForwardingUnit     ; ForwardingUnit ; work         ;
+; |ForwardingUnit            ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 152  ; 0            ; 0          ; |ForwardingUnit     ; ForwardingUnit ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; reg_data[0]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[1]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[2]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[3]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[4]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[5]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[6]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[7]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[8]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[9]                                         ; reg_data[15]        ; yes                    ;
-; reg_data[10]                                        ; reg_data[15]        ; yes                    ;
-; reg_data[11]                                        ; reg_data[15]        ; yes                    ;
-; reg_data[12]                                        ; reg_data[15]        ; yes                    ;
-; reg_data[13]                                        ; reg_data[15]        ; yes                    ;
-; reg_data[14]                                        ; reg_data[15]        ; yes                    ;
-; reg_data[15]                                        ; reg_data[15]        ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -264,8 +235,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |ForwardingUnit|reg_data[4] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ForwardingUnit|reg_data[1] ;
+; 34:1               ; 16 bits   ; 352 LEs       ; 64 LEs               ; 288 LEs                ; No         ; |ForwardingUnit|fwd_reg_val ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
@@ -274,15 +244,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 112                         ;
+; boundary_port         ; 152                         ;
 ; cycloneiii_lcell_comb ; 82                          ;
 ;     normal            ; 82                          ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 57                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 77                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.04                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -300,80 +270,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu May 09 10:46:42 2024
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri May 10 07:57:41 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ForwardingUnit -c ForwardingUnit
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file forwardingunit.vhd
-    Info (12022): Found design unit 1: ForwardingUnit-forward File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 18
-    Info (12023): Found entity 1: ForwardingUnit File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 5
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file forwardingunit.vhdl
+    Info (12022): Found design unit 1: ForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Forwarding Unit/ForwardingUnit.vhdl Line: 30
+    Info (12023): Found entity 1: ForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Forwarding Unit/ForwardingUnit.vhdl Line: 5
 Info (12127): Elaborating entity "ForwardingUnit" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at ForwardingUnit.vhd(48): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 48
-Warning (10492): VHDL Process Statement warning at ForwardingUnit.vhd(48): signal "ma_outc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 48
-Warning (10492): VHDL Process Statement warning at ForwardingUnit.vhd(51): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at ForwardingUnit.vhd(51): signal "ma_outz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at ForwardingUnit.vhd(54): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 54
-Warning (10631): VHDL Process Statement warning at ForwardingUnit.vhd(28): inferring latch(es) for signal or variable "reg_data", which holds its previous value in one or more paths through the process File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[0]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[1]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[2]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[3]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[4]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[5]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[6]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[7]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[8]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[9]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[10]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[11]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[12]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[13]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[14]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Info (10041): Inferred latch for "reg_data[15]" at ForwardingUnit.vhd(28) File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-Warning (13012): Latch reg_data[0] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[1] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[2] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[3] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[4] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[5] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[6] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[7] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[8] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[9] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[10] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[11] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[12] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[13] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
-Warning (13012): Latch reg_data[14] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_outcond[0] File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 10
-Warning (13012): Latch reg_data[15] has unsafe behavior File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 28
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ex_write File: C:/Users/DELL/Personal/SEM4/Theory/EE309/Forwarding Unit/ForwardingUnit.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 95 input pins
+Info (21057): Implemented 234 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 135 input pins
     Info (21059): Implemented 17 output pins
     Info (21061): Implemented 82 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 4809 megabytes
-    Info: Processing ended: Thu May 09 10:46:52 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4799 megabytes
+    Info: Processing ended: Fri May 10 07:57:50 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:05
 
 
