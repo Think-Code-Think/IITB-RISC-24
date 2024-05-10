@@ -1,0 +1,396 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Trial_0_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RISC_Pipeline
+# -- Compiling architecture behave of RISC_Pipeline
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU2.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU2
+# -- Compiling architecture inside of ALU2
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/instruction_memory.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity instruction_memory
+# -- Compiling architecture structure of instruction_memory
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IFIDReg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity IFIDReg
+# -- Compiling architecture behave of IFIDReg
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Decoder.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Decoder
+# -- Compiling architecture behave of Decoder
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/IDORReg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity IDORReg
+# -- Compiling architecture behave of IDORReg
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE6.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SE6
+# -- Compiling architecture extender of SE6
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SE9.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SE9
+# -- Compiling architecture extender of SE9
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Register_File.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Register_File
+# -- Compiling architecture inside of Register_File
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/OREXReg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity OREXReg
+# -- Compiling architecture behave of OREXReg
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_2_1
+# -- Compiling architecture mux2to1 of mux_2_1
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:03 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/SHIFTER.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SHIFTER
+# -- Compiling architecture BHV_SHIFTER of SHIFTER
+# End time: 07:47:03 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_4_1
+# -- Compiling architecture mux4to1 of mux_4_1
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture behave of ALU
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ALU3.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU3
+# -- Compiling architecture inside of ALU3
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/EXMMReg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity EXMMReg
+# -- Compiling architecture behave of EXMMReg
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/data_memory.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity data_memory
+# -- Compiling architecture structure of data_memory
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/MMWBReg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MMWBReg
+# -- Compiling architecture behave of MMWBReg
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_4_1_3bit.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_4_1_3bit
+# -- Compiling architecture mux4to1 of mux_4_1_3bit
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Multiple_Reg.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Multiple_Reg
+# -- Compiling architecture behave of Multiple_Reg
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/mux_2_1_3bit.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_2_1_3bit
+# -- Compiling architecture mux2to1 of mux_2_1_3bit
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ForwardingUnit.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/ForwardingUnit.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ForwardingUnit
+# -- Compiling architecture forward of ForwardingUnit
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:47:04 on May 10,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RISC_tb
+# -- Compiling architecture tb_arch of RISC_tb
+# End time: 07:47:04 on May 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RISC_tb
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RISC_tb 
+# Start time: 07:47:04 on May 10,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_tb(tb_arch)
+# Loading work.risc_pipeline(behave)
+# Loading work.instruction_memory(structure)
+# Loading work.alu2(inside)
+# Loading work.mux_4_1(mux4to1)
+# Loading work.ifidreg(behave)
+# Loading work.decoder(behave)
+# Loading work.se6(extender)
+# Loading work.se9(extender)
+# Loading work.idorreg(behave)
+# Loading work.register_file(inside)
+# Loading work.mux_4_1_3bit(mux4to1)
+# Loading work.forwardingunit(forward)
+# Loading work.mux_2_1_3bit(mux2to1)
+# Loading work.multiple_reg(behave)
+# Loading work.orexreg(behave)
+# Loading work.alu3(inside)
+# Loading work.mux_2_1(mux2to1)
+# Loading work.shifter(bhv_shifter)
+# Loading work.alu(behave)
+# Loading work.exmmreg(behave)
+# Loading work.data_memory(structure)
+# Loading work.mmwbreg(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /risc_tb/dut_instance/IM
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/pc_in_mux/output
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/PCin
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/opcodein
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/Dest_reg_add_in
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/write_reg_in
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/Dest_reg_add_out
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/write_reg_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/Dest_reg_add_out
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/write_reg_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/Dest_reg_add_out
+
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Main_ALU/ALU_A \
+sim:/risc_tb/dut_instance/Main_ALU/ALU_B \
+sim:/risc_tb/dut_instance/Main_ALU/ALU_C
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/R0 \
+sim:/risc_tb/dut_instance/R_file/R1 \
+sim:/risc_tb/dut_instance/R_file/R2 \
+sim:/risc_tb/dut_instance/R_file/R3 \
+sim:/risc_tb/dut_instance/R_file/R4 \
+sim:/risc_tb/dut_instance/R_file/R5 \
+sim:/risc_tb/dut_instance/R_file/R6 \
+sim:/risc_tb/dut_instance/R_file/R7
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Dmemory/RAM(0) \
+sim:/risc_tb/dut_instance/Dmemory/RAM(1) \
+sim:/risc_tb/dut_instance/Dmemory/RAM(2) \
+sim:/risc_tb/dut_instance/Dmemory/RAM(3)
+restart
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /risc_tb/dut_instance/IM
+# End time: 07:51:18 on May 10,2024, Elapsed time: 0:04:14
+# Errors: 0, Warnings: 4
