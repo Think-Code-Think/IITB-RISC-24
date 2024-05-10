@@ -1,0 +1,147 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Trial_0_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:58:25 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Components
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU2
+# -- Compiling architecture inside of ALU2
+# -- Compiling entity instruction_memory
+# -- Compiling architecture structure of instruction_memory
+# -- Compiling entity IFIDReg
+# -- Compiling architecture behave of IFIDReg
+# -- Compiling entity Decoder
+# -- Compiling architecture behave of Decoder
+# -- Compiling entity IDORReg
+# -- Compiling architecture behave of IDORReg
+# -- Compiling entity SE6
+# -- Compiling architecture extender of SE6
+# -- Compiling entity SE9
+# -- Compiling architecture extender of SE9
+# -- Compiling entity Register_File
+# -- Compiling architecture inside of Register_File
+# -- Compiling entity OREXReg
+# -- Compiling architecture behave of OREXReg
+# -- Compiling entity mux_2_1
+# -- Compiling architecture mux2to1 of mux_2_1
+# -- Compiling entity SHIFTER
+# -- Compiling architecture BHV_SHIFTER of SHIFTER
+# -- Compiling entity mux_4_1
+# -- Compiling architecture mux4to1 of mux_4_1
+# -- Compiling entity ALU
+# -- Compiling architecture behave of ALU
+# -- Compiling entity ALU3
+# -- Compiling architecture inside of ALU3
+# -- Compiling entity EXMMReg
+# -- Compiling architecture behave of EXMMReg
+# -- Compiling entity data_memory
+# -- Compiling architecture structure of data_memory
+# -- Compiling entity MMWBReg
+# -- Compiling architecture behave of MMWBReg
+# -- Compiling entity mux_4_1_3bit
+# -- Compiling architecture mux4to1 of mux_4_1_3bit
+# -- Compiling entity Multiple_Reg
+# -- Compiling architecture behave of Multiple_Reg
+# -- Compiling entity mux_2_1_3bit
+# -- Compiling architecture mux2to1 of mux_2_1_3bit
+# -- Compiling entity ForwardingUnit
+# -- Compiling architecture forward of ForwardingUnit
+# -- Compiling entity R0PCForwardingUnit
+# -- Compiling architecture forward of R0PCForwardingUnit
+# End time: 01:58:25 on May 11,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:58:25 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Components
+# -- Compiling entity RISC_Pipeline
+# -- Compiling architecture behave of RISC_Pipeline
+# End time: 01:58:25 on May 11,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:58:25 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RISC_tb
+# -- Compiling architecture tb_arch of RISC_tb
+# End time: 01:58:26 on May 11,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RISC_tb
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RISC_tb 
+# Start time: 01:58:26 on May 11,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.risc_tb(tb_arch)
+# Loading work.components
+# Loading work.risc_pipeline(behave)
+# Loading work.instruction_memory(structure)
+# Loading work.alu2(inside)
+# Loading work.mux_4_1(mux4to1)
+# Loading work.r0pcforwardingunit(forward)
+# Loading work.ifidreg(behave)
+# Loading work.decoder(behave)
+# Loading work.se6(extender)
+# Loading work.se9(extender)
+# Loading work.idorreg(behave)
+# Loading work.register_file(inside)
+# Loading work.mux_2_1(mux2to1)
+# Loading work.mux_4_1_3bit(mux4to1)
+# Loading work.forwardingunit(forward)
+# Loading work.mux_2_1_3bit(mux2to1)
+# Loading work.multiple_reg(behave)
+# Loading work.orexreg(behave)
+# Loading work.alu3(inside)
+# Loading work.shifter(bhv_shifter)
+# Loading work.alu(behave)
+# Loading work.exmmreg(behave)
+# Loading work.data_memory(structure)
+# Loading work.mmwbreg(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /risc_tb/dut_instance/IM
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/stop
+restart
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /risc_tb/dut_instance/IM
+# End time: 02:23:44 on May 11,2024, Elapsed time: 0:25:18
+# Errors: 0, Warnings: 4
