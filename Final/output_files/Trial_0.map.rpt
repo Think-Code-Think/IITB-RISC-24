@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Trial_0
-Sat May 11 02:23:51 2024
+Sat May 11 06:13:31 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,14 +15,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "MMWBReg:MMWB"
- 14. Port Connectivity Checks: "mux_4_1:muxaluB"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "MMWBReg:MMWB"
+ 15. Port Connectivity Checks: "mux_4_1:muxaluB"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -48,15 +49,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 11 02:23:51 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sat May 11 06:13:31 2024       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Trial_0                                     ;
 ; Top-level Entity Name              ; RISC_Pipeline                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,237                                       ;
-;     Total combinational functions  ; 1,800                                       ;
-;     Dedicated logic registers      ; 945                                         ;
-; Total registers                    ; 945                                         ;
+; Total logic elements               ; 2,438                                       ;
+;     Total combinational functions  ; 2,327                                       ;
+;     Dedicated logic registers      ; 943                                         ;
+; Total registers                    ; 943                                         ;
 ; Total pins                         ; 66                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -176,14 +177,14 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; RISC_Pipeline.vhdl               ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl ;         ;
-; Components.vhdl                  ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl    ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
+; RISC_Pipeline.vhdl               ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl ;         ;
+; Components.vhdl                  ; yes             ; User VHDL File  ; D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl    ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -191,20 +192,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,237     ;
+; Estimated Total logic elements              ; 2,438     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1800      ;
+; Total combinational functions               ; 2327      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1211      ;
-;     -- 3 input functions                    ; 296       ;
-;     -- <=2 input functions                  ; 293       ;
+;     -- 4 input functions                    ; 1558      ;
+;     -- 3 input functions                    ; 603       ;
+;     -- <=2 input functions                  ; 166       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1740      ;
-;     -- arithmetic mode                      ; 60        ;
+;     -- normal mode                          ; 2268      ;
+;     -- arithmetic mode                      ; 59        ;
 ;                                             ;           ;
-; Total registers                             ; 945       ;
-;     -- Dedicated logic registers            ; 945       ;
+; Total registers                             ; 943       ;
+;     -- Dedicated logic registers            ; 943       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 66        ;
@@ -212,9 +213,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 945       ;
-; Total fan-out                               ; 9310      ;
-; Average fan-out                             ; 3.24      ;
+; Maximum fan-out                             ; 943       ;
+; Total fan-out                               ; 11560     ;
+; Average fan-out                             ; 3.40      ;
 +---------------------------------------------+-----------+
 
 
@@ -223,31 +224,30 @@ refer to the applicable agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name        ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
-; |RISC_Pipeline                         ; 1800 (28)           ; 945 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |RISC_Pipeline                                   ; RISC_Pipeline      ; work         ;
-;    |ALU2:ALU2_inst|                    ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU2:ALU2_inst                    ; ALU2               ; work         ;
+; |RISC_Pipeline                         ; 2327 (30)           ; 943 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |RISC_Pipeline                                   ; RISC_Pipeline      ; work         ;
+;    |ALU2:ALU2_inst|                    ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU2:ALU2_inst                    ; ALU2               ; work         ;
 ;    |ALU3:ALU_3|                        ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU3:ALU_3                        ; ALU3               ; work         ;
-;    |ALU3:Multiple_ALU|                 ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU3:Multiple_ALU                 ; ALU3               ; work         ;
-;    |ALU:Main_ALU|                      ; 218 (218)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU:Main_ALU                      ; ALU                ; work         ;
-;    |Decoder:Decoder1|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Decoder:Decoder1                  ; Decoder            ; work         ;
+;    |ALU3:Multiple_ALU|                 ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU3:Multiple_ALU                 ; ALU3               ; work         ;
+;    |ALU:Main_ALU|                      ; 229 (229)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ALU:Main_ALU                      ; ALU                ; work         ;
 ;    |EXMMReg:EXMM|                      ; 67 (67)             ; 66 (66)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|EXMMReg:EXMM                      ; EXMMReg            ; work         ;
-;    |ForwardingUnit:RF_D1_fwd_unit|     ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D1_fwd_unit     ; ForwardingUnit     ; work         ;
-;    |ForwardingUnit:RF_D2_fwd_unit|     ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D2_fwd_unit     ; ForwardingUnit     ; work         ;
-;    |IDORReg:IDOR|                      ; 71 (71)             ; 47 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IDORReg:IDOR                      ; IDORReg            ; work         ;
-;    |IFIDReg:IFID|                      ; 32 (32)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IFIDReg:IFID                      ; IFIDReg            ; work         ;
+;    |ForwardingUnit:RF_D1_fwd_unit|     ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D1_fwd_unit     ; ForwardingUnit     ; work         ;
+;    |ForwardingUnit:RF_D2_fwd_unit|     ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|ForwardingUnit:RF_D2_fwd_unit     ; ForwardingUnit     ; work         ;
+;    |IDORReg:IDOR|                      ; 69 (69)             ; 47 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IDORReg:IDOR                      ; IDORReg            ; work         ;
+;    |IFIDReg:IFID|                      ; 44 (44)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|IFIDReg:IFID                      ; IFIDReg            ; work         ;
 ;    |MMWBReg:MMWB|                      ; 50 (50)             ; 49 (49)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|MMWBReg:MMWB                      ; MMWBReg            ; work         ;
-;    |Multiple_Reg:Multiple_Counter|     ; 25 (25)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter     ; Multiple_Reg       ; work         ;
-;    |OREXReg:OREX|                      ; 378 (378)           ; 92 (92)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|OREXReg:OREX                      ; OREXReg            ; work         ;
-;    |R0PCForwardingUnit:R0_PC_Fwd_Unit| ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|R0PCForwardingUnit:R0_PC_Fwd_Unit ; R0PCForwardingUnit ; work         ;
-;    |Register_File:R_file|              ; 96 (96)             ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Register_File:R_file              ; Register_File      ; work         ;
-;    |data_memory:Dmemory|               ; 563 (563)           ; 512 (512)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|data_memory:Dmemory               ; data_memory        ; work         ;
-;    |instruction_memory:IM|             ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|instruction_memory:IM             ; instruction_memory ; work         ;
-;    |mux_2_1:Mdatain_mux|               ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:Mdatain_mux               ; mux_2_1            ; work         ;
-;    |mux_2_1:muxaluC|                   ; 27 (27)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:muxaluC                   ; mux_2_1            ; work         ;
+;    |Multiple_Reg:Multiple_Counter|     ; 24 (24)             ; 18 (18)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter     ; Multiple_Reg       ; work         ;
+;    |OREXReg:OREX|                      ; 377 (377)           ; 91 (91)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|OREXReg:OREX                      ; OREXReg            ; work         ;
+;    |R0PCForwardingUnit:R0_PC_Fwd_Unit| ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|R0PCForwardingUnit:R0_PC_Fwd_Unit ; R0PCForwardingUnit ; work         ;
+;    |Register_File:R_file|              ; 90 (90)             ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|Register_File:R_file              ; Register_File      ; work         ;
+;    |data_memory:Dmemory|               ; 1076 (1076)         ; 512 (512)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|data_memory:Dmemory               ; data_memory        ; work         ;
+;    |instruction_memory:IM|             ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|instruction_memory:IM             ; instruction_memory ; work         ;
+;    |mux_2_1:muxaluC|                   ; 23 (23)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:muxaluC                   ; mux_2_1            ; work         ;
 ;    |mux_2_1:shifter_mux|               ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1:shifter_mux               ; mux_2_1            ; work         ;
 ;    |mux_2_1_3bit:RF_A2_mux|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_2_1_3bit:RF_A2_mux            ; mux_2_1_3bit       ; work         ;
-;    |mux_4_1:RF_Datain_mux|             ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:RF_Datain_mux             ; mux_4_1            ; work         ;
+;    |mux_4_1:RF_Datain_mux|             ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:RF_Datain_mux             ; mux_4_1            ; work         ;
 ;    |mux_4_1:muxaluA|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:muxaluA                   ; mux_4_1            ; work         ;
-;    |mux_4_1:muxaluB|                   ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:muxaluB                   ; mux_4_1            ; work         ;
+;    |mux_4_1:muxaluB|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:muxaluB                   ; mux_4_1            ; work         ;
+;    |mux_4_1:pc_in_mux|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_Pipeline|mux_4_1:pc_in_mux                 ; mux_4_1            ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,29 +259,554 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------+------------------------+
 ; ALU:Main_ALU|carry_var                             ; ALU:Main_ALU|Mux16  ; yes                    ;
 ; ALU:Main_ALU|zero_var                              ; ALU:Main_ALU|Mux18  ; yes                    ;
-; instruction_memory:IM|addr[4]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[5]                      ; reset_im            ; yes                    ;
 ; instruction_memory:IM|addr[0]                      ; reset_im            ; yes                    ;
 ; instruction_memory:IM|addr[1]                      ; reset_im            ; yes                    ;
 ; instruction_memory:IM|addr[2]                      ; reset_im            ; yes                    ;
+; instruction_memory:IM|addr[4]                      ; reset_im            ; yes                    ;
 ; instruction_memory:IM|addr[3]                      ; reset_im            ; yes                    ;
-; Number of user-specified and inferred latches = 7  ;                     ;                        ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                            ;
-+----------------------------------------+--------------------------------------+
-; Register name                          ; Reason for Removal                   ;
-+----------------------------------------+--------------------------------------+
-; OREXReg:OREX|Imm6out[5..9,11..15]      ; Merged with OREXReg:OREX|Imm6out[10] ;
-; OREXReg:OREX|Imm9out[5,9,11..15]       ; Merged with OREXReg:OREX|Imm9out[10] ;
-; IDORReg:IDOR|Imm9out[5,9,11..15]       ; Merged with IDORReg:IDOR|Imm9out[10] ;
-; IDORReg:IDOR|Imm6out[5..9,11..15]      ; Merged with IDORReg:IDOR|Imm6out[10] ;
-; MMWBReg:MMWB|Imm9out[5,9,11..15]       ; Merged with MMWBReg:MMWB|Imm9out[10] ;
-; EXMMReg:EXMM|Imm9out[5,9,11..15]       ; Merged with EXMMReg:EXMM|Imm9out[10] ;
-; Total Number of Removed Registers = 48 ;                                      ;
-+----------------------------------------+--------------------------------------+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal                     ;
++-----------------------------------------------+----------------------------------------+
+; OREXReg:OREX|Imm6out[5..9,11..15]             ; Merged with OREXReg:OREX|Imm6out[10]   ;
+; OREXReg:OREX|Imm9out[5,9,11..15]              ; Merged with OREXReg:OREX|Imm9out[10]   ;
+; IDORReg:IDOR|Imm9out[5,9,11..15]              ; Merged with IDORReg:IDOR|Imm9out[10]   ;
+; MMWBReg:MMWB|Imm9out[5,9,11..15]              ; Merged with MMWBReg:MMWB|Imm9out[10]   ;
+; EXMMReg:EXMM|Imm9out[5,9,11..15]              ; Merged with EXMMReg:EXMM|Imm9out[10]   ;
+; IDORReg:IDOR|Imm6out[5..9,11..15]             ; Merged with IDORReg:IDOR|Imm6out[10]   ;
+; Multiple_Reg:Multiple_Counter|Mem_Imm_temp[0] ; Stuck at GND due to stuck port data_in ;
+; OREXReg:OREX|Mem_Imm_M_out[0]                 ; Stuck at GND due to stuck port data_in ;
+; instruction_memory:IM|RAM~0                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~1                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~2                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~3                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~4                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~5                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~6                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~7                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~8                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~9                   ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~10                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~11                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~12                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~13                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~14                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~15                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~16                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~17                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~18                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~19                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~20                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~21                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~22                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~23                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~24                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~25                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~26                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~27                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~28                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~29                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~30                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~31                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~32                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~33                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~34                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~35                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~36                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~37                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~38                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~39                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~40                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~41                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~42                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~43                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~44                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~45                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~46                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~47                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~48                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~49                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~50                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~51                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~52                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~53                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~54                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~55                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~56                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~57                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~58                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~59                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~60                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~61                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~62                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~63                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~64                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~65                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~66                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~67                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~68                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~69                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~70                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~71                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~72                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~73                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~74                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~75                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~76                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~77                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~78                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~79                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~80                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~81                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~82                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~83                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~84                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~85                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~86                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~87                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~88                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~89                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~90                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~91                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~92                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~93                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~94                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~95                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~96                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~97                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~98                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~99                  ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~100                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~101                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~102                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~103                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~104                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~105                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~106                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~107                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~108                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~109                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~110                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~111                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~112                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~113                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~114                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~115                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~116                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~117                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~118                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~119                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~120                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~121                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~122                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~123                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~124                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~125                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~126                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~127                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~128                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~129                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~130                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~131                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~132                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~133                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~134                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~135                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~136                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~137                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~138                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~139                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~140                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~141                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~142                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~143                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~144                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~145                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~146                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~147                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~148                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~149                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~150                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~151                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~152                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~153                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~154                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~155                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~156                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~157                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~158                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~159                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~160                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~161                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~162                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~163                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~164                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~165                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~166                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~167                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~168                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~169                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~170                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~171                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~172                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~173                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~174                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~175                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~176                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~177                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~178                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~179                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~180                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~181                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~182                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~183                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~184                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~185                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~186                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~187                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~188                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~189                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~190                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~191                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~192                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~193                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~194                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~195                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~196                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~197                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~198                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~199                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~200                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~201                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~202                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~203                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~204                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~205                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~206                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~207                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~208                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~209                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~210                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~211                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~212                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~213                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~214                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~215                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~216                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~217                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~218                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~219                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~220                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~221                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~222                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~223                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~224                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~225                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~226                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~227                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~228                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~229                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~230                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~231                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~232                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~233                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~234                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~235                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~236                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~237                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~238                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~239                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~240                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~241                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~242                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~243                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~244                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~245                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~246                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~247                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~248                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~249                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~250                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~251                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~252                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~253                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~254                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~255                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~256                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~257                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~258                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~259                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~260                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~261                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~262                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~263                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~264                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~265                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~266                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~267                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~268                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~269                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~270                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~271                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~272                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~273                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~274                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~275                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~276                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~277                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~278                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~279                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~280                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~281                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~282                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~283                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~284                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~285                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~286                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~287                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~288                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~289                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~290                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~291                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~292                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~293                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~294                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~295                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~296                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~297                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~298                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~299                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~300                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~301                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~302                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~303                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~304                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~305                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~306                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~307                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~308                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~309                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~310                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~311                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~312                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~313                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~314                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~315                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~316                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~317                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~318                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~319                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~320                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~321                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~322                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~323                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~324                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~325                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~326                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~327                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~328                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~329                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~330                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~331                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~332                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~333                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~334                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~335                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~336                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~337                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~338                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~339                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~340                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~341                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~342                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~343                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~344                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~345                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~346                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~347                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~348                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~349                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~350                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~351                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~352                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~353                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~354                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~355                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~356                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~357                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~358                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~359                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~360                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~361                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~362                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~363                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~364                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~365                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~366                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~367                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~368                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~369                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~370                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~371                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~372                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~373                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~374                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~375                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~376                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~377                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~378                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~379                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~380                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~381                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~382                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~383                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~384                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~385                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~386                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~387                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~388                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~389                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~390                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~391                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~392                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~393                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~394                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~395                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~396                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~397                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~398                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~399                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~400                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~401                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~402                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~403                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~404                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~405                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~406                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~407                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~408                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~409                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~410                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~411                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~412                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~413                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~414                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~415                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~416                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~417                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~418                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~419                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~420                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~421                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~422                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~423                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~424                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~425                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~426                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~427                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~428                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~429                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~430                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~431                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~432                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~433                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~434                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~435                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~436                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~437                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~438                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~439                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~440                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~441                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~442                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~443                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~444                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~445                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~446                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~447                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~448                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~449                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~450                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~451                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~452                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~453                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~454                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~455                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~456                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~457                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~458                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~459                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~460                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~461                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~462                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~463                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~464                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~465                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~466                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~467                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~468                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~469                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~470                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~471                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~472                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~473                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~474                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~475                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~476                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~477                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~478                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~479                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~480                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~481                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~482                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~483                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~484                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~485                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~486                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~487                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~488                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~489                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~490                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~491                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~492                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~493                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~494                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~495                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~496                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~497                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~498                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~499                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~500                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~501                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~502                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~503                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~504                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~505                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~506                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~507                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~508                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~509                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~510                 ; Stuck at GND due to stuck port clock   ;
+; instruction_memory:IM|RAM~511                 ; Stuck at GND due to stuck port clock   ;
+; Total Number of Removed Registers = 562       ;                                        ;
++-----------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++-----------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------------------------------+---------------------------+----------------------------------------+
+; Multiple_Reg:Multiple_Counter|Mem_Imm_temp[0] ; Stuck at GND              ; OREXReg:OREX|Mem_Imm_M_out[0]          ;
+;                                               ; due to stuck port data_in ;                                        ;
++-----------------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -289,12 +814,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 945   ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 32    ;
+; Total registers                              ; 943   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 48    ;
 ; Number of registers using Asynchronous Clear ; 128   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 921   ;
+; Number of registers using Clock Enable       ; 918   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -304,107 +829,107 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------+---------+
 ; Inverted Register                             ; Fan out ;
 +-----------------------------------------------+---------+
-; data_memory:Dmemory|RAM[0][0]                 ; 2       ;
-; data_memory:Dmemory|RAM[0][6]                 ; 2       ;
 ; data_memory:Dmemory|RAM[1][0]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][2]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][4]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][5]                 ; 2       ;
 ; data_memory:Dmemory|RAM[1][6]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][7]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][8]                 ; 2       ;
-; data_memory:Dmemory|RAM[1][9]                 ; 2       ;
-; Multiple_Reg:Multiple_Counter|Reg_Add_temp[0] ; 9       ;
-; Multiple_Reg:Multiple_Counter|Reg_Add_temp[1] ; 8       ;
-; Multiple_Reg:Multiple_Counter|Reg_Add_temp[2] ; 7       ;
-; data_memory:Dmemory|RAM[16][0]                ; 1       ;
+; data_memory:Dmemory|RAM[3][0]                 ; 2       ;
+; data_memory:Dmemory|RAM[3][2]                 ; 2       ;
+; data_memory:Dmemory|RAM[3][4]                 ; 2       ;
+; data_memory:Dmemory|RAM[3][5]                 ; 2       ;
+; data_memory:Dmemory|RAM[3][6]                 ; 2       ;
+; data_memory:Dmemory|RAM[3][7]                 ; 2       ;
+; data_memory:Dmemory|RAM[2][0]                 ; 2       ;
+; data_memory:Dmemory|RAM[2][1]                 ; 2       ;
+; data_memory:Dmemory|RAM[38][0]                ; 1       ;
+; data_memory:Dmemory|RAM[42][0]                ; 1       ;
+; data_memory:Dmemory|RAM[34][0]                ; 1       ;
+; data_memory:Dmemory|RAM[46][0]                ; 1       ;
+; data_memory:Dmemory|RAM[22][0]                ; 1       ;
+; data_memory:Dmemory|RAM[26][0]                ; 1       ;
+; data_memory:Dmemory|RAM[18][0]                ; 1       ;
+; data_memory:Dmemory|RAM[30][0]                ; 1       ;
+; data_memory:Dmemory|RAM[10][0]                ; 1       ;
+; data_memory:Dmemory|RAM[14][0]                ; 1       ;
+; data_memory:Dmemory|RAM[54][0]                ; 1       ;
+; data_memory:Dmemory|RAM[58][0]                ; 1       ;
+; data_memory:Dmemory|RAM[50][0]                ; 1       ;
+; data_memory:Dmemory|RAM[62][0]                ; 1       ;
+; data_memory:Dmemory|RAM[28][0]                ; 1       ;
+; data_memory:Dmemory|RAM[44][0]                ; 1       ;
+; data_memory:Dmemory|RAM[12][0]                ; 1       ;
+; data_memory:Dmemory|RAM[60][0]                ; 1       ;
+; data_memory:Dmemory|RAM[36][0]                ; 1       ;
+; data_memory:Dmemory|RAM[20][0]                ; 1       ;
+; data_memory:Dmemory|RAM[52][0]                ; 1       ;
+; data_memory:Dmemory|RAM[27][0]                ; 1       ;
+; data_memory:Dmemory|RAM[23][0]                ; 1       ;
+; data_memory:Dmemory|RAM[19][0]                ; 1       ;
+; data_memory:Dmemory|RAM[31][0]                ; 1       ;
+; data_memory:Dmemory|RAM[39][0]                ; 1       ;
+; data_memory:Dmemory|RAM[43][0]                ; 1       ;
+; data_memory:Dmemory|RAM[35][0]                ; 1       ;
+; data_memory:Dmemory|RAM[47][0]                ; 1       ;
 ; data_memory:Dmemory|RAM[11][0]                ; 1       ;
-; data_memory:Dmemory|RAM[7][0]                 ; 1       ;
-; data_memory:Dmemory|RAM[10][1]                ; 1       ;
-; data_memory:Dmemory|RAM[7][1]                 ; 1       ;
-; data_memory:Dmemory|RAM[11][1]                ; 1       ;
-; data_memory:Dmemory|RAM[28][2]                ; 1       ;
-; data_memory:Dmemory|RAM[26][2]                ; 1       ;
-; data_memory:Dmemory|RAM[24][2]                ; 1       ;
-; data_memory:Dmemory|RAM[30][2]                ; 1       ;
-; data_memory:Dmemory|RAM[21][2]                ; 1       ;
-; data_memory:Dmemory|RAM[19][2]                ; 1       ;
-; data_memory:Dmemory|RAM[17][2]                ; 1       ;
-; data_memory:Dmemory|RAM[23][2]                ; 1       ;
-; data_memory:Dmemory|RAM[18][2]                ; 1       ;
-; data_memory:Dmemory|RAM[16][2]                ; 1       ;
-; data_memory:Dmemory|RAM[22][2]                ; 1       ;
-; data_memory:Dmemory|RAM[29][2]                ; 1       ;
-; data_memory:Dmemory|RAM[27][2]                ; 1       ;
-; data_memory:Dmemory|RAM[25][2]                ; 1       ;
-; data_memory:Dmemory|RAM[31][2]                ; 1       ;
-; data_memory:Dmemory|RAM[9][2]                 ; 1       ;
-; data_memory:Dmemory|RAM[8][2]                 ; 1       ;
-; data_memory:Dmemory|RAM[7][2]                 ; 1       ;
-; data_memory:Dmemory|RAM[14][2]                ; 1       ;
-; data_memory:Dmemory|RAM[13][2]                ; 1       ;
-; data_memory:Dmemory|RAM[12][2]                ; 1       ;
-; data_memory:Dmemory|RAM[15][2]                ; 1       ;
-; data_memory:Dmemory|RAM[26][3]                ; 1       ;
-; data_memory:Dmemory|RAM[25][3]                ; 1       ;
-; data_memory:Dmemory|RAM[24][3]                ; 1       ;
-; data_memory:Dmemory|RAM[27][3]                ; 1       ;
-; data_memory:Dmemory|RAM[22][3]                ; 1       ;
-; data_memory:Dmemory|RAM[21][3]                ; 1       ;
-; data_memory:Dmemory|RAM[23][3]                ; 1       ;
-; data_memory:Dmemory|RAM[18][3]                ; 1       ;
-; data_memory:Dmemory|RAM[17][3]                ; 1       ;
-; data_memory:Dmemory|RAM[19][3]                ; 1       ;
-; data_memory:Dmemory|RAM[30][3]                ; 1       ;
-; data_memory:Dmemory|RAM[29][3]                ; 1       ;
-; data_memory:Dmemory|RAM[28][3]                ; 1       ;
-; data_memory:Dmemory|RAM[31][3]                ; 1       ;
-; data_memory:Dmemory|RAM[12][3]                ; 1       ;
-; data_memory:Dmemory|RAM[9][3]                 ; 1       ;
-; data_memory:Dmemory|RAM[13][3]                ; 1       ;
-; data_memory:Dmemory|RAM[11][3]                ; 1       ;
-; data_memory:Dmemory|RAM[14][3]                ; 1       ;
-; data_memory:Dmemory|RAM[10][3]                ; 1       ;
-; data_memory:Dmemory|RAM[15][3]                ; 1       ;
-; data_memory:Dmemory|RAM[25][6]                ; 1       ;
-; data_memory:Dmemory|RAM[21][6]                ; 1       ;
-; data_memory:Dmemory|RAM[17][6]                ; 1       ;
-; data_memory:Dmemory|RAM[29][6]                ; 1       ;
-; data_memory:Dmemory|RAM[26][6]                ; 1       ;
-; data_memory:Dmemory|RAM[22][6]                ; 1       ;
-; data_memory:Dmemory|RAM[18][6]                ; 1       ;
-; data_memory:Dmemory|RAM[30][6]                ; 1       ;
-; data_memory:Dmemory|RAM[24][6]                ; 1       ;
-; data_memory:Dmemory|RAM[20][6]                ; 1       ;
-; data_memory:Dmemory|RAM[28][6]                ; 1       ;
-; data_memory:Dmemory|RAM[27][6]                ; 1       ;
-; data_memory:Dmemory|RAM[23][6]                ; 1       ;
-; data_memory:Dmemory|RAM[19][6]                ; 1       ;
-; data_memory:Dmemory|RAM[31][6]                ; 1       ;
-; data_memory:Dmemory|RAM[9][6]                 ; 1       ;
-; data_memory:Dmemory|RAM[14][6]                ; 1       ;
-; data_memory:Dmemory|RAM[13][6]                ; 1       ;
-; data_memory:Dmemory|RAM[12][6]                ; 1       ;
-; data_memory:Dmemory|RAM[15][6]                ; 1       ;
-; data_memory:Dmemory|RAM[20][7]                ; 1       ;
-; data_memory:Dmemory|RAM[25][8]                ; 1       ;
-; data_memory:Dmemory|RAM[21][8]                ; 1       ;
-; data_memory:Dmemory|RAM[17][8]                ; 1       ;
-; data_memory:Dmemory|RAM[29][8]                ; 1       ;
-; data_memory:Dmemory|RAM[26][8]                ; 1       ;
-; data_memory:Dmemory|RAM[22][8]                ; 1       ;
-; data_memory:Dmemory|RAM[18][8]                ; 1       ;
-; data_memory:Dmemory|RAM[30][8]                ; 1       ;
-; data_memory:Dmemory|RAM[24][8]                ; 1       ;
-; data_memory:Dmemory|RAM[28][8]                ; 1       ;
-; data_memory:Dmemory|RAM[27][8]                ; 1       ;
-; data_memory:Dmemory|RAM[23][8]                ; 1       ;
-; data_memory:Dmemory|RAM[19][8]                ; 1       ;
-; data_memory:Dmemory|RAM[31][8]                ; 1       ;
-; data_memory:Dmemory|RAM[9][8]                 ; 1       ;
-; data_memory:Dmemory|RAM[14][8]                ; 1       ;
-; data_memory:Dmemory|RAM[13][8]                ; 1       ;
-; Total number of inverted registers = 174*     ;         ;
+; data_memory:Dmemory|RAM[15][0]                ; 1       ;
+; data_memory:Dmemory|RAM[59][0]                ; 1       ;
+; data_memory:Dmemory|RAM[55][0]                ; 1       ;
+; data_memory:Dmemory|RAM[51][0]                ; 1       ;
+; data_memory:Dmemory|RAM[63][0]                ; 1       ;
+; data_memory:Dmemory|RAM[37][0]                ; 1       ;
+; data_memory:Dmemory|RAM[41][0]                ; 1       ;
+; data_memory:Dmemory|RAM[33][0]                ; 1       ;
+; data_memory:Dmemory|RAM[45][0]                ; 1       ;
+; data_memory:Dmemory|RAM[25][0]                ; 1       ;
+; data_memory:Dmemory|RAM[21][0]                ; 1       ;
+; data_memory:Dmemory|RAM[17][0]                ; 1       ;
+; data_memory:Dmemory|RAM[29][0]                ; 1       ;
+; data_memory:Dmemory|RAM[13][0]                ; 1       ;
+; data_memory:Dmemory|RAM[57][0]                ; 1       ;
+; data_memory:Dmemory|RAM[53][0]                ; 1       ;
+; data_memory:Dmemory|RAM[49][0]                ; 1       ;
+; data_memory:Dmemory|RAM[61][0]                ; 1       ;
+; data_memory:Dmemory|RAM[16][0]                ; 1       ;
+; data_memory:Dmemory|RAM[48][0]                ; 1       ;
+; data_memory:Dmemory|RAM[32][0]                ; 2       ;
+; data_memory:Dmemory|RAM[24][0]                ; 1       ;
+; data_memory:Dmemory|RAM[40][0]                ; 1       ;
+; data_memory:Dmemory|RAM[56][0]                ; 1       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[2] ; 7       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[1] ; 8       ;
+; Multiple_Reg:Multiple_Counter|Reg_Add_temp[0] ; 9       ;
+; data_memory:Dmemory|RAM[38][4]                ; 1       ;
+; data_memory:Dmemory|RAM[42][4]                ; 1       ;
+; data_memory:Dmemory|RAM[34][4]                ; 1       ;
+; data_memory:Dmemory|RAM[46][4]                ; 1       ;
+; data_memory:Dmemory|RAM[26][4]                ; 1       ;
+; data_memory:Dmemory|RAM[22][4]                ; 1       ;
+; data_memory:Dmemory|RAM[18][4]                ; 1       ;
+; data_memory:Dmemory|RAM[30][4]                ; 1       ;
+; data_memory:Dmemory|RAM[10][4]                ; 1       ;
+; data_memory:Dmemory|RAM[14][4]                ; 1       ;
+; data_memory:Dmemory|RAM[58][4]                ; 1       ;
+; data_memory:Dmemory|RAM[54][4]                ; 1       ;
+; data_memory:Dmemory|RAM[50][4]                ; 1       ;
+; data_memory:Dmemory|RAM[62][4]                ; 1       ;
+; data_memory:Dmemory|RAM[28][4]                ; 1       ;
+; data_memory:Dmemory|RAM[44][4]                ; 1       ;
+; data_memory:Dmemory|RAM[12][4]                ; 1       ;
+; data_memory:Dmemory|RAM[60][4]                ; 1       ;
+; data_memory:Dmemory|RAM[36][4]                ; 1       ;
+; data_memory:Dmemory|RAM[20][4]                ; 1       ;
+; data_memory:Dmemory|RAM[52][4]                ; 1       ;
+; data_memory:Dmemory|RAM[27][4]                ; 1       ;
+; data_memory:Dmemory|RAM[23][4]                ; 1       ;
+; data_memory:Dmemory|RAM[19][4]                ; 1       ;
+; data_memory:Dmemory|RAM[31][4]                ; 1       ;
+; data_memory:Dmemory|RAM[39][4]                ; 1       ;
+; data_memory:Dmemory|RAM[43][4]                ; 1       ;
+; data_memory:Dmemory|RAM[35][4]                ; 1       ;
+; data_memory:Dmemory|RAM[47][4]                ; 1       ;
+; data_memory:Dmemory|RAM[11][4]                ; 1       ;
+; data_memory:Dmemory|RAM[15][4]                ; 1       ;
+; data_memory:Dmemory|RAM[59][4]                ; 1       ;
+; data_memory:Dmemory|RAM[55][4]                ; 1       ;
+; Total number of inverted registers = 229*     ;         ;
 +-----------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -414,31 +939,157 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 66 bits   ; 132 LEs       ; 66 LEs               ; 66 LEs                 ; Yes        ; |RISC_Pipeline|EXMMReg:EXMM|RAout[9]                         ;
-; 3:1                ; 57 bits   ; 114 LEs       ; 57 LEs               ; 57 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Mem_Imm_M_out[1]                 ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |RISC_Pipeline|IFIDReg:IFID|PCout[9]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|IFIDReg:IFID|Iout[3]                          ;
-; 3:1                ; 49 bits   ; 98 LEs        ; 49 LEs               ; 49 LEs                 ; Yes        ; |RISC_Pipeline|MMWBReg:MMWB|Imm9out[0]                       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter|Mem_Imm_temp[4] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Dest_reg_add_out[0]              ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm9out[1]                       ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRBout[2]                        ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|SelAluout[1]                     ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm6out[4]                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[63][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[62][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[61][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[60][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[59][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[58][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[57][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[56][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[55][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[54][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[53][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[52][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[51][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[50][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[49][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[48][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[47][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[46][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[45][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[44][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[43][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[42][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[41][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[40][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[39][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[38][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[37][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[36][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[35][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[34][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[33][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[32][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[31][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[30][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[29][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[28][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[27][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[26][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[25][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[24][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[23][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[22][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[21][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[20][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[19][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[18][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[17][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[16][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[15][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[14][6]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[13][1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[12][3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[11][2]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[10][3]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[9][4]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[8][7]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[7][4]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[6][3]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[5][1]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[4][0]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[3][3]                 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[2][7]                 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[1][1]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[0][1]                 ;
+; 3:1                ; 66 bits   ; 132 LEs       ; 66 LEs               ; 66 LEs                 ; Yes        ; |RISC_Pipeline|EXMMReg:EXMM|Imm9out[7]                       ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Imm9out[8]                       ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|PCout[12]                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|IFIDReg:IFID|Iout[2]                          ;
+; 3:1                ; 49 bits   ; 98 LEs        ; 49 LEs               ; 49 LEs                 ; Yes        ; |RISC_Pipeline|MMWBReg:MMWB|aluCout[0]                       ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |RISC_Pipeline|Multiple_Reg:Multiple_Counter|Mem_Imm_temp[2] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|OREXReg:OREX|Dest_reg_add_out[1]              ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm9out[3]                       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRBout[0]                        ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRCout[1]                        ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm6out[10]                      ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|Imm9out[8]                       ;
-; 18:1               ; 3 bits    ; 36 LEs        ; 3 LEs                ; 33 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRAout[2]                        ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; Yes        ; |RISC_Pipeline|Register_File:R_file|R0[0]                    ;
-; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RA[11]                           ;
-; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RB[0]                            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|ForwardingUnit:RF_D1_fwd_unit|Mux21           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|R0PCForwardingUnit:R0_PC_Fwd_Unit|Mux2        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluA|Mux1                          ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:RF_Datain_mux|Mux8                    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux0                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux14                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux7                          ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux12                     ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 64 LEs               ; 112 LEs                ; No         ; |RISC_Pipeline|ALU:Main_ALU|Mux15                            ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 3 LEs                ; 33 LEs                 ; Yes        ; |RISC_Pipeline|IDORReg:IDOR|aRAout[0]                        ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 75 LEs               ; 15 LEs                 ; Yes        ; |RISC_Pipeline|Register_File:R_file|R0[11]                   ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RA[1]                            ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 160 LEs              ; 32 LEs                 ; Yes        ; |RISC_Pipeline|OREXReg:OREX|RB[9]                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[63][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[62][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[61][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[60][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[59][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[58][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[57][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[56][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[55][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[54][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[53][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[52][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[51][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[50][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[49][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[48][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[47][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[46][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[45][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[44][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[43][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[42][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[41][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[40][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[39][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[38][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[37][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[36][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[35][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[34][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[33][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[32][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[31][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[30][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[29][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[28][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[27][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[26][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[25][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[24][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[23][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[22][7]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[21][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[20][0]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[19][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[18][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[17][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[16][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[15][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[14][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[13][4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[12][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[11][5]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[10][5]                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[3][0]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[2][0]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RISC_Pipeline|data_memory:Dmemory|RAM[1][0]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|ForwardingUnit:RF_D2_fwd_unit|Mux26           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |RISC_Pipeline|ForwardingUnit:RF_D2_fwd_unit|Mux9            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluA|Mux6                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:RF_Datain_mux|Mux5                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux2                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux13                         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux12                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RISC_Pipeline|mux_4_1:muxaluB|Mux6                          ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux0                      ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux12                     ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 64 LEs               ; 112 LEs                ; No         ; |RISC_Pipeline|ALU:Main_ALU|Mux10                            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux0                      ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux0                      ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |RISC_Pipeline|data_memory:Dmemory|Mux7                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
@@ -468,25 +1119,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 66                          ;
-; cycloneiii_ff         ; 945                         ;
-;     ENA               ; 761                         ;
+; cycloneiii_ff         ; 943                         ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 744                         ;
 ;     ENA CLR           ; 112                         ;
-;     ENA CLR SLD       ; 16                          ;
-;     ENA SCLR          ; 16                          ;
+;     ENA CLR SLD       ; 15                          ;
+;     ENA SCLR          ; 15                          ;
 ;     ENA SCLR SLD      ; 16                          ;
+;     ENA SLD           ; 16                          ;
 ;     plain             ; 24                          ;
-; cycloneiii_lcell_comb ; 1810                        ;
-;     arith             ; 60                          ;
-;         2 data inputs ; 30                          ;
+; cycloneiii_lcell_comb ; 2337                        ;
+;     arith             ; 59                          ;
+;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 30                          ;
-;     normal            ; 1750                        ;
-;         1 data inputs ; 183                         ;
-;         2 data inputs ; 90                          ;
-;         3 data inputs ; 266                         ;
-;         4 data inputs ; 1211                        ;
+;     normal            ; 2278                        ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 135                         ;
+;         3 data inputs ; 573                         ;
+;         4 data inputs ; 1558                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 25.00                       ;
-; Average LUT depth     ; 8.94                        ;
+; Average LUT depth     ; 8.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -495,7 +1148,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -505,113 +1158,114 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 11 02:23:32 2024
+    Info: Processing started: Sat May 11 06:13:11 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Trial_0 -c Trial_0
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file risc_tb.vhdl
-    Info (12022): Found design unit 1: RISC_tb-tb_arch File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 9
-    Info (12023): Found entity 1: RISC_tb File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl Line: 6
+    Info (12022): Found design unit 1: RISC_tb-tb_arch File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl Line: 8
+    Info (12023): Found entity 1: RISC_tb File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file risc_pipeline.vhdl
-    Info (12022): Found design unit 1: RISC_Pipeline-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 20
-    Info (12023): Found entity 1: RISC_Pipeline File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 9
+    Info (12022): Found design unit 1: RISC_Pipeline-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 20
+    Info (12023): Found entity 1: RISC_Pipeline File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 9
 Info (12021): Found 45 design units, including 22 entities, in source file components.vhdl
-    Info (12022): Found design unit 1: Components File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 5
-    Info (12022): Found design unit 2: ALU2-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 332
-    Info (12022): Found design unit 3: instruction_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 378
-    Info (12022): Found design unit 4: IFIDReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 428
-    Info (12022): Found design unit 5: Decoder-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 471
-    Info (12022): Found design unit 6: IDORReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 554
-    Info (12022): Found design unit 7: SE6-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 599
-    Info (12022): Found design unit 8: SE9-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 622
-    Info (12022): Found design unit 9: Register_File-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 655
-    Info (12022): Found design unit 10: OREXReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 807
-    Info (12022): Found design unit 11: mux_2_1-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 864
-    Info (12022): Found design unit 12: SHIFTER-BHV_SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 896
-    Info (12022): Found design unit 13: mux_4_1-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 916
-    Info (12022): Found design unit 14: ALU-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 960
-    Info (12022): Found design unit 15: ALU3-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1121
-    Info (12022): Found design unit 16: EXMMReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1183
-    Info (12022): Found design unit 17: data_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1243
-    Info (12022): Found design unit 18: MMWBReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1325
-    Info (12022): Found design unit 19: mux_4_1_3bit-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1367
-    Info (12022): Found design unit 20: Multiple_Reg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1411
-    Info (12022): Found design unit 21: mux_2_1_3bit-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1490
-    Info (12022): Found design unit 22: ForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1539
-    Info (12022): Found design unit 23: R0PCForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1627
-    Info (12023): Found entity 1: ALU2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 325
-    Info (12023): Found entity 2: instruction_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 370
-    Info (12023): Found entity 3: IFIDReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 416
-    Info (12023): Found entity 4: Decoder File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 457
-    Info (12023): Found entity 5: IDORReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 526
-    Info (12023): Found entity 6: SE6 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 592
-    Info (12023): Found entity 7: SE9 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 615
-    Info (12023): Found entity 8: Register_File File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 638
-    Info (12023): Found entity 9: OREXReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 771
-    Info (12023): Found entity 10: mux_2_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 857
-    Info (12023): Found entity 11: SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 890
-    Info (12023): Found entity 12: mux_4_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 910
-    Info (12023): Found entity 13: ALU File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 948
-    Info (12023): Found entity 14: ALU3 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1114
-    Info (12023): Found entity 15: EXMMReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1155
-    Info (12023): Found entity 16: data_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1227
-    Info (12023): Found entity 17: MMWBReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1301
-    Info (12023): Found entity 18: mux_4_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1361
-    Info (12023): Found entity 19: Multiple_Reg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1399
-    Info (12023): Found entity 20: mux_2_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1483
-    Info (12023): Found entity 21: ForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1517
-    Info (12023): Found entity 22: R0PCForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1609
+    Info (12022): Found design unit 1: Components File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 5
+    Info (12022): Found design unit 2: ALU2-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 332
+    Info (12022): Found design unit 3: instruction_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 378
+    Info (12022): Found design unit 4: IFIDReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 428
+    Info (12022): Found design unit 5: Decoder-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 471
+    Info (12022): Found design unit 6: IDORReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 554
+    Info (12022): Found design unit 7: SE6-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 599
+    Info (12022): Found design unit 8: SE9-extender File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 622
+    Info (12022): Found design unit 9: Register_File-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 655
+    Info (12022): Found design unit 10: OREXReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 807
+    Info (12022): Found design unit 11: mux_2_1-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 864
+    Info (12022): Found design unit 12: SHIFTER-BHV_SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 896
+    Info (12022): Found design unit 13: mux_4_1-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 916
+    Info (12022): Found design unit 14: ALU-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 960
+    Info (12022): Found design unit 15: ALU3-inside File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1121
+    Info (12022): Found design unit 16: EXMMReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1183
+    Info (12022): Found design unit 17: data_memory-structure File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1243
+    Info (12022): Found design unit 18: MMWBReg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1326
+    Info (12022): Found design unit 19: mux_4_1_3bit-mux4to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1368
+    Info (12022): Found design unit 20: Multiple_Reg-behave File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1412
+    Info (12022): Found design unit 21: mux_2_1_3bit-mux2to1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1491
+    Info (12022): Found design unit 22: ForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1540
+    Info (12022): Found design unit 23: R0PCForwardingUnit-forward File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1628
+    Info (12023): Found entity 1: ALU2 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 325
+    Info (12023): Found entity 2: instruction_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 370
+    Info (12023): Found entity 3: IFIDReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 416
+    Info (12023): Found entity 4: Decoder File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 457
+    Info (12023): Found entity 5: IDORReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 526
+    Info (12023): Found entity 6: SE6 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 592
+    Info (12023): Found entity 7: SE9 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 615
+    Info (12023): Found entity 8: Register_File File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 638
+    Info (12023): Found entity 9: OREXReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 771
+    Info (12023): Found entity 10: mux_2_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 857
+    Info (12023): Found entity 11: SHIFTER File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 890
+    Info (12023): Found entity 12: mux_4_1 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 910
+    Info (12023): Found entity 13: ALU File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 948
+    Info (12023): Found entity 14: ALU3 File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1114
+    Info (12023): Found entity 15: EXMMReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1155
+    Info (12023): Found entity 16: data_memory File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1227
+    Info (12023): Found entity 17: MMWBReg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1302
+    Info (12023): Found entity 18: mux_4_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1362
+    Info (12023): Found entity 19: Multiple_Reg File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1400
+    Info (12023): Found entity 20: mux_2_1_3bit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1484
+    Info (12023): Found entity 21: ForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1518
+    Info (12023): Found entity 22: R0PCForwardingUnit File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1610
 Info (12127): Elaborating entity "RISC_Pipeline" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(74): object "PCout5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 74
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:IM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 171
-Warning (10631): VHDL Process Statement warning at Components.vhdl(399): inferring latch(es) for signal or variable "addr", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (10041): Inferred latch for "addr[0]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (10041): Inferred latch for "addr[1]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (10041): Inferred latch for "addr[2]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (10041): Inferred latch for "addr[3]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (10041): Inferred latch for "addr[4]" at Components.vhdl(399) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 399
-Info (12128): Elaborating entity "ALU2" for hierarchy "ALU2:ALU2_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 178
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:pc_in_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 184
-Info (12128): Elaborating entity "R0PCForwardingUnit" for hierarchy "R0PCForwardingUnit:R0_PC_Fwd_Unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 206
-Info (12128): Elaborating entity "IFIDReg" for hierarchy "IFIDReg:IFID" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 233
-Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Decoder1" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 246
-Info (12128): Elaborating entity "SE6" for hierarchy "SE6:SE6_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 258
-Info (12128): Elaborating entity "SE9" for hierarchy "SE9:SE9_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 264
-Info (12128): Elaborating entity "IDORReg" for hierarchy "IDORReg:IDOR" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 273
-Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:R_file" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 304
-Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:RF_D1_PC_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 320
-Info (12128): Elaborating entity "mux_4_1_3bit" for hierarchy "mux_4_1_3bit:RF_Addressin_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 339
-Info (12128): Elaborating entity "ForwardingUnit" for hierarchy "ForwardingUnit:RF_D1_fwd_unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 353
-Info (12128): Elaborating entity "mux_2_1_3bit" for hierarchy "mux_2_1_3bit:RF_A2_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 410
-Info (12128): Elaborating entity "Multiple_Reg" for hierarchy "Multiple_Reg:Multiple_Counter" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 420
-Info (12128): Elaborating entity "OREXReg" for hierarchy "OREXReg:OREX" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 443
-Info (12128): Elaborating entity "ALU3" for hierarchy "ALU3:Multiple_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 481
-Info (12128): Elaborating entity "SHIFTER" for hierarchy "SHIFTER:Shifter_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 508
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Main_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 541
-Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "carry_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "zero_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-Info (10041): Inferred latch for "zero_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-Info (10041): Inferred latch for "carry_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-Info (12128): Elaborating entity "EXMMReg" for hierarchy "EXMMReg:EXMM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 570
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:Dmemory" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 600
-Info (12128): Elaborating entity "MMWBReg" for hierarchy "MMWBReg:MMWB" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl Line: 635
+Warning (10036): Verilog HDL or VHDL warning at RISC_Pipeline.vhdl(74): object "PCout5" assigned a value but never read File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 74
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:IM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 171
+Warning (10631): VHDL Process Statement warning at Components.vhdl(398): inferring latch(es) for signal or variable "addr", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[0]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[1]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[2]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[3]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[4]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (10041): Inferred latch for "addr[5]" at Components.vhdl(398) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 398
+Info (12128): Elaborating entity "ALU2" for hierarchy "ALU2:ALU2_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 178
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:pc_in_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 184
+Info (12128): Elaborating entity "R0PCForwardingUnit" for hierarchy "R0PCForwardingUnit:R0_PC_Fwd_Unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 206
+Info (12128): Elaborating entity "IFIDReg" for hierarchy "IFIDReg:IFID" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 233
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Decoder1" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 246
+Info (12128): Elaborating entity "SE6" for hierarchy "SE6:SE6_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 258
+Info (12128): Elaborating entity "SE9" for hierarchy "SE9:SE9_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 264
+Info (12128): Elaborating entity "IDORReg" for hierarchy "IDORReg:IDOR" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 273
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:R_file" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 304
+Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:RF_D1_PC_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 320
+Info (12128): Elaborating entity "mux_4_1_3bit" for hierarchy "mux_4_1_3bit:RF_Addressin_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 339
+Info (12128): Elaborating entity "ForwardingUnit" for hierarchy "ForwardingUnit:RF_D1_fwd_unit" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 353
+Info (12128): Elaborating entity "mux_2_1_3bit" for hierarchy "mux_2_1_3bit:RF_A2_mux" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 410
+Info (12128): Elaborating entity "Multiple_Reg" for hierarchy "Multiple_Reg:Multiple_Counter" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 420
+Info (12128): Elaborating entity "OREXReg" for hierarchy "OREXReg:OREX" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 443
+Info (12128): Elaborating entity "ALU3" for hierarchy "ALU3:Multiple_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 481
+Info (12128): Elaborating entity "SHIFTER" for hierarchy "SHIFTER:Shifter_inst" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 508
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Main_ALU" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 541
+Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "carry_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+Warning (10631): VHDL Process Statement warning at Components.vhdl(1005): inferring latch(es) for signal or variable "zero_var", which holds its previous value in one or more paths through the process File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+Info (10041): Inferred latch for "zero_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+Info (10041): Inferred latch for "carry_var" at Components.vhdl(1005) File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+Info (12128): Elaborating entity "EXMMReg" for hierarchy "EXMMReg:EXMM" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 570
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:Dmemory" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 600
+Info (12128): Elaborating entity "MMWBReg" for hierarchy "MMWBReg:MMWB" File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl Line: 635
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276013): RAM logic "instruction_memory:IM|RAM" is uninferred because MIF is not supported for the selected family File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 382
-Warning (13012): Latch ALU:Main_ALU|carry_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[3] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 814
-Warning (13012): Latch ALU:Main_ALU|zero_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 1005
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[1] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl Line: 814
+    Info (276013): RAM logic "instruction_memory:IM|RAM" is uninferred because MIF is not supported for the selected family File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 382
+Warning (13012): Latch ALU:Main_ALU|carry_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[3] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 814
+Warning (13012): Latch ALU:Main_ALU|zero_var has unsafe behavior File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 1005
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OREXReg:OREX|opcode[1] File: D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl Line: 814
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2351 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2552 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 2285 logic cells
+    Info (21061): Implemented 2486 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Sat May 11 02:23:51 2024
-    Info: Elapsed time: 00:00:19
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Sat May 11 06:13:31 2024
+    Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:09
 
 

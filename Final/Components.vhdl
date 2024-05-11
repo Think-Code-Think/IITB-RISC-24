@@ -259,14 +259,14 @@ port(
 		 mem_d   : in std_logic_vector(15 downto 0);
 		 mem_a   : in std_logic_vector(15 downto 0);
 		 rd_en  : in std_logic; 
-		 wr_en  : in std_logic; 
-		 reset: in std_logic; 
+		 wr_en  : in std_logic;
+		 reset: in std_logic;
 		 clk : in std_logic;
 		 mem_out : out std_logic_vector(15 downto 0); 
-		 mem_0 : out std_logic_vector(15 downto 0); 
-		 mem_1 : out std_logic_vector(15 downto 0); 
-		 mem_2 : out std_logic_vector(15 downto 0); 
-		 mem_3 : out std_logic_vector(15 downto 0)
+		 mem_0_1 : out std_logic_vector(15 downto 0); 
+		 mem_2_3 : out std_logic_vector(15 downto 0); 
+		 mem_4_5 : out std_logic_vector(15 downto 0); 
+		 mem_6_7 : out std_logic_vector(15 downto 0)
 		 );
 end component;
 
@@ -333,7 +333,7 @@ architecture inside of ALU2 is
 
     function add_sub(
         PC: in STD_LOGIC_VECTOR(15 downto 0);
-		  Imm :in STD_LOGIC_VECTOR(15 downto 0) := "0000000000000001")
+		  Imm :in STD_LOGIC_VECTOR(15 downto 0) := "0000000000000010")
 		  return std_logic_vector is
         variable temp_sum : STD_LOGIC_VECTOR(15 downto 0);
         variable sum : std_logic_vector(16 downto 0) := (others => '0');
@@ -353,7 +353,7 @@ begin
     ALU2: process(PC)
 	 variable temp: STD_LOGIC_VECTOR(16 downto 0);
     begin
-            temp := add_sub(PC, "0000000000000001");
+            temp := add_sub(PC, "0000000000000010");
 				PCout <= temp(15 downto 0);
     end process ALU2;
 
@@ -378,22 +378,21 @@ end instruction_memory;
 architecture structure of instruction_memory is 
 
 
-type memarr is array(0 to 31) of std_logic_vector(15 downto 0);
-signal RAM : memarr := (0=>"0011100000000000", --- LLI R4, 0
-								1=>"0100001100000000", --- LW R7, R4, 0
-								2=>"0100010100000001", --- LW R6, R4, 1
-								3=>"0011110000000001", --- LLI R6,1
-								4=>"1000010100000011", --- BEQ R2, R4, 3
-								5=>"0001011001011000", --- ADA R3, R1, R3
-								6=>"0001101100101011", --- AWC R5, R4, R5
-								7=>"0001010110010111", --- ACW R2, R6, R2
-								8=>"1100111111111110", --- JAL R7, -2
-								9=>"1011011000000101", --- NOP 
-							  10=>"0101101100000010", --- SW R5, R4, 2
-							  11=>"0101011100000011", --- SW R3, R4, 2
-							  12=>"1110000000000011", -- STOP
-								others => "1011000101001100");
-signal addr : std_logic_vector(4 downto 0);
+type memarr is array(0 to 63) of std_logic_vector(7 downto 0);
+signal RAM : memarr := (0 =>"00111000",1 =>"00000000", --- LLI R4, 0
+								2 =>"01000011",3 =>"00000000", --- LW R7, R4, 0
+								4 =>"01000101",5 =>"00000010", --- LW R6, R4, 1
+								6 =>"00111100",7 =>"00000001", --- LLI R6,1
+								8 =>"10000101",9 =>"00000101", --- BEQ R2, R4, 5
+								10=>"00010110",11 =>"01011000", --- ADA R3, R1, R3
+								12=>"00011011",13 =>"00101011", --- AWC R5, R4, R5
+								14=>"00010101",15 =>"10010111", --- ACW R2, R6, R2
+								16=>"11001111",17 =>"11111100", --- JAL R7, -4
+							   18=>"01011011",19 =>"00000100", --- SW R5, R4, 4
+							   20=>"01010111",21 =>"00000110", --- SW R3, R4, 6
+							   22=>"11100000",23 =>"00000011", -- STOP
+								others => "10110000");
+signal addr : std_logic_vector(5 downto 0);
 
 begin
 	process(reset,RAM,mem_add,addr) 
@@ -401,8 +400,9 @@ begin
 		if (reset = '1') then
 			mem_out <= "1011000000000000";
 		else
-			addr <= mem_add(4 downto 0);
-			mem_out <= RAM(to_integer(unsigned(addr)));
+			addr <= mem_add(5 downto 0);
+			mem_out(15 downto 8) <= RAM(to_integer(unsigned(addr)));
+			mem_out(7 downto 0)  <= RAM(to_integer(unsigned(addr) + 1));
 		end if;
 	end process;
 end structure;
@@ -1226,57 +1226,54 @@ use ieee.numeric_std.all;
 
 entity data_memory is 
 	port(
-		 mem_d   : in std_logic_vector(15 DOWNTO 0);
+		 mem_d   : in std_logic_vector(15 downto 0);
 		 mem_a   : in std_logic_vector(15 downto 0);
 		 rd_en  : in std_logic; 
 		 wr_en  : in std_logic;
 		 reset: in std_logic;
 		 clk : in std_logic;
-		 mem_out : out std_logic_vector(15 DOWNTO 0); 
-		 mem_0 : out std_logic_vector(15 DOWNTO 0); 
-		 mem_1 : out std_logic_vector(15 DOWNTO 0); 
-		 mem_2 : out std_logic_vector(15 DOWNTO 0); 
-		 mem_3 : out std_logic_vector(15 DOWNTO 0)
+		 mem_out : out std_logic_vector(15 downto 0); 
+		 mem_0_1 : out std_logic_vector(15 downto 0); 
+		 mem_2_3 : out std_logic_vector(15 downto 0); 
+		 mem_4_5 : out std_logic_vector(15 downto 0); 
+		 mem_6_7 : out std_logic_vector(15 downto 0)
 		 );
 end data_memory;
 
 architecture structure of data_memory is 
+ 
 
-
-type memarr is array(0 to 31) of std_logic_vector(15 downto 0);
-signal RAM : memarr := (0=>"0000000001000001",
-								1=>"0000001111110101",
-								2=>"0000000000000000",
-								3=>"0000000000000000",
-								4=>"0000000000000000",
-								5=>"0000000000000000",
-								6=>"0000000000000000",
-								7=>"0000000000000111",
-								8=>"1100110000000100",
-								16=>"1111011000000101",
-								20=>"1101101011000000",
-								10=>"0000000000001010",
-								11=>"0000000000001011",
-								others => "1011000101001100");
-signal addr : std_logic_vector(4 downto 0);
+type memarr is array(0 to 63) of std_logic_vector(7 downto 0);
+signal RAM : memarr := (0=>"00000000",
+								1=>"01000001",
+								2=>"00000011",
+								3=>"11110101",
+								4=>"00000000",
+								5=>"00000000",
+								6=>"00000000",
+								7=>"00000000",
+								8=>"00000000",
+								9=>"00000000",
+					  others => "10110001");
+signal addr : std_logic_vector(5 downto 0);
 
 begin
 
-addr <= mem_a(4 downto 0);
+addr <= mem_a(5 downto 0);
 
-	mem_proc : process(reset, wr_en, rd_en, clk, addr, RAM)
+  mem_proc : process(reset, wr_en, rd_en, clk, addr, RAM)
 
 		begin
 				
 			if rd_en = '1' then
-				mem_out <= RAM(to_integer(unsigned(addr)));
-			
+				mem_out(15 downto 8) <= RAM(to_integer(unsigned(addr)));
+			   mem_out(7 downto 0)  <= RAM(to_integer(unsigned(addr) + 1));
 		
 			elsif rising_edge (clk) then
 				
 				if wr_en ='1' then
-					RAM(to_integer(unsigned(addr))) <= mem_d;
-					
+					RAM(to_integer(unsigned(addr))) <= mem_d(15 downto 8);
+					RAM(to_integer(unsigned(addr)+1)) <= mem_d(7 downto 0);
 				end if;
 				mem_out <= (others => '0');
 			else 
@@ -1285,11 +1282,15 @@ addr <= mem_a(4 downto 0);
 					
 	end process mem_proc;
 
-	mem_0 <= RAM(0);
-	mem_1 <= RAM(1);
-	mem_2 <= RAM(2);
-	mem_3 <= RAM(3);
-
+	mem_0_1(15 downto 8) <= RAM(0);
+	mem_0_1(7 downto 0)  <= RAM(1);
+	mem_2_3(15 downto 8) <= RAM(2);
+	mem_2_3(7 downto 0)  <= RAM(3);
+	mem_4_5(15 downto 8) <= RAM(4);
+	mem_4_5(7 downto 0)  <= RAM(5);
+	mem_6_7(15 downto 8) <= RAM(6);
+	mem_6_7(7 downto 0)  <= RAM(7);
+	
 end structure;
 
 ---------------------------------------------------------------------------------------------
@@ -1423,7 +1424,7 @@ architecture behave of Multiple_Reg is
 		
 		
       begin
-		T1:="0000000000000001";
+		T1:="0000000000000010";
 		T2:= "001";
 		if (clk'event and clk = '1') then
 		  

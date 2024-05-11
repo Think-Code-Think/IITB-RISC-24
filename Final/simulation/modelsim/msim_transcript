@@ -10,10 +10,10 @@
 # Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl}
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:58:25 on May 11,2024
-# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl 
+# Start time: 06:13:57 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -63,12 +63,12 @@
 # -- Compiling architecture forward of ForwardingUnit
 # -- Compiling entity R0PCForwardingUnit
 # -- Compiling architecture forward of R0PCForwardingUnit
-# End time: 01:58:25 on May 11,2024, Elapsed time: 0:00:00
+# End time: 06:13:57 on May 11,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl}
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:58:25 on May 11,2024
-# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl 
+# Start time: 06:13:57 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -76,25 +76,25 @@
 # -- Loading package Components
 # -- Compiling entity RISC_Pipeline
 # -- Compiling architecture behave of RISC_Pipeline
-# End time: 01:58:25 on May 11,2024, Elapsed time: 0:00:00
+# End time: 06:13:57 on May 11,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl}
+# vcom -93 -work work {D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:58:25 on May 11,2024
-# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl 
+# Start time: 06:13:57 on May 11,2024
+# vcom -reportprogress 300 -93 -work work D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity RISC_tb
 # -- Compiling architecture tb_arch of RISC_tb
-# End time: 01:58:26 on May 11,2024, Elapsed time: 0:00:01
+# End time: 06:13:57 on May 11,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RISC_tb
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RISC_tb 
-# Start time: 01:58:26 on May 11,2024
+# Start time: 06:13:57 on May 11,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -134,14 +134,10 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 20 ns  Iteration: 3  Instance: /risc_tb/dut_instance/IM
-add wave -position insertpoint  \
-sim:/risc_tb/dut_instance/stop
-restart
-run -all
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /risc_tb/dut_instance/IM
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 20 ns  Iteration: 3  Instance: /risc_tb/dut_instance/IM
-# End time: 02:23:44 on May 11,2024, Elapsed time: 0:25:18
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 3  Instance: /risc_tb/dut_instance/IM
+# End time: 06:14:21 on May 11,2024, Elapsed time: 0:00:24
 # Errors: 0, Warnings: 4

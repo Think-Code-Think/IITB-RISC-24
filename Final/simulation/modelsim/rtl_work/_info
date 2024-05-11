@@ -7,26 +7,26 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/simulation/modelsim
+Z0 dD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/simulation/modelsim
 Ealu
-Z1 w1715372377
+Z1 w1715388190
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z5 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl
-Z6 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl
+Z5 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl
+Z6 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl
 l0
 L948
 VAO>lDk?aO8=UB4ofX^7Jn0
 !s100 m86m:?A1>6Dono;OU40]81
 Z7 OV;C;10.5b;63
 31
-Z8 !s110 1715372905
+Z8 !s110 1715388237
 !i10b 1
-Z9 !s108 1715372905.000000
-Z10 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl|
-Z11 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/Components.vhdl|
+Z9 !s108 1715388237.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl|
+Z11 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/Components.vhdl|
 !i113 1
 Z12 o-93 -work work
 Z13 tExplicit 1 CvgOpt 0
@@ -78,8 +78,8 @@ R4
 DEx4 work 4 alu2 0 22 MS76=lc7PBnffnG9[8^h33
 l352
 L332
-V>@O[F_YM2QSE?XXd>iPl52
-!s100 [MQ>i;QJkzk7@0GeH4J^g0
+VaQJ[]H712Do^_okhY_zHU3
+!s100 ]<2iKE2Vk1gCzQ_TC4i4H3
 R7
 31
 R8
@@ -140,8 +140,8 @@ R5
 R6
 l0
 L5
-VgORA9hVobTIROjKMX^bi@2
-!s100 lHl6o=XnW4ADNbLef11i31
+V457`om38Hc0AX6b`QI:^Y0
+!s100 aG5VV33F7RYBS^ENE_5433
 R7
 31
 R8
@@ -162,8 +162,8 @@ R5
 R6
 l0
 L1227
-VzF4Y7VPcGibFlTEMUNflS0
-!s100 >8aIHKc`BHJ[7CP3iQK@Y1
+VeP5DDgiX^Sck<CAPTD5W71
+!s100 7VMD;DEPjO?OMno8JQZfm0
 R7
 31
 R8
@@ -178,11 +178,11 @@ Astructure
 R2
 R3
 R4
-DEx4 work 11 data_memory 0 22 zF4Y7VPcGibFlTEMUNflS0
-l1263
+DEx4 work 11 data_memory 0 22 eP5DDgiX^Sck<CAPTD5W71
+l1260
 L1243
-V_3PUA<1oN1KgOM^YBQcnC1
-!s100 z:R[zjcCLmVBK^ZL[P7Rf3
+V@NG_SOfj>AXEM5^_RbP1n1
+!s100 J=3jV^R1QdMg4::`oBR^i1
 R7
 31
 R8
@@ -284,9 +284,9 @@ R0
 R5
 R6
 l0
-L1517
-V@BeDE_0DTUEFK[o]f494=3
-!s100 oU?lYQeMljElnXkgGKSN=0
+L1518
+VM:NU59d4`aRj=Ah@zKlaI0
+!s100 2fcY^?g2@59hWbi6i@>hK2
 R7
 31
 R8
@@ -301,11 +301,11 @@ Aforward
 R2
 R3
 R4
-DEx4 work 14 forwardingunit 0 22 @BeDE_0DTUEFK[o]f494=3
-l1542
-L1539
-VHGn?Oak4AA]1KQ=?<mbVe0
-!s100 96F<VBOMkFaa?UShCB:lP2
+DEx4 work 14 forwardingunit 0 22 M:NU59d4`aRj=Ah@zKlaI0
+l1543
+L1540
+V`1l<YzbG2l?jb5P=dneze3
+!s100 7BbV4P0N3Z5n1cPhen9kj2
 R7
 31
 R8
@@ -425,10 +425,10 @@ R2
 R3
 R4
 DEx4 work 18 instruction_memory 0 22 =c=QU]]QAeLdLRQXHdOgI1
-l398
+l397
 L378
-V06JLRHzj=]JHGLK[^@6Te1
-!s100 6oc3TU5^KXNgUU3f4`KKg3
+VKY]O<ZT`3Yf7`JzWHH6il2
+!s100 gbiKgl@0;cz@h3MM9SCG83
 R7
 31
 R8
@@ -448,9 +448,9 @@ R0
 R5
 R6
 l0
-L1301
-VABM6a;=87XFhC>l]BjWlK2
-!s100 bd@]XWlPbBR@glQWkB3^l0
+L1302
+VTLW;Jioc3`D10KXKoNl;C3
+!s100 J:8mTSZGfCSS^6oXVgMfm2
 R7
 31
 R8
@@ -465,11 +465,11 @@ Abehave
 R2
 R3
 R4
-DEx4 work 7 mmwbreg 0 22 ABM6a;=87XFhC>l]BjWlK2
-l1326
-L1325
-V`>I_0nFJ2cZQfkR3N?eUk2
-!s100 RSM_Y0k>GY0M=GT9oYaL41
+DEx4 work 7 mmwbreg 0 22 TLW;Jioc3`D10KXKoNl;C3
+l1327
+L1326
+VR3QjVK__hld5R]Pce_2ET3
+!s100 R@@SmO_;2k3d[FjE33EHm2
 R7
 31
 R8
@@ -489,9 +489,9 @@ R0
 R5
 R6
 l0
-L1399
-VjY9eP>V>Rf^hdW9Q60R600
-!s100 PM@TRL2=K@D_zg;;ZR45X2
+L1400
+V;`^i^2z[MzNZg7?>e3Fb63
+!s100 Z6eBmHO9kb8MEkRm`A?hV0
 R7
 31
 R8
@@ -506,11 +506,11 @@ Abehave
 R2
 R3
 R4
-DEx4 work 12 multiple_reg 0 22 jY9eP>V>Rf^hdW9Q60R600
-l1418
-L1411
-V?a2Qn2SIzlm3CCeGKK]3C0
-!s100 CUzBa8QbFSXjce8]V^^771
+DEx4 work 12 multiple_reg 0 22 ;`^i^2z[MzNZg7?>e3Fb63
+l1419
+L1412
+VWIPaii[:[L@a:oelYnQBz2
+!s100 eBH7a<[O[1R@8h6VGnP]L3
 R7
 31
 R8
@@ -568,9 +568,9 @@ R0
 R5
 R6
 l0
-L1483
-VR]N>;SSFSLjflG>a?@oWh1
-!s100 fY99eLaRDVC`L=YcPE^aH3
+L1484
+Vb<oWGSK=Ve?cdMXWX1:Q^0
+!s100 S3AWTQDEVi0VaK0_N4>N20
 R7
 31
 R8
@@ -584,11 +584,11 @@ R13
 Amux2to1
 R3
 R4
-DEx4 work 12 mux_2_1_3bit 0 22 R]N>;SSFSLjflG>a?@oWh1
-l1491
-L1490
-V9IHQzOcz37j@BVFiS:]Y61
-!s100 BF6nV2P>bn2OcUNOU2gI63
+DEx4 work 12 mux_2_1_3bit 0 22 b<oWGSK=Ve?cdMXWX1:Q^0
+l1492
+L1491
+VU=ccFQiLjWMBgQzlZ8HEa2
+!s100 ]6[QN]B``NX=YXmFlgI<g0
 R7
 31
 R8
@@ -646,9 +646,9 @@ R0
 R5
 R6
 l0
-L1361
-V1N]D_06MLh3JC3OIRJfh>2
-!s100 LRRKgeR5ggkdfeS2b]N8j2
+L1362
+VeUi1Ra1=6Rb0OkXGM2Y7_0
+!s100 zRUacDAomfo9F<V>zPJH]3
 R7
 31
 R8
@@ -662,11 +662,11 @@ R13
 Amux4to1
 R3
 R4
-DEx4 work 12 mux_4_1_3bit 0 22 1N]D_06MLh3JC3OIRJfh>2
-l1368
-L1367
-V;3BF55d`8TlVdb6HIONnj1
-!s100 F0hWPUU3ad1nEPCjM;Bbo2
+DEx4 work 12 mux_4_1_3bit 0 22 eUi1Ra1=6Rb0OkXGM2Y7_0
+l1369
+L1368
+V0ALR`RNAO8^;l`EkSgjfQ2
+!s100 XmhfiU_I`Mdz]<J:N]NHk2
 R7
 31
 R8
@@ -727,9 +727,9 @@ R0
 R5
 R6
 l0
-L1609
-VSd7KjJ47JBmbGaZW@9@4Q1
-!s100 M0WAI0o?An]KfU[=[VK;Q1
+L1610
+VK:;@>]1[ZWc0ZfQ?Sk:Q@1
+!s100 nGehEeo1j:aMf@g2K2NEE1
 R7
 31
 R8
@@ -744,11 +744,11 @@ Aforward
 R2
 R3
 R4
-DEx4 work 18 r0pcforwardingunit 0 22 Sd7KjJ47JBmbGaZW@9@4Q1
-l1629
-L1627
-V3>SM_:;MIK=^6=S@dlH<H3
-!s100 RPfH4z4>2JWFZ7J@?2z@J2
+DEx4 work 18 r0pcforwardingunit 0 22 K:;@>]1[ZWc0ZfQ?Sk:Q@1
+l1630
+L1628
+V[RK]3c<CA5]e]RX99Vd5D0
+!s100 0kB?f7`[lG>8=465cK?4P2
 R7
 31
 R8
@@ -799,25 +799,25 @@ R11
 R12
 R13
 Erisc_pipeline
-Z14 w1715370239
-Z15 DPx4 work 10 components 0 22 gORA9hVobTIROjKMX^bi@2
+Z14 w1715388014
+Z15 DPx4 work 10 components 0 22 457`om38Hc0AX6b`QI:^Y0
 R2
 R3
 R4
 R0
-Z16 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl
-Z17 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl
+Z16 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl
+Z17 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl
 l0
 L9
-V^B`Bj<nW>nNmK3;=kjob^0
-!s100 efI?g[SezUInZC[N<V6IT1
+V=njC;5jaLU6Kf5:7B;eB^3
+!s100 K;<:]j^DMH4j4k3QzeMKi2
 R7
 31
 R8
 !i10b 1
 R9
-Z18 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl|
-Z19 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_Pipeline.vhdl|
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl|
+Z19 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_Pipeline.vhdl|
 !i113 1
 R12
 R13
@@ -826,11 +826,11 @@ R15
 R2
 R3
 R4
-DEx4 work 13 risc_pipeline 0 22 ^B`Bj<nW>nNmK3;=kjob^0
+DEx4 work 13 risc_pipeline 0 22 =njC;5jaLU6Kf5:7B;eB^3
 l169
 L20
-Vm[[oWCCYY5]H4nIQVR8:O2
-!s100 TWUWIU6dLaAa:PTl;H@Io3
+V>4mL=_kShO9k9Udb;mU^:3
+!s100 @3Tlbf?mF@Ni3l8IbgcA81
 R7
 31
 R8
@@ -842,24 +842,24 @@ R19
 R12
 R13
 Erisc_tb
-Z20 w1715372881
+Z20 w1715387980
 R2
 R3
 R4
 R0
-Z21 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl
-Z22 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl
+Z21 8D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl
+Z22 FD:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl
 l0
-L6
-VzdoZ[m_HDn1PhFj:jF?9S1
-!s100 =PBHDk1?S`9=el:k3S5nj3
+L5
+Vo8P<:N?TXXPz:OhLYjkOQ2
+!s100 QK1;Z1PFEoVANDPjiC@]:3
 R7
 31
-Z23 !s110 1715372906
+R8
 !i10b 1
 R9
-Z24 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl|
-Z25 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/Trial_0/RISC_tb.vhdl|
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl|
+Z24 !s107 D:/IIT-B/E.E. DD/2nd Year/Spring Semester/EE 309/Project/IITB-RISC-24/Final/RISC_tb.vhdl|
 !i113 1
 R12
 R13
@@ -867,18 +867,18 @@ Atb_arch
 R2
 R3
 R4
-DEx4 work 7 risc_tb 0 22 zdoZ[m_HDn1PhFj:jF?9S1
-l23
-L9
-V_@2cPZ7n=<hCFdk1GdQ1@3
-!s100 QM_:=JXC@h8;dEhhP]I:f0
+DEx4 work 7 risc_tb 0 22 o8P<:N?TXXPz:OhLYjkOQ2
+l22
+L8
+V^E1B;PAjb:8MzWcL5XgdY1
+!s100 <<lXWL;hHPagZ0lNiPff?2
 R7
 31
-R23
+R8
 !i10b 1
 R9
+R23
 R24
-R25
 !i113 1
 R12
 R13

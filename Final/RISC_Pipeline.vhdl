@@ -10,10 +10,10 @@ entity RISC_Pipeline is
 port (
 	    clk: in std_logic;
 		 reset:in std_logic;
-		 mem_0 : out std_logic_vector(15 downto 0); 
-		 mem_1 : out std_logic_vector(15 downto 0); 
-		 mem_2 : out std_logic_vector(15 downto 0); 
-		 mem_3 : out std_logic_vector(15 downto 0)
+		 mem_0_1 : out std_logic_vector(15 downto 0); 
+		 mem_2_3 : out std_logic_vector(15 downto 0); 
+		 mem_4_5 : out std_logic_vector(15 downto 0); 
+		 mem_6_7 : out std_logic_vector(15 downto 0)
 	   );
 end RISC_Pipeline;
 
@@ -32,7 +32,7 @@ signal Iin1: std_logic_vector(15 downto 0);
 signal PCout1: std_logic_vector(15 downto 0);
 signal Iout1: std_logic_vector(15 downto 0);
 
-signal PC_plus_one: std_logic_vector(15 downto 0);
+signal PC_plus_two: std_logic_vector(15 downto 0);
 signal PC_R0_out: std_logic_vector(15 downto 0);
 signal PC_selected: std_logic_vector(15 downto 0);
 signal PC_selected_with_fwd: std_logic_vector(15 downto 0);
@@ -54,7 +54,7 @@ signal IMM9_16bit_1: std_logic_vector(15 downto 0);
 
 signal reset_im: std_logic;
 
-------------Read Operand
+------------Read Operand------------------------
 
 signal WR_E2: std_logic;
 signal opcode2: std_logic_vector(3 downto 0);
@@ -84,7 +84,7 @@ signal Dout2_post_PC_fix: std_logic_vector(15 downto 0);
 signal R0PC : std_logic_vector(15 downto 0);
 signal RF_A2_select: std_logic;
 
---Execution variables
+--Execution variables-----------------------------
 
 signal WR_E3: std_logic;
 signal opcode3: std_logic_vector(3 downto 0);
@@ -114,7 +114,7 @@ signal Reg_Add_M,Dest_Reg_Add2: std_logic_vector(2 downto 0);
 signal Mem_Imm_M,Mem_Imm_M3: std_logic_vector(15 downto 0);
 signal Bit_Reg_Add,Bit_Reg_Add3,Bit_Reg_Add4: std_logic;
 
---Memory variables
+--Memory variables------------------------------------------
 signal WR_E4,equal4,less4: std_logic;
 signal opcode4: std_logic_vector(3 downto 0);
 signal PCout4: std_logic_vector(15 downto 0);
@@ -142,7 +142,7 @@ signal Mdatain : std_logic_vector(15 downto 0);
 signal Madrin: std_logic_vector(15 downto 0);
 
 
---WriteBack
+--WriteBack-------------------------
 signal WR_E5: std_logic;
 signal opcode5: std_logic_vector(3 downto 0);
 signal reset5,hold_or_flush_ex_D1fwd,hold_or_flush_ex_D2fwd,hold_or_flush_ex: std_logic;
@@ -178,7 +178,7 @@ reset_im <= reset or jump;
 ALU2_inst: ALU2 
 	port map(
 		  PC => PC_R0_out,
-		  PCout => PC_plus_one
+		  PCout => PC_plus_two
 		   );
 
 pc_in_mux : mux_4_1 
@@ -186,7 +186,7 @@ port map (
 			  three=>pc_plus_2_imm,
            two=>RB3,
            one=>aluC,
-           zero=>PC_plus_one,
+           zero=>PC_plus_two,
            output=>PC_selected,
            sel=>pc_in_sel
 	         );
@@ -435,7 +435,7 @@ WR_E_M <= ((not (reset or stop)) and ((not opcode2(3)) and opcode2(2) and opcode
 
 hold_instr_at_or <= WR_E_M;
 	
---		  
+
 -------------------------------------
 --------------------Execution--------
 -------------------------------------
@@ -606,10 +606,10 @@ Dmemory : data_memory
 		 reset =>reset_MD,
 		 clk =>clk,
 		 mem_out =>MMoutin,  
-		 mem_0 => mem_0, 
-		 mem_1 => mem_1,  
-		 mem_2 => mem_2,
-		 mem_3 => mem_3
+		 mem_0_1 => mem_0_1, 
+		 mem_2_3 => mem_2_3,  
+		 mem_4_5 => mem_4_5,
+		 mem_6_7 => mem_6_7
 		 );
 
 Madrin <= aluCout4;
