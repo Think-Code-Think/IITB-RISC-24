@@ -1,0 +1,101 @@
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/opcodein
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/opcode
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/Iin
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/Iout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/Iout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/Iout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/Iout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/Iout
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/pc_in_mux/output
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/PCin
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IFID/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/IDOR/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/PCout
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/PCout
+
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/aluCout \
+sim:/risc_tb/dut_instance/EXMM/Reg_Add_M_out \
+sim:/risc_tb/dut_instance/EXMM/Bit_Reg_Add_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/WR_MD
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/reset_MD
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain_sel
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Dmemory/mem_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain_mux/I0
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain_mux/I1
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain_mux/S0
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Mdatain_mux/mux_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Dmemory/mem_a
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Dmemory/rd_en
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Dmemory/wr_en
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/A3 \
+sim:/risc_tb/dut_instance/R_file/D3
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/Reg_Add_M_out5 \
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/WR_E_R_file_without_LM
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/WR_E_R_file 
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/reset_R_file
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/R6 \
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/R4 \
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/R2 \
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/R_file/R0 \
+
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/Dest_reg_add_in
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/OREX/Dest_reg_add_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/Dest_reg_add_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/Dest_reg_add_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/write_reg_in
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/EXMM/write_reg_out
+add wave -position insertpoint  \
+sim:/risc_tb/dut_instance/MMWB/write_reg_out
